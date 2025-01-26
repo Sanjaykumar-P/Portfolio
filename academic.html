@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Data Table</title>
+    <style>
+        /* General Reset */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transform: scale(0.95);
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                transform: scale(0.85);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 1rem;
+        }
+
+        table thead {
+            background: linear-gradient(135deg, #4caf50, #81c784);
+            color: #fff;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+        }
+
+        th {
+            font-weight: bold;
+        }
+
+        td input {
+            width: 90%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        td input:focus {
+            outline: none;
+            border-color: #4caf50;
+            box-shadow: 0 0 5px #4caf50;
+        }
+
+        .semester-label {
+            font-weight: bold;
+            padding: 10px 15px;
+            color: #fff;
+            background: linear-gradient(135deg, #ff512f, #dd2476);
+            border-radius: 15px;
+            display: inline-block;
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-10px);
+            }
+        }
+
+        .semester-label:hover {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+        }
+
+        .update-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .update-btn:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #43a047, #1b5e20);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .error {
+            border: 2px solid red;
+            animation: shake 0.3s ease;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Academic Data Entry</h1>
+        <table id="academic-table">
+            <thead>
+                <tr>
+                    <th>Semester</th>
+                    <th>Subject 1</th>
+                    <th>Subject 2</th>
+                    <th>Subject 3</th>
+                    <th>Subject 4</th>
+                    <th>Subject 5</th>
+                    <th>CGPA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows for subject names and marks will be generated dynamically -->
+            </tbody>
+        </table>
+        <button class="update-btn" onclick="updateData()">Update Data</button>
+    </div>
+
+    <script>
+        const tableBody = document.querySelector('#academic-table tbody');
+
+        // Dynamically generate rows for 6 semesters with subject name and marks inputs
+        for (let i = 1; i <= 6; i++) {
+            // Row for entering subject names
+            const subjectRow = document.createElement('tr');
+            subjectRow.innerHTML = `
+                <td><span class="semester-label">Semester ${i}</span> (Subjects)</td>
+                <td><input type="text" placeholder="Enter Subject 1"></td>
+                <td><input type="text" placeholder="Enter Subject 2"></td>
+                <td><input type="text" placeholder="Enter Subject 3"></td>
+                <td><input type="text" placeholder="Enter Subject 4"></td>
+                <td><input type="text" placeholder="Enter Subject 5"></td>
+                <td></td>
+            `;
+            tableBody.appendChild(subjectRow);
+
+            // Row for entering marks
+            const marksRow = document.createElement('tr');
+            marksRow.innerHTML = `
+                <td><span class="semester-label">Semester ${i}</span> (Marks)</td>
+                <td><input type="text" placeholder="Enter marks"></td>
+                <td><input type="text" placeholder="Enter marks"></td>
+                <td><input type="text" placeholder="Enter marks"></td>
+                <td><input type="text" placeholder="Enter marks"></td>
+                <td><input type="text" placeholder="Enter marks"></td>
+                <td><input type="text" placeholder="Enter CGPA"></td>
+            `;
+            tableBody.appendChild(marksRow);
+        }
+
+        // Function to validate and update data
+        function updateData() {
+            const inputs = document.querySelectorAll('#academic-table input');
+            let isValid = true;
+
+            // Validate each input field
+            inputs.forEach(input => {
+                if (input.value.trim() === '') {
+                    input.classList.add('error');
+                    isValid = false;
+                } else {
+                    input.classList.remove('error');
+                }
+            });
+
+            if (isValid) {
+                alert('Data updated successfully!');
+            } else {
+                alert('Please fill in all fields before updating.');
+            }
+        }
+    </script>
+</body>
+</html>
