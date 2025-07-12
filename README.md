@@ -1,7 +1,8 @@
 # 🌟 Sanjaykumar P – Personal Portfolio
 
-Hi! I'm Sanjaykumar P, and this is my personal portfolio website.  
-I built this using my basic web development knowledge with HTML, CSS, and a touch of JavaScript — no frameworks, no AI builders. Just pure effort and love 💖
+This is my personal portfolio website built using HTML, CSS, and JavaScript with the help of AI tools.  
+It showcases my learning journey, skills, projects, and experiences in a simple and professional way.
+
 
 ### 🔗 Live Website  
 👉 [View Portfolio](https://sanjaykumar-p.github.io/Portfolio/)
@@ -27,11 +28,3 @@ I built this using my basic web development knowledge with HTML, CSS, and a touc
 - JavaScript  
 - Google Form (for Contact section)  
 - Git & GitHub Pages (for hosting)
-
----
-
-## 🚀 How to Run
-
-1. Clone this repo:
-   ```bash
-   git clone https://github.com/Sanjaykumar-P/Sanjaykumar-P.git
