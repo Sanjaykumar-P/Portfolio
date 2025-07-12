@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjaykumar P - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <style>
+        :root {
+            --primary: #4a6fff;
+            --secondary: #2ecc71;
+            --accent: #ff6b6b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --text: #334155;
+            --border: #e2e8f0;
+            --black: #000000;
+            --success: #16a34a;
+            --error: #dc2626;
+            --ai-gradient: linear-gradient(135deg, #a777e3, #d16ba5);
+            --cloud-gradient: linear-gradient(135deg, #4facfe, #00f2fe);
+            --linux-gradient: linear-gradient(135deg, #11998e, #38ef7d);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .visitor-count {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: var(--dark);
+            color: var(--light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            z-index: 1001;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .floating-icons {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .floating-icon {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 15s infinite linear;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--light);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-logo i {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+            padding: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                width: 100%;
+                text-align: center;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: var(--light);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                padding: 1rem 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .visitor-count {
+                top: 70px;
+                left: 10px;
+                font-size: 0.8rem;
+            }
+        }
+
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            margin: 0.8rem auto 0;
+            border-radius: 2px;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 2rem;
+            position: relative;
+            padding-top: 100px; /* Fixed nav bar overlap */
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text);
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .tech-showcase {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .tech-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        .tech-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-item span {
+            font-size: 0.9rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .profile-summary {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 2rem;
+            background: var(--light);
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
+            border: 1px solid var(--border);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s, z-index 0.3s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            z-index: 2;
+        }
+
+        .ai-service-card {
+            background: var(--ai-gradient);
+            color: white;
+            animation: pulse 3s infinite;
+            transform: translateY(0);
+        }
+
+        .cloud-service-card {
+            background: var(--cloud-gradient);
+            color: white;
+        }
+
+        .linux-service-card {
+            background: var(--linux-gradient);
+            color: white;
+        }
+
+        .ai-service-card .service-icon,
+        .ai-service-card h3,
+        .ai-service-card p,
+        .cloud-service-card .service-icon,
+        .cloud-service-card h3,
+        .cloud-service-card p,
+        .linux-service-card .service-icon,
+        .linux-service-card h3,
+        .linux-service-card p {
+            color: white;
+        }
+
+        .ai-service-card .service-tool,
+        .cloud-service-card .service-tool,
+        .linux-service-card .service-tool {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .ai-service-card .service-tool:hover,
+        .cloud-service-card .service-tool:hover,
+        .linux-service-card .service-tool:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(167, 119, 227, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(167, 119, 227, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(167, 119, 227, 0); }
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .innovation-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+
+        .service-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+            justify-content: center;
+        }
+
+        .service-tool {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light);
+            border-radius: 10px;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-tool:hover {
+            background: var(--primary);
+            color: var(--light);
+            transform: translateY(-3px);
+        }
+
+        .service-contact {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: black;
+            color: white;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+        
+        .service-contact h4 {
+            color: white;
+        }
+        
+        .service-contact .contact-info-item {
+            color: white;
+        }
+        
+        .service-contact .contact-info-item i {
+            color: white;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0.5rem 0;
+            color: var(--text);
+        }
+
+        .contact-info-item i {
+            margin-right: 0.5rem;
+            color: var(--primary);
+        }
+
+        .card {
+            background: var(--light);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--border);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .skill-item {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 1px solid var(--border);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-item:hover {
+            background: var(--primary);
+            color: var(--light);
+            transform: scale(1.05);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: var(--light);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s, box-shadow 0.4s;
+            border: 1px solid var(--border);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-content {
+            padding: 1.8rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .project-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tag {
+            background: rgba(74, 111, 255, 0.1);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            flex: 1;
+            text-align: center;
+            padding: 0.8rem 1rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .project-link:hover {
+            background: #3a5bff;
+            transform: translateY(-3px);
+        }
+
+        .project-link.live {
+            background: var(--secondary);
+        }
+
+        .project-link.live:hover {
+            background: #27ae60;
+        }
+
+        .contact-section {
+            background: var(--light);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.6rem;
+            font-weight: 500;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background: var(--light);
+            color: var(--text);
+        }
+
+        .form-group textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(74, 111, 255, 0.15);
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: var(--light);
+            padding: 1.1rem 2.5rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            background: #3a5bff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(74, 111, 255, 0.3);
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            font-size: 1.6rem;
+            color: var(--dark);
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-links a:hover {
+            color: var(--primary);
+            transform: scale(1.1);
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            color: var(--text);
+        }
+
+        .certification-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .certification-list li {
+            padding: 1.2rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            font-size: 1.1rem;
+            justify-content: space-between;
+        }
+
+        .certification-list i {
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+
+        .certificate-actions {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .certificate-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .certificate-btn.view {
+            background: var(--primary);
+            color: white;
+        }
+
+        .certificate-btn.download {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .certificate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .clickable-contact {
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .clickable-contact:hover {
+            color: var(--primary);
+        }
+
+        .last-updated {
+            text-align: center;
+            margin-top: 3rem;
+            color: var(--text);
+            opacity: 0.7;
+            font-size: 1rem;
+        }
+
+        .resume-link-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .resume-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 2.5rem;
+            background: var(--primary);
+            color: var(--light);
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(74, 111, 255, 0.3);
+        }
+
+        .resume-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(74, 111, 255, 0.4);
+            background: #3a5bff;
+        }
+
+        .resume-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem;
+            background: var(--light);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+        }
+
+        .resume-image {
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .resume-image img {
+            width: 100%;
+            display: block;
+        }
+
+        .resume-buttons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .resume-btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .resume-btn.view {
+            background: var(--primary);
+            color: white;
+        }
+
+        .resume-btn.download {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .resume-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .github-profile {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .github-profile a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: #333;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .github-profile a:hover {
+            background: #444;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 5rem 1.5rem;
+            }
+
+            .profile-summary {
+                padding: 1.5rem;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .resume-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .certificate-actions {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links li {
+                margin: 0.5rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links a {
+                font-size: 1.3rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .resume-buttons {
+                width: 100%;
+            }
+            
+            .resume-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Tech Icons -->
+    <div class="floating-icons" id="floatingIcons"></div>
+
+    <!-- Visitor Count -->
+    <div class="visitor-count" id="visitorCount">
+        <i class="fas fa-users"></i> Visitors: <span id="count">0</span>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <nav>
+            <div class="nav-container">
+                <a href="#home" class="nav-logo">
+                    <i class="fas fa-laptop-code"></i> Sanjaykumar P
+                </a>
+                <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#workshops">Workshops</a></li>
+                    <li><a href="#volunteer">Volunteer</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>👋 Hii, I'm <span>Sanjaykumar P</span></h1>
+                <p>B.Sc Computer Science Graduate | Cloud Engineer & Linux Administrator</p>
+                
+                <div class="profile-summary">
+                    <p>I've completed my B.Sc. in Computer Science and chosen to start my career in Cloud Computing, Linux administration, and AI-powered web development. I am building my skills in AWS, Apache/Nginx, and GitHub to grow as a modern, tech-driven professional.</p>
+                </div>
+
+                <!-- Tech Showcase in Hero -->
+                <div class="tech-showcase">
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="devicon-linux-plain colored"></i>
+                        </div>
+                        <span>Linux</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="devicon-redhat-plain colored"></i>
+                        </div>
+                        <span>Red Hat</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
+                        </div>
+                        <span>AWS</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="devicon-apache-plain-wordmark colored"></i>
+                        </div>
+                        <span>Apache</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="devicon-nginx-original colored"></i>
+                        </div>
+                        <span>Nginx</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="devicon-git-plain colored"></i>
+                        </div>
+                        <span>Git</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <a href="https://github.com/Sanjaykumar-P/" target="_blank" title="Visit My Portfolio">
+                                <i class="devicon-github-original colored"></i>
+                            </a>
+                        </div>
+                        <span>GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card ai-service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Website development services including responsive design, front-end development, and back-end integration with modern frameworks.</p>
+                    <div class="innovation-badge">Innovating with Web Technology</div>
+                    
+                    <div class="service-tools">
+                        <div class="service-tool">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <div class="service-tool">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <div class="service-tool">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <div class="service-tool">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="service-tool">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <div class="service-tool">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="service-contact">
+                        <h4>Contact for Services</h4>
+                        <div class="contact-info-item clickable-contact" onclick="window.location.href='mailto:sanjaykumar80724@gmail.com?subject=Request for Web Development Services'">
+                            <i class="fas fa-envelope"></i>
+                            <span>sanjaykumar80724@gmail.com</span>
+                        </div>
+                        <div class="contact-info-item clickable-contact" onclick="window.location.href='tel:+918072414579'">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 8072414579</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-card cloud-service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Solutions & Services</h3>
+                    <p>Comprehensive cloud solutions including infrastructure setup, deployment, and management on AWS and other cloud platforms.</p>
+                    
+                    <div class="service-tools">
+                        <div class="service-tool">
+                            <i class="devicon-amazonwebservices-plain colored"></i>
+                        </div>
+                        <div class="service-tool">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="service-tool">
+                            <i class="fas fa-database"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="service-contact">
+                        <h4>Contact for Services</h4>
+                        <div class="contact-info-item clickable-contact" onclick="window.location.href='mailto:sanjaykumar80724@gmail.com?subject=Request for Cloud Solutions & Services'">
+                            <i class="fas fa-envelope"></i>
+                            <span>sanjaykumar80724@gmail.com</span>
+                        </div>
+                        <div class="contact-info-item clickable-contact" onclick="window.location.href='tel:+918072414579'">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 8072414579</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-card linux-service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <h3>Linux Administration</h3>
+                    <p>Expert Linux server administration, configuration, and maintenance for optimal performance and security.</p>
+                    
+                    <div class="service-tools">
+                        <div class="service-tool">
+                            <i class="devicon-linux-plain colored"></i>
+                        </div>
+                        <div class="service-tool">
+                            <i class="devicon-redhat-plain colored"></i>
+                        </div>
+                        <div class="service-tool">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="service-contact">
+                        <h4>Contact for Services</h4>
+                        <div class="contact-info-item clickable-contact" onclick="window.location.href='mailto:sanjaykumar80724@gmail.com?subject=Request for Linux Administration Services'">
+                            <i class="fas fa-envelope"></i>
+                            <span>sanjaykumar80724@gmail.com</span>
+                        </div>
+                        <div class="contact-info-item clickable-contact" onclick="window.location.href='tel:+918072414579'">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 8072414579</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="card">
+                <h3>Kongu Arts And Science College - Erode</h3>
+                <p><strong>Degree:</strong> BSc in Computer Science</p>
+                <p><strong>CGPA:</strong> 8.1/10.0</p>
+                <p><strong>Coursework:</strong> Computer Architecture, Software Engineering, Operating Systems, Database Management</p>
+            </div>
+        </section>
+        
+        <section id="resume">
+            <h2 class="section-title">My Resume</h2>
+            <div class="resume-section">
+                <div class="resume-image">
+                    <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg" alt="Resume Preview">
+                </div>
+                <div class="resume-buttons">
+                    <a href="https://drive.google.com/file/d/17czVd3HguZy0SWPq47wyEaBVG0RfY3CR/view?usp=sharing" target="_blank" class="resume-btn view">
+                        <i class="fas fa-eye"></i> View Resume
+                    </a>
+                    <a href="https://drive.google.com/file/d/17czVd3HguZy0SWPq47wyEaBVG0RfY3CR/view?usp=sharing" download class="resume-btn download">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="grid">
+                <div class="skill-item">Linux Administration</div>
+                <div class="skill-item">HTML5 & CSS3 with AI</div>
+                <div class="skill-item">IoT Development & Deployment</div>
+                <div class="skill-item">AWS Cloud & Learning Services</div>
+                <div class="skill-item">Apache Server Hosting & Config</div>
+                <div class="skill-item">Nginx Server Hosting & Config</div>
+                <div class="skill-item">Git & GitHub</div>
+                <div class="skill-item">Bash Scripting</div>
+                <div class="skill-item">Server Management</div>
+                <div class="skill-item">Cloud Infrastructure</div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="C:\Users\kumar\OneDrive\Desktop\FInal Year image 1.jpg" alt="Footstep Power Generation">
+                    </div>
+                    <div class="project-content">
+                        <h3>Footstep Power Generation System - IoT</h3>
+                        <p>An innovative IoT project that converts kinetic energy from human footsteps into usable electrical energy with real-time monitoring capabilities.</p>
+                        <div class="project-tags">
+                            <div class="project-tag">IoT</div>
+                            <div class="project-tag">Energy Harvesting</div>
+                            <div class="project-tag">Arduino</div>
+                            <div class="project-tag">Iot Sensor & Connection & Development</div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://drive.google.com/drive/folders/1T2o3WeTfvZYoQXgGFteOMZJqJJ9KPEqi?usp=sharing" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> View Video
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="C:\Users\kumar\OneDrive\Desktop\Screenshot 2025-07-11 215658.png" alt="Portfolio Website">
+                    </div>
+                    <div class="project-content">
+                        <h3>Portfolio Website</h3>
+                        <p>A responsive personal portfolio website with visitor tracking and modern design features.</p>
+                        <div class="project-tags">
+                            <div class="project-tag">HTML5</div>
+                            <div class="project-tag">CSS3</div>
+                            <div class="project-tag">JavaScript</div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Sanjaykumar-P/portfolio" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="#" class="project-link live">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="C:\Users\kumar\OneDrive\Desktop\WhatsApp Image 2025-07-10 at 22.37.26_5d88cf3a.jpg" alt="Cloud Deployment">
+                    </div>
+                    <div class="project-content">
+                        <h3>Linux Network Script</h3>
+                        <p>A Script Created for the Overall All in One script created for Management in a Single Execution to all Networking Details</p>
+                        <div class="project-tags">
+                            <div class="project-tag">Linux</div>
+                            <div class="project-tag">Bash</div>
+                            <div class="project-tag">Execution & Commands skills</div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Sanjaykumar-P/networkscript.sh.git" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> View Scripts
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="C:\Users\kumar\OneDrive\Desktop\WhatsApp Image 2025-07-10 at 22.37.26_5d88cf3a.jpg" alt="Linux System Report">
+                    </div>
+                    <div class="project-content">
+                        <h3>Systemhealth.sh</h3>
+                        <p>A Shell Script used for Automation of task by checking the System health Report by script and scheduled by Cron job the Report send it to the Users mail</p>
+                        <div class="project-tags">
+                            <div class="project-tag">Linux</div>
+                            <div class="project-tag">Shell Scripting(bash)</div>
+                            <div class="project-tag">Crontab</div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Sanjaykumar-P/Systemhealth.sh.git" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> View Script
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2 class="section-title">Certifications</h2>
+            <div class="card">
+                <ul class="certification-list">
+                    <li>
+                        <div>
+                            <i class="fas fa-certificate"></i> Redhat Linux Admin Certificate (Besant technologies - 2025)
+                        </div>
+                        <div class="certificate-actions">
+                            <a href="#" class="certificate-btn view">
+                                <i class="fas fa-eye"></i> View
+                            </a>
+                            <a href="#" class="certificate-btn download">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <i class="fas fa-certificate"></i> Android App Development (Eclipse)
+                        </div>
+                        <div class="certificate-actions">
+                            <a href="#" class="certificate-btn view">
+                                <i class="fas fa-eye"></i> View
+                            </a>
+                            <a href="#" class="certificate-btn download">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <i class="fas fa-certificate"></i> Excel Intermediate (Great Learning)
+                        </div>
+                        <div class="certificate-actions">
+                            <a href="https://www.mygreatlearning.com/certificate/TWYGEVHQ" class="certificate-btn view">
+                                <i class="fas fa-eye"></i> View
+                            </a>
+                            <a href="https://drive.google.com/file/d/110ASuqUE8lYE9R1x5mSzaufKtol86jhe/view?usp=sharing" class="certificate-btn download">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <i class="fas fa-certificate"></i> Face Detection with OpenCV (Great Learning)
+                        </div>
+                        <div class="certificate-actions">
+                            <a href="https://www.mygreatlearning.com/certificate/TWYGEVHQ" class="certificate-btn view">
+                                <i class="fas fa-eye"></i> View
+                            </a>
+                            <a href="https://drive.google.com/file/d/1vjNI6HqQCPPxARZKNGIcZm1Yhj5XomiW/view?usp=sharing" class="certificate-btn download">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <i class="fas fa-certificate"></i> Cloud Foundations Using AWS (Great Learning)
+                        </div>
+                        <div class="certificate-actions">
+                            <a href="#" class="certificate-btn view">
+                                <i class="fas fa-eye"></i> View
+                            </a>
+                            <a href="#" class="certificate-btn download">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <i class="fas fa-certificate"></i> Artificial Intelligence with Python
+                        </div>
+                        <div class="certificate-actions">
+                            <a href="https://www.mygreatlearning.com/certificate/OSKZHQMJ" class="certificate-btn view">
+                                <i class="fas fa-eye"></i> View
+                            </a>
+                            <a href="https://drive.google.com/file/d/1IJC4BSJo-xmdnEBZgimCyelefIpfq0xl/view?usp=sharing" class="certificate-btn download">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="workshops">
+            <h2 class="section-title">Workshops</h2>
+            <div class="card">
+                <ul>
+                    <li><i class="fas fa-laptop-code"></i> Computer Hardware Maintenance</li>
+                    <li><i class="fas fa-cloud"></i> Cloud Computing Using AWS</li>
+                    <li><i class="fas fa-microchip"></i> IoT Application Development</li>
+                    <li><i class="fas fa-server"></i> Linux Server Administration</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="volunteer">
+            <h2 class="section-title">Volunteer Experience</h2>
+            <div class="card">
+                <ul>
+                    <li><i class="fas fa-hands-helping"></i> <strong>NSS Volunteer</strong> - National Service Scheme (2 years)</li>
+                    <li><i class="fas fa-calendar-alt"></i> <strong>Event Coordinator</strong> - College Tech Fest</li>
+                    <li><i class="fas fa-users"></i> <strong>Community Service</strong> - Village adoption program</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-section">
+                <div class="contact-icon" style="text-align: center; margin-bottom: 2rem;">
+                    <i class="fas fa-handshake fa-4x" style="color: var(--primary);"></i>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="contactName">Your Name</label>
+                        <input type="text" id="contactName" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Your Email</label>
+                        <input type="email" id="contactEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Your Message</label>
+                        <textarea id="contactMessage" placeholder="Enter your message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> <span>Send Message</span>
+                    </button>
+                </form>
+                
+                <div class="contact-links">
+                    <a href="mailto:sanjaykumar80724@gmail.com" title="Email">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="https://linkedin.com/in/sanjaykumar77" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/Sanjaykumar-P" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="tel:+918072414579" title="Call">
+                        <i class="fas fa-phone"></i> Call
+                    </a>
+                </div>
+                
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Tiruppur, Tamil Nadu, India</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="last-updated">
+            Last Updated: <span id="lastUpdatedDate"></span>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Generate floating icons
+            const floatingIcons = document.getElementById('floatingIcons');
+            const techIcons = [
+                'devicon-linux-plain', 'devicon-redhat-plain', 'devicon-amazonwebservices-plain-wordmark',
+                'devicon-apache-plain-wordmark', 'devicon-nginx-original', 'devicon-git-plain',
+                'devicon-github-original', 'devicon-html5-plain', 'devicon-css3-plain',
+                'devicon-javascript-plain', 'devicon-python-plain', 'devicon-react-original'
+            ];
+            
+            for (let i = 0; i < 20; i++) {
+                const icon = document.createElement('div');
+                icon.className = 'floating-icon';
+                const iconClass = techIcons[Math.floor(Math.random() * techIcons.length)];
+                icon.innerHTML = `<i class="${iconClass} colored"></i>`;
+                icon.style.left = `${Math.random() * 100}%`;
+                icon.style.top = `${Math.random() * 100}%`;
+                icon.style.animationDuration = `${15 + Math.random() * 20}s`;
+                icon.style.animationDelay = `${Math.random() * 5}s`;
+                floatingIcons.appendChild(icon);
+            }
+
+            // Set last updated date
+            document.getElementById('lastUpdatedDate').textContent = new Date().toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            // DOM Elements
+            const visitorCount = document.getElementById('visitorCount');
+            const countSpan = document.getElementById('count');
+            
+            // Visitor Tracking
+            let visitors = JSON.parse(localStorage.getItem('portfolioVisitors')) || {
+                count: 0,
+                lastVisit: null
+            };
+            
+            // Increment visitor count
+            visitors.count++;
+            visitors.lastVisit = new Date().toISOString();
+            localStorage.setItem('portfolioVisitors', JSON.stringify(visitors));
+            
+            // Update visitor count display
+            countSpan.textContent = visitors.count;
+            
+            // Mobile menu toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+            }
+            
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') === '#') return;
+                    
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active');
+                        }
+                    }
+                });
+            });
+            
+            // Contact Form Submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const name = document.getElementById('contactName').value;
+                    const email = document.getElementById('contactEmail').value;
+                    const message = document.getElementById('contactMessage').value;
+                    
+                    // Here you would normally send the data to a server
+                    console.log('Form submitted:', { name, email, message });
+                    
+                    // Show success message
+                    alert('Thank you for your message! I will get back to you soon.');
+                    contactForm.reset();
+                });
+            }
+            
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
