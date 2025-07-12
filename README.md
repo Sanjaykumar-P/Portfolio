@@ -4,7 +4,7 @@ Hi! I'm Sanjaykumar P, and this is my personal portfolio website.
 I built this using my basic web development knowledge with HTML, CSS, and a touch of JavaScript — no frameworks, no AI builders. Just pure effort and love 💖
 
 ### 🔗 Live Website  
-👉 [View Portfolio](https://sanjaykumar-p.github.io/Sanjaykumar-P/)
+👉 [View Portfolio](https://sanjaykumar-p.github.io/Portfolio/)
 
 ---
 
