@@ -13,8 +13,8 @@
             --accent: #ff6b6b;
             --dark: #1e293b;
             --light: #f8fafc;
-            --text: #334155;
-            --border: #e2e8f0;
+            --text: #333333; /* Updated to softer black */
+            --border: #e0e0e0; /* Light grey border */
             --black: #000000;
             --success: #16a34a;
             --error: #dc2626;
@@ -22,6 +22,7 @@
             --cloud-gradient: linear-gradient(135deg, #4facfe, #00f2fe);
             --linux-gradient: linear-gradient(135deg, #11998e, #38ef7d);
             --contact-gradient: linear-gradient(135deg, #4a6fff, #a777e3);
+            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Softer shadow */
         }
 
         * {
@@ -51,7 +52,7 @@
             font-size: 0.9rem;
             font-weight: 500;
             z-index: 1001;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: var(--card-shadow);
         }
 
         .floating-icons {
@@ -88,7 +89,7 @@
             top: 0;
             width: 100%;
             background: var(--light);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
             z-index: 1000;
             padding: 1rem 0;
         }
@@ -114,6 +115,12 @@
 
         .nav-logo i {
             color: var(--primary);
+            animation: bounce 2s infinite ease-in-out;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
         }
 
         .nav-links {
@@ -206,10 +213,6 @@
                 width: 100% !important;
                 height: 1000px !important;
             }
-            
-            .services-cta {
-                padding: 0 1rem;
-            }
         }
 
         section {
@@ -268,7 +271,7 @@
             font-size: 1.25rem;
             color: var(--text);
             opacity: 0.9;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
 
         .tech-showcase {
@@ -309,25 +312,25 @@
             padding: 2rem;
             background: var(--light);
             border-radius: 15px;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             position: relative;
             z-index: 1;
             border: 1px solid var(--border);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--card-shadow);
         }
 
-        .services-grid {
+        .expertise-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
 
-        .service-card {
+        .expertise-card {
             background: var(--light);
             border-radius: 15px;
             padding: 2.5rem 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--card-shadow);
             border: 1px solid var(--border);
             transition: transform 0.3s, box-shadow 0.3s, z-index 0.3s;
             position: relative;
@@ -335,89 +338,48 @@
             z-index: 1;
         }
 
-        .service-card:hover {
+        .expertise-card:hover {
             transform: translateY(-15px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
             z-index: 2;
         }
 
-        .ai-service-card {
-            background: var(--ai-gradient);
-            color: white;
-            animation: pulse 3s infinite;
-            transform: translateY(0);
-        }
-
-        .cloud-service-card {
+        .cloud-expertise-card {
             background: var(--cloud-gradient);
             color: white;
         }
 
-        .linux-service-card {
+        .linux-expertise-card {
             background: var(--linux-gradient);
             color: white;
         }
 
-        .ai-service-card .service-icon,
-        .ai-service-card h3,
-        .ai-service-card p,
-        .cloud-service-card .service-icon,
-        .cloud-service-card h3,
-        .cloud-service-card p,
-        .linux-service-card .service-icon,
-        .linux-service-card h3,
-        .linux-service-card p {
+        .cloud-expertise-card .expertise-icon,
+        .cloud-expertise-card h3,
+        .cloud-expertise-card p,
+        .linux-expertise-card .expertise-icon,
+        .linux-expertise-card h3,
+        .linux-expertise-card p {
             color: white;
         }
 
-        .ai-service-card .service-tool,
-        .cloud-service-card .service-tool,
-        .linux-service-card .service-tool {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-        }
-
-        .ai-service-card .service-tool:hover,
-        .cloud-service-card .service-tool:hover,
-        .linux-service-card .service-tool:hover {
-            background: white;
-            color: var(--primary);
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(167, 119, 227, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(167, 119, 227, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(167, 119, 227, 0); }
-        }
-
-        .service-icon {
+        .expertise-icon {
             font-size: 3rem;
             color: var(--primary);
             margin-bottom: 1.5rem;
         }
 
-        .service-card h3 {
+        .expertise-card h3 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
         }
 
-        .service-card p {
+        .expertise-card p {
             margin-bottom: 1.5rem;
             font-size: 1.1rem;
         }
 
-        .innovation-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
-            font-weight: 600;
-        }
-
-        .service-tools {
+        .expertise-tools {
             display: flex;
             flex-wrap: wrap;
             gap: 0.8rem;
@@ -425,7 +387,7 @@
             justify-content: center;
         }
 
-        .service-tool {
+        .expertise-tool {
             width: 45px;
             height: 45px;
             display: flex;
@@ -435,10 +397,10 @@
             border-radius: 10px;
             transition: all 0.3s;
             font-size: 1.2rem;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--card-shadow);
         }
 
-        .service-tool:hover {
+        .expertise-tool:hover {
             background: var(--primary);
             color: var(--light);
             transform: translateY(-3px);
@@ -448,7 +410,7 @@
             background: var(--light);
             padding: 2.5rem;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--card-shadow);
             margin-bottom: 2rem;
             transition: transform 0.3s, box-shadow 0.3s;
             border: 1px solid var(--border);
@@ -474,7 +436,7 @@
             font-size: 1.1rem;
             transition: all 0.3s;
             border: 1px solid var(--border);
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--card-shadow);
         }
 
         .skill-item:hover {
@@ -493,7 +455,7 @@
             background: var(--light);
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: var(--card-shadow);
             transition: transform 0.4s, box-shadow 0.4s;
             border: 1px solid var(--border);
             display: flex;
@@ -502,7 +464,7 @@
 
         .project-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
 
         .project-content {
@@ -578,7 +540,7 @@
             background: var(--light);
             padding: 3rem;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--card-shadow);
             border: 1px solid var(--border);
             max-width: 800px;
             margin: 0 auto;
@@ -616,7 +578,7 @@
         .google-form-container iframe {
             border: none;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--card-shadow);
         }
 
         .contact-links {
@@ -699,7 +661,7 @@
 
         .certificate-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
         }
 
         .last-updated {
@@ -745,14 +707,14 @@
             padding: 2rem;
             background: var(--light);
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--card-shadow);
             border: 1px solid var(--border);
         }
 
         .resume-image {
             max-width: 300px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--card-shadow);
             overflow: hidden;
         }
 
@@ -789,7 +751,7 @@
 
         .resume-btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
         .github-profile {
@@ -815,7 +777,7 @@
         .github-profile a:hover {
             background: #444;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         /* Services CTA Section */
@@ -864,6 +826,52 @@
         .footer p {
             font-size: 1rem;
             opacity: 0.8;
+        }
+
+        /* Education grid */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+        }
+
+        .education-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .education-card p {
+            margin-bottom: 0.8rem;
+        }
+
+        .education-card ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .open-to-work-badge {
+            background-color: #d4fcd7;
+            color: #256029;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            box-shadow: var(--card-shadow);
         }
 
         @media (max-width: 768px) {
@@ -922,6 +930,10 @@
             .services-cta p {
                 font-size: 1rem;
             }
+            
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 480px) {
@@ -938,7 +950,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .services-grid {
+            .expertise-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -988,7 +1000,7 @@
                 <div class="menu-toggle"><i class="fas fa-bars"></i></div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="#expertise">Expertise</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#resume">Resume</a></li>
                     <li><a href="#skills">Skills</a></li>
@@ -1008,6 +1020,11 @@
                 
                 <div class="profile-summary">
                     <p>I've completed my B.Sc. in Computer Science and chosen to start my career in Cloud Computing, Linux administration, and AI-powered web development. I am building my skills in AWS, Apache/Nginx, and GitHub to grow as a modern, tech-driven professional.</p>
+                </div>
+                
+                <!-- Open to Work badge -->
+                <div class="open-to-work-badge">
+                    💼 Open to Work
                 </div>
 
                 <!-- Tech Showcase in Hero -->
@@ -1060,74 +1077,44 @@
             </div>
         </section>
 
-        <section id="services">
-            <h2 class="section-title">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card ai-service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>Web Development</h3>
-                    <p>Website development services including responsive design, front-end development, and back-end integration with modern frameworks.</p>
-                    <div class="innovation-badge">Innovating with Web Technology</div>
-                    
-                    <div class="service-tools">
-                        <div class="service-tool">
-                            <i class="fab fa-html5"></i>
-                        </div>
-                        <div class="service-tool">
-                            <i class="fab fa-css3-alt"></i>
-                        </div>
-                        <div class="service-tool">
-                            <i class="fab fa-js"></i>
-                        </div>
-                        <div class="service-tool">
-                            <i class="fab fa-react"></i>
-                        </div>
-                        <div class="service-tool">
-                            <i class="fab fa-node-js"></i>
-                        </div>
-                        <div class="service-tool">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="service-card cloud-service-card">
-                    <div class="service-icon">
+        <section id="expertise">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="expertise-grid">
+                <div class="expertise-card cloud-expertise-card">
+                    <div class="expertise-icon">
                         <i class="fas fa-cloud"></i>
                     </div>
                     <h3>Cloud Solutions & Services</h3>
                     <p>Comprehensive cloud solutions including infrastructure setup, deployment, and management on AWS and other cloud platforms.</p>
                     
-                    <div class="service-tools">
-                        <div class="service-tool">
+                    <div class="expertise-tools">
+                        <div class="expertise-tool">
                             <i class="devicon-amazonwebservices-plain colored"></i>
                         </div>
-                        <div class="service-tool">
+                        <div class="expertise-tool">
                             <i class="fas fa-server"></i>
                         </div>
-                        <div class="service-tool">
+                        <div class="expertise-tool">
                             <i class="fas fa-database"></i>
                         </div>
                     </div>
                 </div>
                 
-                <div class="service-card linux-service-card">
-                    <div class="service-icon">
+                <div class="expertise-card linux-expertise-card">
+                    <div class="expertise-icon">
                         <i class="fas fa-terminal"></i>
                     </div>
                     <h3>Linux Administration</h3>
                     <p>Expert Linux server administration, configuration, and maintenance for optimal performance and security.</p>
                     
-                    <div class="service-tools">
-                        <div class="service-tool">
+                    <div class="expertise-tools">
+                        <div class="expertise-tool">
                             <i class="devicon-linux-plain colored"></i>
                         </div>
-                        <div class="service-tool">
+                        <div class="expertise-tool">
                             <i class="devicon-redhat-plain colored"></i>
                         </div>
-                        <div class="service-tool">
+                        <div class="expertise-tool">
                             <i class="fas fa-shield-alt"></i>
                         </div>
                     </div>
@@ -1136,20 +1123,39 @@
             
             <!-- Services CTA Section -->
             <div class="services-cta">
-                <p>Please fill the Google Form below to contact us for our services</p>
+                <p>If you're interested in connecting, collaborating, or learning more about my work, feel free to reach out using the form below.</p>
                 <a href="#contact" class="contact-btn">
-                    <i class="fas fa-envelope"></i> Contact Us Now
+                    <i class="fas fa-envelope"></i> Contact Me Now
                 </a>
             </div>
         </section>
 
         <section id="education">
             <h2 class="section-title">Education</h2>
-            <div class="card">
-                <h3>Kongu Arts And Science College - Erode</h3>
-                <p><strong>Degree:</strong> BSc in Computer Science</p>
-                <p><strong>CGPA:</strong> 8.1/10.0</p>
-                <p><strong>Coursework:</strong> Computer Architecture, Software Engineering, Operating Systems, Database Management</p>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>Cloud Computing Master Training</h3>
+                    <p><strong>Besant Technologies</strong> | May 2025– Present</p>
+                    <ul>
+                        <li>Completed Linux Administration training with practical labs.</li>
+                        <li>Currently pursuing CCNA (Cisco Certified Network Associate), focusing on routing, switching, and network troubleshooting.</li>
+                    </ul>
+                </div>
+                
+                <div class="education-card">
+                    <h3>B.Sc. in Computer Science</h3>
+                    <p><strong>Kongu Arts and Science College, Erode</strong> | June 2022– May 2025</p>
+                    <p><strong>GPA:</strong> 8.01 / 10.0 <a href="#">(View Academic Info)</a></p>
+                    <p><strong>Coursework:</strong></p>
+                    <ul>
+                        <li>Operating Systems</li>
+                        <li>Networking Fundamentals</li>
+                        <li>Digital Electronics</li>
+                        <li>Software Engineering Life Cycle</li>
+                        <li>C & C++</li>
+                        <li>Java Basics</li>
+                    </ul>
+                </div>
             </div>
         </section>
         
@@ -1160,10 +1166,10 @@
                     <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg" alt="Resume Preview">
                 </div>
                 <div class="resume-buttons">
-                    <a href="https://drive.google.com/file/d/17czVd3HguZy0SWPq47wyEaBVG0RfY3CR/view?usp=sharing" target="_blank" class="resume-btn view">
+                    <a href="https://drive.google.com/file/d/1kDBcIYyXG1X0aJziTlyy-7FuFpViC0L3/view?usp=sharing" target="_blank" class="resume-btn view">
                         <i class="fas fa-eye"></i> View Resume
                     </a>
-                    <a href="https://drive.google.com/file/d/17czVd3HguZy0SWPq47wyEaBVG0RfY3CR/view?usp=sharing" download class="resume-btn download">
+                    <a href="https://drive.google.com/file/d/1kDBcIYyXG1X0aJziTlyy-7FuFpViC0L3/view?usp=sharing" download class="resume-btn download">
                         <i class="fas fa-download"></i> Download Resume
                     </a>
                 </div>
@@ -1173,16 +1179,26 @@
         <section id="skills">
             <h2 class="section-title">Technical Skills</h2>
             <div class="grid">
-                <div class="skill-item">Linux Administration</div>
-                <div class="skill-item">HTML5 & CSS3 with AI</div>
-                <div class="skill-item">IoT Development & Deployment</div>
-                <div class="skill-item">AWS Cloud & Learning Services</div>
-                <div class="skill-item">Apache Server Hosting & Config</div>
-                <div class="skill-item">Nginx Server Hosting & Config</div>
-                <div class="skill-item">Git & GitHub</div>
-                <div class="skill-item">Bash Scripting</div>
+                <div class="skill-item">Linux System Administration</div>
+                <div class="skill-item">File creation and permissions</div>
+                <div class="skill-item">User and Group management</div>
+                <div class="skill-item">top, Crontab</div>
+                <div class="skill-item">Apache Web Server</div>
                 <div class="skill-item">Server Management</div>
-                <div class="skill-item">Cloud Infrastructure</div>
+                <div class="skill-item">ACLs</div>
+                <div class="skill-item">SSH and SCP</div>
+                <div class="skill-item">Git</div>
+                <div class="skill-item">Partitioning</div>
+                <div class="skill-item">Logical Volume Manager (LVM)</div>
+                <div class="skill-item">Shell Scripting (Bash)</div>
+                <div class="skill-item">Networking Fundamentals</div>
+                <div class="skill-item">IP Addressing</div>
+                <div class="skill-item">Subnetting</div>
+                <div class="skill-item">Routing Basics</div>
+                <div class="skill-item">Red Hat Enterprise Linux</div>
+                <div class="skill-item">Apache Web Server</div>
+                <div class="skill-item">Nginx Server</div>
+                <div class="skill-item">GitHub</div>
             </div>
         </section>
 
@@ -1381,7 +1397,7 @@
                 </div>
                 
                 <div class="google-form-container">
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScm91FA2o-wEnHWebHR0ZjJBFLL-TsjDPRYXiKW7qdrhJWHRQ/viewform?embedded=true" width="640" height="1171" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScm91FA2o-wEnHWebHR0ZjJBFLL-TsjDPRYXiKW7qdrhJWHRQ/viewform?embedded=true" width="640" height="1091" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
                 </div>
                 
                 <div class="contact-links">
