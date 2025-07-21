@@ -52,3 +52,4 @@
 
 ## 📂 Project Structure
 
+| 📄 `index.html` |
