@@ -19,7 +19,7 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Build
         run: npm run build
@@ -32,6 +32,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
-          external_repository: Sanjaykumar-P/Portfolio
+          external_repository: yourusername/yourusername.github.io
           publish_branch: gh-pages
           publish_dir: ./dist
