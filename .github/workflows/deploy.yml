@@ -1,0 +1,37 @@
+name: Build and deploy site
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Remove source maps (optional)
+        run: |
+          find ./dist -name '*.map' -type f -delete || true
+
+      - name: Deploy to public repo
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          external_repository: yourusername/yourusername.github.io
+          publish_branch: gh-pages
+          publish_dir: ./dist
