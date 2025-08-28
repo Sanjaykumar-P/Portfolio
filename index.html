@@ -24,7 +24,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-family: Georgia, "Times New Roman", serif;
             transition: all 0.3s ease;
         }
 
@@ -34,6 +34,11 @@
             background-color: var(--light);
             scroll-behavior: smooth;
             overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            font-family: Georgia, "Times New Roman", serif;
         }
 
         .floating-icons {
@@ -120,6 +125,7 @@
             font-weight: 500;
             padding: 0.5rem 0;
             position: relative;
+            font-family: Georgia, "Times New Roman", serif;
         }
 
         .nav-links a:hover {
@@ -161,6 +167,7 @@
             margin-bottom: 3rem;
             color: var(--dark);
             position: relative;
+            font-family: Georgia, "Times New Roman", serif;
         }
 
         .section-title:after {
@@ -181,7 +188,7 @@
             text-align: center;
             padding: 0 2rem;
             position: relative;
-            padding-top: 100px;
+            padding-top: 120px; /* Increased to prevent header overlap */
         }
 
         .hero-content {
@@ -591,18 +598,66 @@
             color: var(--dark);
         }
 
-        .google-form-container {
+        .contact-form {
             width: 100%;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
-        .google-form-container iframe {
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: Georgia, "Times New Roman", serif;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(74, 111, 255, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: white;
             border: none;
-            border-radius: 10px;
-            box-shadow: var(--card-shadow);
-            width: 100%;
-            height: 1100px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            background: #3a5bff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .contact-links {
@@ -806,6 +861,10 @@
                 display: block;
             }
 
+            .hero {
+                padding-top: 140px; /* Adjusted for mobile */
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -875,8 +934,8 @@
                 grid-template-columns: 1fr;
             }
             
-            .google-form-container iframe {
-                height: 1200px;
+            .contact-form {
+                gap: 1rem;
             }
         }
 
@@ -888,6 +947,10 @@
 
             .nav-links li {
                 margin: 0.5rem;
+            }
+
+            .hero {
+                padding-top: 120px; /* Adjusted for small mobile */
             }
 
             .hero h1 {
@@ -914,6 +977,15 @@
             
             .certificate-actions {
                 flex-direction: column;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .contact-links a {
+                font-size: 1.4rem;
             }
         }
     </style>
@@ -944,18 +1016,15 @@
 
         <section id="home" class="hero">
             <div class="hero-content">
-                <div class="hero-content">
-    <div class="profile-photo-container">
-        <img src="profile.jpg" alt="Sanjaykumar P" class="profile-photo">
-        <div class="profile-photo-frame"></div>
-    </div>
-</div>
-
+                <div class="profile-photo-container">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Sanjaykumar P" class="profile-photo">
+                    <div class="profile-photo-frame"></div>
+                </div>
                 <h1>👋 Hii, I'm <span>Sanjaykumar P</span></h1>
-                <p>Aspiring Cloud Engineer | RHEL | CCNA </p>
+                <p>B.Sc Computer Science Graduate | Linux System Administrator</p>
                 
-                <div class="Executive Summary">
-                    <p>I have completed my B.Sc. in Computer Science and chosen to begin my career in Cloud Computing, Linux Administration, and Network Engineering. I am actively building my skills in AWS, Python, and CCNA while gaining hands-on experience with Linux servers and automation tools. My goal is to grow as a cloud-focused professional, combining technical expertise with problem-solving to deliver impactful solutions.</p>
+                <div class="profile-summary">
+                    <p>A motivated and aspiring Linux System Administrator with a B.Sc. in Computer Science and hands-on training in Red Hat Enterprise Linux. Skilled in system configuration, user and permission management, shell scripting, and troubleshooting Linux environments. Dedicated to delivering secure and efficient system operations with a strong technical foundation.</p>
                 </div>
                 
                 <!-- Open to Work badge -->
@@ -1117,14 +1186,13 @@
                 
                 <div class="project-card">
                     <div class="project-content">
-                        <h3>PortfolioBuilder-Nginx.com</h3>
-                        <p>About
-Portfolio Builder Website – Locally hosted on Nginx in a Linux environment, with custom server files, port configuration, and secure HTTP→HTTPS (80→443) redirection. Built from scratch with HTML, CSS, and JavaScript, highlighting frontend and advanced server configuration skills</p>
+                        <h3>Portfolio Website</h3>
+                        <p>A responsive personal portfolio website with modern design features and smooth animations.</p>
                         <div class="project-tags">
-                            <div class="project-tag">Nginx Server</div>
-                            <div class="project-tag">Nginx Configuration</div>
-                            <div class="project-tag">Port Cnfiguration</div>
-                            <div class="project-tag">HTML,CSS,JS</div>
+                            <div class="project-tag">HTML5</div>
+                            <div class="project-tag">CSS3</div>
+                            <div class="project-tag">JavaScript</div>
+                            <div class="project-tag">Responsive Design</div>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/Sanjaykumar-P/portfolio" target="_blank" class="project-link">
@@ -1164,29 +1232,9 @@ Portfolio Builder Website – Locally hosted on Nginx in a Linux environment, wi
                             <div class="project-tag">Bash Scripting</div>
                             <div class="project-tag">Crontab</div>
                             <div class="project-tag">Automation</div>
-                            <div class="project-tag">Postfix</div>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/Sanjaykumar-P/Systemhealth.sh.git" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Script
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Automated Backup Script</h3>
-                        <p>This script is a simple and effective solution to create compressed backups of a specified directory on a Linux system. It is ideal for personal or project-level backups where keeping date-wise versions is important.</p>
-                        <div class="project-tags">
-                            <div class="project-tag">Linux</div>
-                            <div class="project-tag">Bash Scripting</div>
-                            <div class="project-tag">Crontab</div>
-                            <div class="project-tag">Automation</div>
-                            <div class="project-tag">System Administration</div>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/backupscript" target="_blank" class="project-link">
                                 <i class="fab fa-github"></i> View Script
                             </a>
                         </div>
@@ -1213,32 +1261,6 @@ Portfolio Builder Website – Locally hosted on Nginx in a Linux environment, wi
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Secure-IAM Access Management</h3>
-                        <p>AWS IAM Access Management Project: Developed a secure access control system for an enterprise environment. Implemented user and group management, role-based policies, and fine-grained permissions. Integrated MFA and access monitoring to ensure compliance and security best practices.</p>
-                        <div class="project-tags">
-                            <div class="project-tag">AWS</div>
-                            <div class="project-tag">IAM</div>
-                            <div class="project-tag">Security Pratices</div>
-                            <div class="project-tag">Users</div>
-                            <div class="project-tag">User Groups</div>
-                            <div class="project-tag">IAM Roles</div>
-                            <div class="project-tag">Access Reports</div>
-                            <div class="project-tag">Credential Reports</div>
-                            <div class="project-tag">JSON Policies</div>
-                            
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/IAMSecureaccess" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Repository
-                            </a>
-                            <a href="https://github.com/Sanjaykumar-P/IAMSecureaccess/blob/main/IAM%20Secure%20Final.pdf" class="project-link live">
-                                <i class="fas fa-external-link-alt"></i> View Document
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -1253,6 +1275,9 @@ Portfolio Builder Website – Locally hosted on Nginx in a Linux environment, wi
                         <a href="#" class="certificate-btn view">
                             <i class="fas fa-eye"></i> View
                         </a>
+                        <a href="#" class="certificate-btn download">
+                            <i class="fas fa-download"></i> Download
+                        </a>
                     </div>
                 </li>
                 <li>
@@ -1262,6 +1287,9 @@ Portfolio Builder Website – Locally hosted on Nginx in a Linux environment, wi
                     <div class="certificate-actions">
                         <a href="#" class="certificate-btn view">
                             <i class="fas fa-eye"></i> View
+                        </a>
+                        <a href="#" class="certificate-btn download">
+                            <i class="fas fa-download"></i> Download
                         </a>
                     </div>
                 </li>
@@ -1273,6 +1301,9 @@ Portfolio Builder Website – Locally hosted on Nginx in a Linux environment, wi
                         <a href="https://www.mygreatlearning.com/certificate/TWYGEVHQ" class="certificate-btn view">
                             <i class="fas fa-eye"></i> View
                         </a>
+                        <a href="https://drive.google.com/file/d/110ASuqUE8lYE9R1x5mSzaufKtol86jhe/view?usp=sharing" class="certificate-btn download">
+                            <i class="fas fa-download"></i> Download
+                        </a>
                     </div>
                 </li>
                 <li>
@@ -1282,6 +1313,9 @@ Portfolio Builder Website – Locally hosted on Nginx in a Linux environment, wi
                     <div class="certificate-actions">
                         <a href="https://www.mygreatlearning.com/certificate/TWYGEVHQ" class="certificate-btn view">
                             <i class="fas fa-eye"></i> View
+                        </a>
+                        <a href="https://drive.google.com/file/d/1vjNI6HqQCPPxARZKNGIcZm1Yhj5XomiW/view?usp=sharing" class="certificate-btn download">
+                            <i class="fas fa-download"></i> Download
                         </a>
                     </div>
                 </li>
@@ -1293,6 +1327,9 @@ Portfolio Builder Website – Locally hosted on Nginx in a Linux environment, wi
                         <a href="#" class="certificate-btn view">
                             <i class="fas fa-eye"></i> View
                         </a>
+                        <a href="#" class="certificate-btn download">
+                            <i class="fas fa-download"></i> Download
+                        </a>
                     </div>
                 </li>
                 <li>
@@ -1302,6 +1339,9 @@ Portfolio Builder Website – Locally hosted on Nginx in a Linux environment, wi
                     <div class="certificate-actions">
                         <a href="https://www.mygreatlearning.com/certificate/OSKZHQMJ" class="certificate-btn view">
                             <i class="fas fa-eye"></i> View
+                        </a>
+                        <a href="https://drive.google.com/file/d/1IJC4BSJo-xmdnEBZgimCyelefIpfq0xl/view?usp=sharing" class="certificate-btn download">
+                            <i class="fas fa-download"></i> Download
                         </a>
                     </div>
                 </li>
@@ -1316,12 +1356,44 @@ Portfolio Builder Website – Locally hosted on Nginx in a Linux environment, wi
                     <h3>Get in Touch</h3>
                 </div>
                 
-                <div class="google-form-container">
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScm91FA2o-wEnHWebHR0ZjJBFLL-TsjDPRYXiKW7qdrhJWHRQ/viewform?embedded=true" width="640" height="1091" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-                </div>
+                <form class="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLSfhtnSYgZDFpQTYJ5damfOa393t7Hyyyg73aI9A_PVoMbIPfg/formResponse" method="POST" target="_blank">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="entry.1181390135" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="entry.606845025" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Your Phone Number</label>
+                        <input type="tel" id="phone" name="entry.28667283" placeholder="Enter your phone number" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="alt-phone">Alternate Phone (Optional)</label>
+                        <input type="tel" id="alt-phone" name="entry.990884387" placeholder="Enter alternate phone number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="entry.257264339" placeholder="Type your message here..." required></textarea>
+                    </div>
+                    
+                    <!-- Hidden fields -->
+                    <input type="hidden" name="fvv" value="1">
+                    <input type="hidden" name="fbzx" value="-2206508105654241332">
+                    <input type="hidden" name="pageHistory" value="0">
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
                 
                 <div class="contact-links">
-                    <a href="mailto:sanjaykumarp8577@gmail.com" title="Email">
+                    <a href="mailto:sanjaykumar80724@gmail.com" title="Email">
                         <i class="fas fa-envelope"></i> Email
                     </a>
                     <a href="https://linkedin.com/in/sanjaykumar77" target="_blank" title="LinkedIn">
@@ -1336,13 +1408,13 @@ Portfolio Builder Website – Locally hosted on Nginx in a Linux environment, wi
                 </div>
                 
                 <div class="contact-info">
-                    <p><i class="fas fa-map-marker-alt"></i> Bengaluru, karnataka, India</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Tiruppur, Tamil Nadu, India</p>
                 </div>
             </div>
         </section>
 
         <div class="last-updated">
-            Last Updated: <span id="Last Updated"></span>
+            Last Updated: <span id="lastUpdatedDate"></span>
         </div>
         
         <!-- Footer -->
@@ -1388,6 +1460,15 @@ Portfolio Builder Website – Locally hosted on Nginx in a Linux environment, wi
             if (menuToggle) {
                 menuToggle.addEventListener('click', function() {
                     navLinks.classList.toggle('active');
+                    // Change icon based on menu state
+                    const icon = this.querySelector('i');
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
                 });
             }
             
@@ -1407,6 +1488,10 @@ Portfolio Builder Website – Locally hosted on Nginx in a Linux environment, wi
                         // Close mobile menu if open
                         if (navLinks.classList.contains('active')) {
                             navLinks.classList.remove('active');
+                            // Reset menu icon
+                            const icon = document.querySelector('.menu-toggle i');
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
                         }
                     }
                 });
@@ -1417,6 +1502,10 @@ Portfolio Builder Website – Locally hosted on Nginx in a Linux environment, wi
                 link.addEventListener('click', () => {
                     if (navLinks.classList.contains('active')) {
                         navLinks.classList.remove('active');
+                        // Reset menu icon
+                        const icon = document.querySelector('.menu-toggle i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
                     }
                 });
             });
