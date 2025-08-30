@@ -250,6 +250,46 @@
             margin-bottom: 1rem;
         }
 
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .hero-btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-btn.hire-me {
+            background: var(--accent);
+            color: white;
+        }
+
+        .hero-btn.view-resume {
+            background: var(--primary);
+            color: white;
+        }
+
+        .hero-btn.download-resume {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
         .tech-showcase {
             display: flex;
             justify-content: center;
@@ -873,6 +913,17 @@
                 font-size: 1.1rem;
             }
 
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
             .section-title {
                 font-size: 2rem;
             }
@@ -1017,7 +1068,7 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <div class="profile-photo-container">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Sanjaykumar P" class="profile-photo">
+                    <img src="profile.jpg" alt="Sanjaykumar P" class="profile-photo">
                     <div class="profile-photo-frame"></div>
                 </div>
                 <h1>👋 Hii, I'm <span>Sanjaykumar P</span></h1>
@@ -1030,6 +1081,19 @@
                 <!-- Open to Work badge -->
                 <div class="open-to-work-badge">
                     💼 Open to Work
+                </div>
+                
+                <!-- New buttons section -->
+                <div class="hero-buttons">
+                    <a href="#contact" class="hero-btn hire-me">
+                        <i class="fas fa-briefcase"></i> Hire Me
+                    </a>
+                    <a href="#" class="hero-btn view-resume">
+                        <i class="fas fa-eye"></i> View Resume
+                    </a>
+                    <a href="#" class="hero-btn download-resume">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
                 </div>
 
                 <!-- Tech Showcase in Hero -->
