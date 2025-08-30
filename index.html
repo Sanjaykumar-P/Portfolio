@@ -874,6 +874,65 @@
             box-shadow: 0 8px 20px rgba(74, 111, 255, 0.4);
         }
 
+        /* Resume Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: 2% auto;
+            padding: 20px;
+            width: 90%;
+            height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            color: #fff;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2001;
+        }
+
+        .close-modal:hover {
+            color: var(--accent);
+        }
+
+        .resume-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .resume-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .resume-download-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
@@ -988,6 +1047,12 @@
             .contact-form {
                 gap: 1rem;
             }
+            
+            .modal-content {
+                width: 95%;
+                height: 85%;
+                margin: 5% auto;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1038,12 +1103,40 @@
             .contact-links a {
                 font-size: 1.4rem;
             }
+            
+            .modal-content {
+                width: 95%;
+                height: 80%;
+                margin: 10% auto;
+                padding: 10px;
+            }
+            
+            .close-modal {
+                top: 5px;
+                right: 15px;
+                font-size: 30px;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Floating Tech Icons -->
     <div class="floating-icons" id="floatingIcons"></div>
+    
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <div class="resume-container">
+                <iframe src="Sanjaykumar_P Resume.pdf" class="resume-iframe" id="resumeIframe"></iframe>
+            </div>
+            <div class="resume-download-container">
+                <a href="Sanjaykumar_P Resume.pdf" download="Sanjaykumar_P Resume.pdf" class="hero-btn download-resume">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Main Content -->
     <div class="main-content">
@@ -1083,15 +1176,14 @@
                     💼 Open to Work
                 </div>
                 
-                <!-- New buttons section -->
-                <div class="hero-buttons">
+               <div class="hero-buttons">
                     <a href="#contact" class="hero-btn hire-me">
                         <i class="fas fa-briefcase"></i> Hire Me
                     </a>
-                    <a href="#" class="hero-btn view-resume">
+                    <a href="Sanjaykumar_P Resume.pdf" class="hero-btn view-resume" id="viewResumeBtn">
                         <i class="fas fa-eye"></i> View Resume
                     </a>
-                    <a href="#" class="hero-btn download-resume">
+                    <a href="Sanjaykumar_P Resume.pdf" download="Sanjaykumar_P Resume.pdf" class="hero-btn download-resume">
                         <i class="fas fa-download"></i> Download Resume
                     </a>
                 </div>
@@ -1345,6 +1437,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="project-card">
                     <div class="project-content">
                         <h3>Secure-IAM Access Management</h3>
@@ -1359,13 +1452,35 @@
                             <div class="project-tag">Access Reports</div>
                             <div class="project-tag">Credential Reports</div>
                             <div class="project-tag">JSON Policies</div>
-                            
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/Sanjaykumar-P/IAMSecureaccess" target="_blank" class="project-link">
                                 <i class="fab fa-github"></i> View Repository
                             </a>
                             <a href="https://github.com/Sanjaykumar-P/IAMSecureaccess/blob/main/IAM%20Secure%20Final.pdf" class="project-link live">
+                                <i class="fas fa-external-link-alt"></i> View Document
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Hosting On AWS EC2 With Apache Web Server</h3>
+                        <p>This project demonstrates hosting a personal portfolio on an Amazon EC2 (Free Tier) instance with Amazon Linux 2. It involved configuring an Apache web server, managing security groups, and deploying files in /var/www/html/index.html for seamless access via the instance's public IPv4.</p>
+                        <div class="project-tags">
+                            <div class="project-tag">AWS</div>
+                            <div class="project-tag">Amazon EC2</div>
+                            <div class="project-tag">Security Groups</div>
+                            <div class="project-tag">Cloud Deployment</div>
+                            <div class="project-tag">Amazon Linux Administration</div>
+                            <div class="project-tag">Public IP Management</div>  
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Sanjaykumar-P/Hosting-on-AWS-EC2-with-Apache-Web-Server.git" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> View Repository
+                            </a>
+                            <a href="https://github.com/Sanjaykumar-P/Hosting-on-AWS-EC2-with-Apache-Web-Server/blob/main/Amzon%20EC2%20Apache%20Web%20Server%20Project.pdf" class="project-link live">
                                 <i class="fas fa-external-link-alt"></i> View Document
                             </a>
                         </div>
@@ -1600,6 +1715,34 @@
                         icon.classList.add('fa-bars');
                     }
                 });
+            });
+            
+            // Resume Modal functionality
+            const modal = document.getElementById("resumeModal");
+            const viewResumeBtn = document.getElementById("viewResumeBtn");
+            const closeModal = document.querySelector(".close-modal");
+            
+            if (viewResumeBtn) {
+                viewResumeBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    modal.style.display = "block";
+                    document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+                });
+            }
+            
+            if (closeModal) {
+                closeModal.addEventListener('click', function() {
+                    modal.style.display = "none";
+                    document.body.style.overflow = "auto"; // Re-enable scrolling
+                });
+            }
+            
+            // Close modal when clicking outside of it
+            window.addEventListener('click', function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                    document.body.style.overflow = "auto"; // Re-enable scrolling
+                }
             });
         });
     </script>
