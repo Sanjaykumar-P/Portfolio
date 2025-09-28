@@ -70,6 +70,68 @@
             100% { transform: translateY(-100vh) rotate(360deg); }
         }
 
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+            animation: none;
+        }
+
+        @keyframes pulse-whatsapp {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .whatsapp-text {
+            position: fixed;
+            bottom: 105px;
+            right: 40px;
+            background-color: #25d366;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .whatsapp-float:hover + .whatsapp-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         nav {
             position: fixed;
             top: 0;
@@ -1053,6 +1115,22 @@
                 height: 85%;
                 margin: 5% auto;
             }
+            
+            /* WhatsApp button responsive */
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 24px;
+            }
+            
+            .whatsapp-text {
+                bottom: 75px;
+                right: 20px;
+                font-size: 12px;
+                padding: 6px 10px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1116,12 +1194,34 @@
                 right: 15px;
                 font-size: 30px;
             }
+            
+            /* WhatsApp button responsive */
+            .whatsapp-float {
+                width: 45px;
+                height: 45px;
+                bottom: 15px;
+                right: 15px;
+                font-size: 22px;
+            }
+            
+            .whatsapp-text {
+                bottom: 65px;
+                right: 15px;
+                font-size: 11px;
+                padding: 5px 8px;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Floating Tech Icons -->
     <div class="floating-icons" id="floatingIcons"></div>
+    
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/918072414579?text=Hi%20Sanjaykumar,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <div class="whatsapp-text">Message me on WhatsApp</div>
     
     <!-- Resume Modal -->
     <div id="resumeModal" class="modal">
