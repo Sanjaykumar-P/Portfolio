@@ -556,7 +556,7 @@
             margin-bottom: 1.5rem;
             color: var(--text);
             flex-grow: 1;
-}
+        }
 
         .project-tags {
             display: flex;
@@ -607,7 +607,7 @@
             background: #27ae60;
         }
 
-        .certification-list {
+        .certification-list, .offer-letter-list {
             list-style: none;
             background: var(--light);
             border-radius: 15px;
@@ -616,7 +616,7 @@
             border: 1px solid var(--border);
         }
 
-        .certification-list li {
+        .certification-list li, .offer-letter-list li {
             padding: 1.2rem;
             border-bottom: 1px solid var(--border);
             display: flex;
@@ -626,21 +626,21 @@
             justify-content: space-between;
         }
 
-        .certification-list li:last-child {
+        .certification-list li:last-child, .offer-letter-list li:last-child {
             border-bottom: none;
         }
 
-        .certification-list i {
+        .certification-list i, .offer-letter-list i {
             color: var(--primary);
             font-size: 1.3rem;
         }
 
-        .certificate-actions {
+        .certificate-actions, .offer-letter-actions {
             display: flex;
             gap: 0.8rem;
         }
 
-        .certificate-btn {
+        .certificate-btn, .offer-letter-btn {
             padding: 0.5rem 1rem;
             border-radius: 5px;
             font-weight: 500;
@@ -652,17 +652,17 @@
             font-size: 0.9rem;
         }
 
-        .certificate-btn.view {
+        .certificate-btn.view, .offer-letter-btn.view {
             background: var(--primary);
             color: white;
         }
 
-        .certificate-btn.download {
+        .certificate-btn.download, .offer-letter-btn.download {
             background: var(--secondary);
             color: white;
         }
 
-        .certificate-btn:hover {
+        .certificate-btn:hover, .offer-letter-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
         }
@@ -1065,7 +1065,7 @@
                 flex-direction: column;
             }
             
-            .certificate-actions {
+            .certificate-actions, .offer-letter-actions {
                 flex-direction: column;
                 gap: 0.5rem;
             }
@@ -1092,7 +1092,7 @@
                 grid-template-columns: 1fr;
             }
             
-            .certification-list li {
+            .certification-list li, .offer-letter-list li {
                 flex-direction: column;
                 text-align: center;
                 gap: 1rem;
@@ -1169,7 +1169,7 @@
                 grid-template-columns: 1fr;
             }
             
-            .certificate-actions {
+            .certificate-actions, .offer-letter-actions {
                 flex-direction: column;
             }
             
@@ -1250,6 +1250,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#expertise">Expertise</a></li>
                     <li><a href="#education">Education</a></li>
+                    <li><a href="#internship">Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#certifications">Certifications</a></li>
@@ -1390,6 +1391,24 @@
                         <li>Networking Fundamentals</li>
                         <li>Digital Electronics</li>
                         <li>Software Engineering Life Cycle</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="internship">
+            <h2 class="section-title">Experience</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>DevOps Internship</h3>
+                    <p><strong>CoreXTech IT Services</strong> | September 2025 – Present</p>
+                    <ul>
+                        <li>Currently gaining hands-on experience in AWS Cloud fundamentals.</li>
+                        <li>Worked on cloud service models and deployment models.</li>
+                        <li>Launched and managed AWS EC2 instances, with secure login using PuTTY.</li>
+                        <li>Explored operating system environments on AWS.</li>
+                        <li>Building strong foundations in Cloud Computing and DevOps practices.</li>
+                        <a href="https://drive.google.com/file/d/16xnG4n_PsB3ufpL8jzu_vaWuaCaFg46u/view?usp=sharing" class="View offer letter">(View offer Letter)</a>
                     </ul>
                 </div>
             </div>
