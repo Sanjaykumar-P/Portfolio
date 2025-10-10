@@ -989,6 +989,31 @@
             margin-top: 20px;
         }
 
+        /* Project Summary Styles */
+        .project-summary {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .project-summary-icon {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-summary h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .project-summary p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
@@ -1125,6 +1150,18 @@
                 font-size: 12px;
                 padding: 6px 10px;
             }
+
+            .project-summary-icon {
+                font-size: 3rem;
+            }
+
+            .project-summary h3 {
+                font-size: 1.5rem;
+            }
+
+            .project-summary p {
+                font-size: 1.1rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1246,7 +1283,7 @@
                     <li><a href="#education">Education</a></li>
                     <li><a href="#internship">Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="project.html">Projects</a></li>
                     <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#Workshops">Workshops</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -1402,7 +1439,7 @@
                         <li>Launched and managed AWS EC2 instances, with secure login using PuTTY.</li>
                         <li>Explored operating system environments on AWS.</li>
                         <li>Building strong foundations in Cloud Computing and DevOps practices.</li>
-                        <a href="https://drive.google.com/file/d/16xnG4n_PsB3ufpL8jzu_vaWuaCaFg46u/view?usp=sharing" class="View offer letter">(View offer Letter)</a>
+                        <a href="https://drive.google.com/file/d/16xnG4n_PsB3ufpL8jzu_vaWuaCaFg46u/view?usp=sharing" class="academic-link">(View offer Letter)</a>
                     </ul>
                 </div>
             </div>
@@ -1446,276 +1483,22 @@
             </div>
         </section>
 
+        <!-- PROJECTS SUMMARY SECTION -->
         <section id="projects">
             <h2 class="section-title">Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Footstep Power Generation System - IoT</h3>
-                        <p>An innovative IoT project that converts kinetic energy from human footsteps into usable electrical energy with real-time monitoring capabilities.</p>
-                        <div class="project-tags">
-                            <div class="project-tag">IoT</div>
-                            <div class="project-tag">Energy Harvesting</div>
-                            <div class="project-tag">Arduino</div>
-                            <div class="project-tag">Sensor Integration</div>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://drive.google.com/drive/folders/1T2o3WeTfvZYoQXgGFteOMZJqJJ9KPEqi?usp=sharing" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Video
-                            </a>
-                        </div>
-                    </div>
+            <div class="project-summary">
+                <div class="project-summary-icon">
+                    <i class="fas fa-rocket"></i>
                 </div>
-                
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>PortfolioBuilder-Nginx.com</h3>
-                        <p>About Portfolio Builder Website – Locally hosted on Nginx in a Linux environment, with custom server files, port configuration, and secure HTTP→HTTPS (80→443) redirection. Built from scratch with HTML, CSS, and JavaScript, highlighting frontend and advanced server configuration skills</p>
-                        <div class="project-tags">
-                            <div class="project-tag">Nginx Server</div>
-                            <div class="project-tag">Nginx Configuration</div>
-                            <div class="project-tag">Port Configuration</div>
-                            <div class="project-tag">HTML,CSS,JS</div>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/PortfolioBuilder-Nginx.com" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
-                            <a href="https://sanjaykumar-p.github.io/PortfolioBuilder-Nginx.com/" class="project-link live">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Linux Network Script</h3>
-                        <p>A comprehensive bash script for network management that provides all networking details in a single execution.</p>
-                        <div class="project-tags">
-                            <div class="project-tag">Linux</div>
-                            <div class="project-tag">Bash</div>
-                            <div class="project-tag">Networking</div>
-                            <div class="project-tag">Automation</div>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/networkscript.sh.git" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Script
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Systemhealth.sh</h3>
-                        <p>A shell script for automated system health monitoring that generates reports and sends them via email using cron job scheduling.</p>
-                        <div class="project-tags">
-                            <div class="project-tag">Linux</div>
-                            <div class="project-tag">Bash Scripting</div>
-                            <div class="project-tag">Crontab</div>
-                            <div class="project-tag">Automation</div>
-                            <div class="project-tag">Postfix</div>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/Systemhealth.sh.git" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Script
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Automated Backup Script</h3>
-                        <p>This script is a simple and effective solution to create compressed backups of a specified directory on a Linux system. It is ideal for personal or project-level backups where keeping date-wise versions is important.</p>
-                        <div class="project-tags">
-                            <div class="project-tag">Linux</div>
-                            <div class="project-tag">Bash Scripting</div>
-                            <div class="project-tag">Crontab</div>
-                            <div class="project-tag">Automation</div>
-                            <div class="project-tag">System Administration</div>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/backupscript" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Script
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Booknow-Apache-host.com</h3>
-                        <p>A web application for appointment booking hosted on Apache web server with Linux deployment. Features AI-generated code with custom server configuration.</p>
-                        <div class="project-tags">
-                            <div class="project-tag">Linux</div>
-                            <div class="project-tag">Apache</div>
-                            <div class="project-tag">Web Hosting</div>
-                            <div class="project-tag">AI Development</div>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/Booknow-Apache-host.com" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
-                            <a href="https://sanjaykumar-p.github.io/Booknow-Apache-host.com/" class="project-link live">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Secure-IAM Access Management</h3>
-                        <p>AWS IAM Access Management Project: Developed a secure access control system for an enterprise environment. Implemented user and group management, role-based policies, and fine-grained permissions. Integrated MFA and access monitoring to ensure compliance and security best practices.</p>
-                        <div class="project-tags">
-                            <div class="project-tag">AWS</div>
-                            <div class="project-tag">IAM</div>
-                            <div class="project-tag">Security Practices</div>
-                            <div class="project-tag">Users</div>
-                            <div class="project-tag">User Groups</div>
-                            <div class="project-tag">IAM Roles</div>
-                            <div class="project-tag">Access Reports</div>
-                            <div class="project-tag">Credential Reports</div>
-                            <div class="project-tag">JSON Policies</div>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/IAMSecureaccess" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Repository
-                            </a>
-                            <a href="https://github.com/Sanjaykumar-P/IAMSecureaccess/blob/main/IAM%20Secure%20Final.pdf" class="project-link live">
-                                <i class="fas fa-external-link-alt"></i> View Document
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Hosting On AWS EC2 With Apache Web Server</h3>
-                        <p>This project demonstrates hosting a personal portfolio on an Amazon EC2 (Free Tier) instance with Amazon Linux 2. It involved configuring an Apache web server, managing security groups, and deploying files in /var/www/html/index.html for seamless access via the instance's public IPv4.</p>
-                        <div class="project-tags">
-                            <div class="project-tag">AWS</div>
-                            <div class="project-tag">Amazon EC2</div>
-                            <div class="project-tag">Security Groups</div>
-                            <div class="project-tag">Cloud Deployment</div>
-                            <div class="project-tag">Amazon Linux Administration</div>
-                            <div class="project-tag">Public IP Management</div>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/Hosting-on-AWS-EC2-with-Apache-Web-Server.git" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Repository
-                            </a>
-                            <a href="https://github.com/Sanjaykumar-P/Hosting-on-AWS-EC2-with-Apache-Web-Server/blob/main/Amzon%20EC2%20Apache%20Web%20Server%20Project.pdf" class="project-link live">
-                                <i class="fas fa-external-link-alt"></i> View Document
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>High Availability Web Application with AWS Elastic Load Balancer (BookNow Project)</h3>
-                        <p>This project demonstrates deploying the BookNow web app on AWS EC2 instances with an Elastic Load Balancer to ensure high availability, scalability, and fault tolerance. Traffic is distributed across servers with different backgrounds (blue & black), showcasing load balancing, web hosting, and cloud deployment skills.</p>
-                        <div class="project-tags">
-                            <div class="project-tag">Amazon EC2</div>
-                            <div class="project-tag">Elastic Load Balancer (ALB)</div>
-                            <div class="project-tag">High Availability & Scalability</div>
-                            <div class="project-tag">Linux Administration (Apache Web Server)</div>
-                            <div class="project-tag">AWS Security Groups & Networking</div>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/High-Availability-Web-Application-with-AWS-Elastic-Load-Balancer-BookNow-Project-.git" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Repository
-                            </a>
-                            <a href="https://github.com/Sanjaykumar-P/High-Availability-Web-Application-with-AWS-Elastic-Load-Balancer-BookNow-Project-/blob/main/High%20Availability%20Web%20Application%20with%20AWS%20Elastic%20Load%20Balancer%20(BookNow%20Project).pdf" class="project-link live">
-                                <i class="fas fa-external-link-alt"></i> View Document
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Highly Available Web Application with AWS Auto Scaling and Load Balancing</h3>
-                        <p>Built a highly available and scalable web application on AWS using EC2, Auto Scaling Group, and Application Load Balancer for seamless performance and cost efficiency.</p>
-                        <div class="project-tags">
-                            <div class="project-tag">Amazon EC2</div>
-                            <div class="project-tag">Auto Scaling Groups</div>
-                            <div class="project-tag">High Availability & Cost Efficient</div>
-                            <div class="project-tag">ALB</div>
-                            <div class="project-tag">Scale In & Scale Out</div>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/Highly-Available-Web-Application-with-AWS-Auto-Scaling-and-Load-Balancing.git" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Repository
-                            </a>
-                            <a href="https://github.com/Sanjaykumar-P/Highly-Available-Web-Application-with-AWS-Auto-Scaling-and-Load-Balancing/blob/main/Highly%20Available%20Web%20Application%20with%20AWS%20Auto%20Scaling%20and%20Load.pdf" class="project-link live">
-                                <i class="fas fa-external-link-alt"></i> View Document
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>ElegantEvents: Static Event Planner Website Hosted on AWS S3 and CloudFront</h3>
-                        <p>Developed and hosted a static Event Planner Website on AWS S3 with CloudFront CDN. Ensured global availability, low latency, scalability, and cost-efficient performance.</p>
-                        <div class="project-tags">
-                            <div class="project-tag">Amazon S3</div>
-                            <div class="project-tag">Static Website Hosting</div>
-                            <div class="project-tag">CloudFront</div>
-                            <div class="project-tag">Global Infrastructure</div>
-                            <div class="project-tag">Security & Cost Optimization</div>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/ElegantEvents-Static-Event-Planner-Website-Hosted-on-AWS-S3-and-CloudFront.git" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Repository
-                            </a>
-                            <a href="https://github.com/Sanjaykumar-P/ElegantEvents-Static-Event-Planner-Website-Hosted-on-AWS-S3-and-CloudFront/blob/main/Static%20Web%20pages%20and%20Cloud%20Front.pdf" class="project-link live">
-                                <i class="fas fa-external-link-alt"></i> View Document
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>courseMate - Your Learning Companion</h3>
-                        <p>CourseMate – Your Learning Companion is a static website on AWS S3 delivering CCNA video courses with embedded lessons and auto-generated completion certificates. An S3 lifecycle policy deletes uploaded videos after 15 days for efficient storage management.</p>
-                        <div class="project-tags">
-                            <div class="project-tag">Amazon S3</div>
-                            <div class="project-tag">Static Website Hosting</div>
-                            <div class="project-tag">Lifecycle Configuration</div>
-                            <div class="project-tag">Security & Cost Optimization</div>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/Course-Mate-Your-Learning-Companion.git" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Repository
-                            </a>
-                            <a href="https://github.com/Sanjaykumar-P/Course-Mate-Your-Learning-Companion/blob/main/index.html" class="project-link live">
-                                <i class="fas fa-external-link-alt"></i> View Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Explore Projects Link -->
+                <h3>🚀 Explore My Projects</h3>
                 <p>
-                    🚀 To explore my <b>20+ Projects</b> and <b>DevOps Tasks</b>, 
-                    <a href="project.html">
-                        click here
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 12H19M12 5L19 12L12 19" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <animate attributeName="d" dur="1s" repeatCount="indefinite"
-                                values="M5 12H19M12 5L19 12L12 19;
-                                        M6 12H20M13 5L20 12L13 19;
-                                        M5 12H19M12 5L19 12L12 19"/>
-                            </path>
-                        </svg>
-                    </a> ✨
+                    I have completed <strong>20+ projects</strong> demonstrating my skills in DevOps, AWS, Linux, and more. 
+                    From infrastructure automation to cloud deployment and system administration, each project showcases 
+                    practical implementation of modern technologies and best practices.
                 </p>
+                <a href="project.html" class="hero-btn" style="background: var(--secondary); color: white; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-external-link-alt"></i> View All Projects
+                </a>
             </div>
         </section>
 
