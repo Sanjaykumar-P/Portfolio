@@ -3,42 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanjaykumar P - Linux & Cloud Specialist</title>
+    <title>Sanjaykumar P - Cybersecurity & Cloud Specialist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <style>
         :root {
-            --primary: #4a6fff;
-            --secondary: #2ecc71;
-            --accent: #ff6b6b;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --text: #333333;
-            --border: #e0e0e0;
-            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            --cloud-gradient: linear-gradient(135deg, #4facfe, #00f2fe);
-            --linux-gradient: linear-gradient(135deg, #11998e, #38ef7d);
+            --primary: #00FF9D; /* Neon Green */
+            --secondary: #00D4FF; /* Neon Cyan */
+            --accent: #FF2A6D; /* Neon Pink */
+            --dark: #0A0F0D; /* Dark background */
+            --darker: #050A08; /* Even darker for contrast */
+            --light: #1F2937; /* Dark gray */
+            --text: #E5E7EB; /* Soft white */
+            --border: #2D3748; /* Border color */
+            --card-shadow: 0 5px 15px rgba(0, 255, 157, 0.1);
+            --cloud-gradient: linear-gradient(135deg, #00FF9D, #00D4FF);
+            --linux-gradient: linear-gradient(135deg, #00D4FF, #00FF9D);
+            --hacker-gradient: linear-gradient(135deg, #00FF9D, #050A08);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Georgia, "Times New Roman", serif;
+            font-family: 'Courier New', monospace;
             transition: all 0.3s ease;
         }
 
         body {
             line-height: 1.6;
             color: var(--text);
-            background-color: var(--light);
+            background-color: var(--dark);
             scroll-behavior: smooth;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Terminal Grid Background */
+        .terminal-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 157, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 157, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -2;
+            opacity: 0.5;
+        }
+
+        .grid-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, transparent 50%, rgba(0, 255, 157, 0.03) 50%);
+            background-size: 100% 4px;
+            z-index: -1;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100%); }
         }
 
         h1, h2, h3, h4, h5, h6 {
             font-weight: 700;
-            font-family: Georgia, "Times New Roman", serif;
+            font-family: 'Courier New', monospace;
         }
 
         .floating-icons {
@@ -82,7 +117,7 @@
             border-radius: 50px;
             text-align: center;
             font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
             z-index: 1000;
             display: flex;
             align-items: center;
@@ -130,10 +165,12 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: var(--light);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            background: rgba(10, 15, 13, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
             z-index: 1000;
             padding: 1rem 0;
+            border-bottom: 1px solid var(--primary);
         }
 
         .nav-container {
@@ -148,11 +185,12 @@
         .nav-logo {
             font-weight: 700;
             font-size: 1.4rem;
-            color: var(--dark);
+            color: var(--primary);
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 10px;
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
         }
 
         .nav-logo i {
@@ -181,7 +219,7 @@
             font-weight: 500;
             padding: 0.5rem 0;
             position: relative;
-            font-family: Georgia, "Times New Roman", serif;
+            font-family: 'Courier New', monospace;
         }
 
         .nav-links a:hover {
@@ -197,6 +235,7 @@
             left: 0;
             background-color: var(--primary);
             transition: width 0.3s;
+            box-shadow: 0 0 5px var(--primary);
         }
 
         .nav-links a:hover:after {
@@ -206,7 +245,7 @@
         .menu-toggle {
             display: none;
             font-size: 1.5rem;
-            color: var(--dark);
+            color: var(--primary);
             cursor: pointer;
             padding: 1rem;
         }
@@ -221,9 +260,10 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: var(--dark);
+            color: var(--primary);
             position: relative;
-            font-family: Georgia, "Times New Roman", serif;
+            font-family: 'Courier New', monospace;
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
         }
 
         .section-title:after {
@@ -234,6 +274,7 @@
             background: var(--primary);
             margin: 0.8rem auto 0;
             border-radius: 2px;
+            box-shadow: 0 0 10px var(--primary);
         }
 
         .hero {
@@ -266,7 +307,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--primary);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.5);
             position: relative;
             z-index: 2;
         }
@@ -291,12 +332,13 @@
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
-            color: var(--dark);
+            color: var(--primary);
             line-height: 1.2;
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
         }
 
         .hero h1 span {
-            color: var(--primary);
+            color: var(--secondary);
         }
 
         .hero p {
@@ -304,6 +346,28 @@
             color: var(--text);
             opacity: 0.9;
             margin-bottom: 1rem;
+        }
+
+        .typing-text {
+            font-family: 'Courier New', monospace;
+            border-right: 2px solid var(--primary);
+            padding-right: 5px;
+            animation: blink 1s infinite;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 0;
+            animation: typing 4s steps(40, end) forwards, blink 1s infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink {
+            0%, 100% { border-color: transparent }
+            50% { border-color: var(--primary) }
         }
 
         .hero-buttons {
@@ -323,27 +387,34 @@
             display: flex;
             align-items: center;
             gap: 0.8rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--primary);
+            background: rgba(0, 255, 157, 0.1);
+            color: var(--primary);
         }
 
         .hero-btn.hire-me {
-            background: var(--accent);
-            color: white;
+            background: rgba(255, 42, 109, 0.2);
+            color: var(--accent);
+            border-color: var(--accent);
         }
 
         .hero-btn.view-resume {
-            background: var(--primary);
-            color: white;
+            background: rgba(0, 255, 157, 0.2);
+            color: var(--primary);
+            border-color: var(--primary);
         }
 
         .hero-btn.download-resume {
-            background: var(--secondary);
-            color: white;
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--secondary);
+            border-color: var(--secondary);
         }
 
         .hero-btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 255, 157, 0.3);
+            background: rgba(0, 255, 157, 0.3);
         }
 
         .tech-showcase {
@@ -368,6 +439,7 @@
             font-size: 3rem;
             color: var(--primary);
             margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
         }
 
         .tech-item span {
@@ -381,18 +453,19 @@
             margin: 0 auto;
             text-align: center;
             padding: 2rem;
-            background: var(--light);
+            background: rgba(31, 41, 55, 0.5);
             border-radius: 15px;
             margin-bottom: 2rem;
             position: relative;
             z-index: 1;
             border: 1px solid var(--border);
             box-shadow: var(--card-shadow);
+            backdrop-filter: blur(10px);
         }
 
         .open-to-work-badge {
-            background-color: #d4fcd7;
-            color: #256029;
+            background-color: rgba(0, 255, 157, 0.2);
+            color: var(--primary);
             padding: 6px 12px;
             border-radius: 20px;
             font-weight: bold;
@@ -400,6 +473,7 @@
             margin-top: 1rem;
             font-size: 1.1rem;
             box-shadow: var(--card-shadow);
+            border: 1px solid var(--primary);
         }
 
         .expertise-grid {
@@ -410,38 +484,47 @@
         }
 
         .expertise-card {
-            background: var(--light);
+            background: rgba(31, 41, 55, 0.5);
             border-radius: 15px;
             padding: 2.5rem 2rem;
             box-shadow: var(--card-shadow);
             border: 1px solid var(--border);
             transition: transform 0.3s, box-shadow 0.3s;
+            backdrop-filter: blur(10px);
         }
 
         .expertise-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 255, 157, 0.2);
+            border-color: var(--primary);
         }
 
         .cloud-expertise-card {
             background: var(--cloud-gradient);
-            color: white;
+            color: var(--dark);
         }
 
         .linux-expertise-card {
             background: var(--linux-gradient);
-            color: white;
+            color: var(--dark);
+        }
+
+        .cybersecurity-expertise-card {
+            background: var(--hacker-gradient);
+            color: var(--text);
         }
 
         .expertise-icon {
             font-size: 3rem;
             color: var(--primary);
             margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
         }
 
         .cloud-expertise-card .expertise-icon,
-        .linux-expertise-card .expertise-icon {
-            color: white;
+        .linux-expertise-card .expertise-icon,
+        .cybersecurity-expertise-card .expertise-icon {
+            color: var(--dark);
         }
 
         .expertise-card h3 {
@@ -468,14 +551,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--light);
+            background: rgba(0, 255, 157, 0.1);
             border-radius: 10px;
             font-size: 1.2rem;
             box-shadow: var(--card-shadow);
+            border: 1px solid rgba(0, 255, 157, 0.3);
         }
 
         .cloud-expertise-card .expertise-tool,
-        .linux-expertise-card .expertise-tool {
+        .linux-expertise-card .expertise-tool,
+        .cybersecurity-expertise-card .expertise-tool {
             background: rgba(255, 255, 255, 0.2);
         }
 
@@ -486,29 +571,33 @@
         }
 
         .skill-category {
-            background: var(--light);
+            background: rgba(31, 41, 55, 0.5);
             border-radius: 15px;
             padding: 2rem;
             box-shadow: var(--card-shadow);
             border: 1px solid var(--border);
             text-align: center;
             transition: transform 0.3s;
+            backdrop-filter: blur(10px);
         }
 
         .skill-category:hover {
             transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(0, 255, 157, 0.2);
         }
 
         .skill-category h3 {
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
-            color: var(--dark);
+            color: var(--primary);
         }
 
         .skill-icon {
             font-size: 3rem;
             color: var(--primary);
             margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
         }
 
         .project-grid {
@@ -518,7 +607,7 @@
         }
 
         .project-card {
-            background: var(--light);
+            background: rgba(31, 41, 55, 0.5);
             border-radius: 15px;
             box-shadow: var(--card-shadow);
             transition: transform 0.4s, box-shadow 0.4s;
@@ -526,11 +615,13 @@
             display: flex;
             flex-direction: column;
             height: 100%;
+            backdrop-filter: blur(10px);
         }
 
         .project-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 255, 157, 0.2);
+            border-color: var(--primary);
         }
 
         .project-content {
@@ -543,7 +634,7 @@
         .project-content h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: var(--dark);
+            color: var(--primary);
         }
 
         .project-content p {
@@ -560,12 +651,13 @@
         }
 
         .project-tag {
-            background: rgba(74, 111, 255, 0.1);
+            background: rgba(0, 255, 157, 0.1);
             color: var(--primary);
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 500;
+            border: 1px solid rgba(0, 255, 157, 0.3);
         }
 
         .project-links {
@@ -577,8 +669,8 @@
             flex: 1;
             text-align: center;
             padding: 0.8rem 1rem;
-            background: var(--primary);
-            color: white;
+            background: rgba(0, 255, 157, 0.2);
+            color: var(--primary);
             border-radius: 8px;
             text-decoration: none;
             font-weight: 500;
@@ -586,28 +678,32 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
+            border: 1px solid var(--primary);
         }
 
         .project-link:hover {
-            background: #3a5bff;
+            background: rgba(0, 255, 157, 0.3);
             transform: translateY(-3px);
         }
 
         .project-link.live {
-            background: var(--secondary);
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--secondary);
+            border-color: var(--secondary);
         }
 
         .project-link.live:hover {
-            background: #27ae60;
+            background: rgba(0, 212, 255, 0.3);
         }
 
         .certification-list, .offer-letter-list {
             list-style: none;
-            background: var(--light);
+            background: rgba(31, 41, 55, 0.5);
             border-radius: 15px;
             padding: 2rem;
             box-shadow: var(--card-shadow);
             border: 1px solid var(--border);
+            backdrop-filter: blur(10px);
         }
 
         .certification-list li, .offer-letter-list li {
@@ -644,31 +740,36 @@
             align-items: center;
             gap: 0.5rem;
             font-size: 0.9rem;
+            border: 1px solid var(--primary);
+            background: rgba(0, 255, 157, 0.1);
+            color: var(--primary);
         }
 
         .certificate-btn.view, .offer-letter-btn.view {
-            background: var(--primary);
-            color: white;
+            background: rgba(0, 255, 157, 0.2);
+            color: var(--primary);
         }
 
         .certificate-btn.download, .offer-letter-btn.download {
-            background: var(--secondary);
-            color: white;
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--secondary);
+            border-color: var(--secondary);
         }
 
         .certificate-btn:hover, .offer-letter-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 3px 8px rgba(0, 255, 157, 0.2);
         }
 
         .contact-section {
-            background: var(--light);
+            background: rgba(31, 41, 55, 0.5);
             padding: 3rem;
             border-radius: 15px;
             box-shadow: var(--card-shadow);
             border: 1px solid var(--border);
             max-width: 800px;
             margin: 0 auto;
+            backdrop-filter: blur(10px);
         }
 
         .contact-icon {
@@ -679,7 +780,7 @@
         .contact-icon i {
             font-size: 4rem;
             color: var(--primary);
-            background: rgba(74, 111, 255, 0.1);
+            background: rgba(0, 255, 157, 0.1);
             width: 100px;
             height: 100px;
             display: inline-flex;
@@ -687,11 +788,13 @@
             justify-content: center;
             border-radius: 50%;
             margin-bottom: 1rem;
+            border: 1px solid var(--primary);
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.3);
         }
 
         .contact-icon h3 {
             font-size: 1.8rem;
-            color: var(--dark);
+            color: var(--primary);
         }
 
         .contact-form {
@@ -709,7 +812,7 @@
 
         .form-group label {
             font-weight: 600;
-            color: var(--dark);
+            color: var(--primary);
         }
 
         .form-group input,
@@ -718,15 +821,17 @@
             border: 1px solid var(--border);
             border-radius: 8px;
             font-size: 1rem;
-            font-family: Georgia, "Times New Roman", serif;
+            font-family: 'Courier New', monospace;
             transition: all 0.3s;
+            background: rgba(10, 15, 13, 0.5);
+            color: var(--text);
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(74, 111, 255, 0.2);
+            box-shadow: 0 0 0 3px rgba(0, 255, 157, 0.2);
         }
 
         .form-group textarea {
@@ -736,9 +841,9 @@
 
         .submit-btn {
             padding: 1rem 2rem;
-            background: var(--primary);
-            color: white;
-            border: none;
+            background: rgba(0, 255, 157, 0.2);
+            color: var(--primary);
+            border: 1px solid var(--primary);
             border-radius: 8px;
             font-size: 1.1rem;
             font-weight: 600;
@@ -751,9 +856,9 @@
         }
 
         .submit-btn:hover {
-            background: #3a5bff;
+            background: rgba(0, 255, 157, 0.3);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 255, 157, 0.2);
         }
 
         .contact-links {
@@ -766,7 +871,7 @@
 
         .contact-links a {
             font-size: 1.6rem;
-            color: var(--dark);
+            color: var(--primary);
             transition: all 0.3s;
             display: flex;
             align-items: center;
@@ -776,8 +881,9 @@
         }
 
         .contact-links a:hover {
-            color: var(--primary);
+            color: var(--secondary);
             transform: scale(1.1);
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
         }
 
         .contact-info {
@@ -796,11 +902,12 @@
         }
 
         .footer {
-            background: var(--dark);
-            color: var(--light);
+            background: var(--darker);
+            color: var(--text);
             padding: 2rem;
             text-align: center;
             margin-top: 3rem;
+            border-top: 1px solid var(--primary);
         }
         
         .footer p {
@@ -816,17 +923,23 @@
         }
 
         .education-card {
-            background: var(--light);
+            background: rgba(31, 41, 55, 0.5);
             padding: 2rem;
             border-radius: 15px;
             box-shadow: var(--card-shadow);
             border: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+        }
+
+        .education-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(0, 255, 157, 0.2);
         }
 
         .education-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: var(--dark);
+            color: var(--primary);
         }
 
         .education-card p {
@@ -850,6 +963,7 @@
 
         .academic-link:hover {
             text-decoration: underline;
+            text-shadow: 0 0 5px rgba(0, 255, 157, 0.5);
         }
 
         /* Resume Section */
@@ -859,10 +973,11 @@
             align-items: center;
             gap: 2rem;
             padding: 2rem;
-            background: var(--light);
+            background: rgba(31, 41, 55, 0.5);
             border-radius: 15px;
             box-shadow: var(--card-shadow);
             border: 1px solid var(--border);
+            backdrop-filter: blur(10px);
         }
 
         .resume-buttons {
@@ -879,21 +994,25 @@
             display: flex;
             align-items: center;
             gap: 0.8rem;
+            border: 1px solid var(--primary);
+            background: rgba(0, 255, 157, 0.1);
+            color: var(--primary);
         }
 
         .resume-btn.view {
-            background: var(--primary);
-            color: white;
+            background: rgba(0, 255, 157, 0.2);
+            color: var(--primary);
         }
 
         .resume-btn.download {
-            background: var(--secondary);
-            color: white;
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--secondary);
+            border-color: var(--secondary);
         }
 
         .resume-btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 255, 157, 0.2);
         }
 
         /* Services CTA Section */
@@ -914,20 +1033,21 @@
             align-items: center;
             gap: 10px;
             padding: 1rem 2.5rem;
-            background: var(--primary);
-            color: white;
+            background: rgba(0, 255, 157, 0.2);
+            color: var(--primary);
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(74, 111, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 255, 157, 0.3);
+            border: 1px solid var(--primary);
         }
         
         .contact-btn:hover {
-            background: #3a5bff;
+            background: rgba(0, 255, 157, 0.3);
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(74, 111, 255, 0.4);
+            box-shadow: 0 8px 20px rgba(0, 255, 157, 0.4);
         }
 
         /* Resume Modal Styles */
@@ -945,24 +1065,26 @@
 
         .modal-content {
             position: relative;
-            background-color: #fefefe;
+            background-color: var(--dark);
             margin: 2% auto;
             padding: 20px;
             width: 90%;
             height: 90%;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border: 1px solid var(--primary);
         }
 
         .close-modal {
             position: absolute;
             top: 15px;
             right: 25px;
-            color: #fff;
+            color: var(--primary);
             font-size: 35px;
             font-weight: bold;
             cursor: pointer;
             z-index: 2001;
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
         }
 
         .close-modal:hover {
@@ -1000,18 +1122,35 @@
             font-size: 4rem;
             color: var(--primary);
             margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
         }
 
         .project-summary h3 {
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
-            color: var(--dark);
+            color: var(--primary);
         }
 
         .project-summary p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
             line-height: 1.6;
+        }
+
+        /* Cybersecurity specific additions */
+        .terminal-prompt {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .command-line {
+            font-family: 'Courier New', monospace;
+            background: rgba(10, 15, 13, 0.5);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--primary);
+            margin: 1rem 0;
+            box-shadow: 0 0 10px rgba(0, 255, 157, 0.2);
         }
 
         /* Responsive Design */
@@ -1024,9 +1163,10 @@
                 position: absolute;
                 top: 100%;
                 left: 0;
-                background: var(--light);
+                background: rgba(10, 15, 13, 0.95);
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                 padding: 1rem 0;
+                backdrop-filter: blur(10px);
             }
 
             .nav-links.active {
@@ -1245,6 +1385,10 @@
     </style>
 </head>
 <body>
+    <!-- Terminal Grid Background -->
+    <div class="terminal-grid"></div>
+    <div class="grid-animation"></div>
+    
     <!-- Floating Tech Icons -->
     <div class="floating-icons" id="floatingIcons"></div>
     
@@ -1274,7 +1418,7 @@
         <nav>
             <div class="nav-container">
                 <a href="#home" class="nav-logo">
-                    <i class="fas fa-laptop-code"></i> Sanjaykumar P
+                    <i class="fas fa-terminal"></i> Sanjaykumar P
                 </a>
                 <div class="menu-toggle"><i class="fas fa-bars"></i></div>
                 <ul class="nav-links">
@@ -1297,16 +1441,22 @@
                     <img src="profile.jpg" alt="Sanjaykumar P" class="profile-photo">
                     <div class="profile-photo-frame"></div>
                 </div>
-                <h1>👋 Hii, I'm <span>Sanjaykumar P</span></h1>
-                <p>Aspiring Devops Engineer | RHEL | CCNA | AWS Cloud Practioner | Git |</p>
+                <h1><span class="terminal-prompt">></span> Hii, I'm <span>Sanjaykumar P</span></h1>
+                <p class="typing-text">Aspiring Cybersecurity & Devops Engineer | RHEL | CCNA | AWS Cloud Practioner | Git |</p>
+                
+                <div class="command-line">
+                    <p><span class="terminal-prompt">$</span> whoami</p>
+                    <p>Cybersecurity Enthusiast | Cloud Specialist | Linux Administrator</p>
+                    <p><span class="terminal-prompt">$</span> cat about_me.txt</p>
+                </div>
                 
                 <div class="profile-summary">
-                    <p>I have completed my B.Sc. in Computer Science and chosen to begin my career in DevOps and Cloud Engineering. I am actively building my skills in Linux Administration, AWS, Python, and CI/CD tools while gaining hands-on experience with automation, containerization, and network fundamentals. My goal is to grow as a DevOps professional, combining technical expertise with problem-solving to deliver scalable, efficient, and reliable solutions.</p>
+                    <p>I have completed my B.Sc. in Computer Science and chosen to begin my career in Cybersecurity, DevOps and Cloud Engineering. I am actively building my skills in Linux Administration, AWS, Python, and security tools while gaining hands-on experience with automation, containerization, and network fundamentals. My goal is to grow as a Cybersecurity professional, combining technical expertise with problem-solving to deliver secure, scalable, and reliable solutions.</p>
                 </div>
                 
                 <!-- Open to Work badge -->
                 <div class="open-to-work-badge">
-                    💼 Open to Work
+                    <i class="fas fa-shield-alt"></i> Open to Work in Cybersecurity
                 </div>
                 
                 <div class="hero-buttons">
@@ -1325,13 +1475,19 @@
                 <div class="tech-showcase">
                     <div class="tech-item">
                         <div class="tech-icon">
-                            <i class="devicon-linux-plain colored"></i>
+                            <i class="devicon-linux-plain"></i>
                         </div>
                         <span>Linux</span>
                     </div>
                     <div class="tech-item">
                         <div class="tech-icon">
-                            <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <span>Cybersecurity</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <i class="devicon-amazonwebservices-plain-wordmark"></i>
                         </div>
                         <span>AWS</span>
                     </div>
@@ -1357,7 +1513,7 @@
                     
                     <div class="expertise-tools">
                         <div class="expertise-tool">
-                            <i class="devicon-amazonwebservices-plain colored"></i>
+                            <i class="devicon-amazonwebservices-plain"></i>
                         </div>
                         <div class="expertise-tool">
                             <i class="fas fa-server"></i>
@@ -1377,13 +1533,33 @@
                     
                     <div class="expertise-tools">
                         <div class="expertise-tool">
-                            <i class="devicon-linux-plain colored"></i>
+                            <i class="devicon-linux-plain"></i>
                         </div>
                         <div class="expertise-tool">
-                            <i class="devicon-redhat-plain colored"></i>
+                            <i class="devicon-redhat-plain"></i>
                         </div>
                         <div class="expertise-tool">
                             <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expertise-card cybersecurity-expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cybersecurity</h3>
+                    <p>Building expertise in cybersecurity fundamentals, network security, and ethical hacking methodologies.</p>
+                    
+                    <div class="expertise-tools">
+                        <div class="expertise-tool">
+                            <i class="fas fa-user-secret"></i>
+                        </div>
+                        <div class="expertise-tool">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="expertise-tool">
+                            <i class="fas fa-fingerprint"></i>
                         </div>
                     </div>
                 </div>
@@ -1450,7 +1626,7 @@
             <div class="skills-grid">
                 <div class="skill-category">
                     <div class="skill-icon">
-                        <i class="devicon-linux-plain colored"></i>
+                        <i class="devicon-linux-plain"></i>
                     </div>
                     <h3>Linux Administration</h3>
                 </div>
@@ -1464,21 +1640,27 @@
                 
                 <div class="skill-category">
                     <div class="skill-icon">
-                        <i class="devicon-amazonwebservices-plain colored"></i>
+                        <i class="devicon-amazonwebservices-plain"></i>
                     </div>
                     <h3>AWS Cloud</h3>
                 </div>
                 <div class="skill-category">
                     <div class="skill-icon">
-                        <i class="devicon-git-plain colored"></i>
+                        <i class="devicon-git-plain"></i>
                     </div>
                     <h3>Git</h3>
                 </div>
                 <div class="skill-category">
                     <div class="skill-icon">
-                        <i class="fa-solid fa-infinity colored"></i>
+                        <i class="fa-solid fa-infinity"></i>
                     </div>
                     <h3>DevOps</h3>
+                </div> 
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cybersecurity</h3>
                 </div> 
             </div>
         </section>
@@ -1492,11 +1674,11 @@
                 </div>
                 <h3>🚀 Explore My Projects</h3>
                 <p>
-                    I have completed <strong>20+ projects</strong> demonstrating my skills in DevOps, AWS, Linux, and more. 
+                    I have completed <strong>20+ projects</strong> demonstrating my skills in DevOps, AWS, Linux, Cybersecurity, and more. 
                     From infrastructure automation to cloud deployment and system administration, each project showcases 
                     practical implementation of modern technologies and best practices.
                 </p>
-                <a href="project.html" class="hero-btn" style="background: var(--secondary); color: white; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;">
+                <a href="project.html" class="hero-btn" style="background: rgba(0, 212, 255, 0.2); color: var(--secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 10px; border-color: var(--secondary);">
                     <i class="fas fa-external-link-alt"></i> View All Projects
                 </a>
             </div>
@@ -1766,15 +1948,15 @@
             const techIcons = [
                 'devicon-linux-plain', 'devicon-redhat-plain', 'devicon-amazonwebservices-plain-wordmark',
                 'devicon-apache-plain-wordmark', 'devicon-nginx-original', 'devicon-git-plain',
-                'devicon-github-original', 'devicon-html5-plain', 'devicon-css3-plain',
-                'devicon-javascript-plain', 'devicon-python-plain', 'devicon-react-original'
+                'devicon-github-original', 'fas fa-shield-alt', 'fas fa-user-secret',
+                'fas fa-lock', 'fas fa-fingerprint', 'fas fa-terminal'
             ];
             
             for (let i = 0; i < 20; i++) {
                 const icon = document.createElement('div');
                 icon.className = 'floating-icon';
                 const iconClass = techIcons[Math.floor(Math.random() * techIcons.length)];
-                icon.innerHTML = `<i class="${iconClass} colored"></i>`;
+                icon.innerHTML = `<i class="${iconClass}"></i>`;
                 icon.style.left = `${Math.random() * 100}%`;
                 icon.style.top = `${Math.random() * 100}%`;
                 icon.style.animationDuration = `${15 + Math.random() * 20}s`;
