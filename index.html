@@ -3,88 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanjaykumar P - Cybersecurity & DevOps Engineer</title>
+    <title>Sanjaykumar P - Linux & Cloud Specialist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <style>
         :root {
-            --primary: #00FF9D; /* Neon Green */
-            --secondary: #00D4FF; /* Neon Cyan */
-            --accent: #FF2A6D; /* Neon Pink */
-            --dark: #0A0F0D; /* Dark background */
-            --darker: #050A08; /* Even darker for contrast */
-            --light: #1F2937; /* Dark gray */
-            --text: #E5E7EB; /* Soft white */
-            --border: #2D3748; /* Border color */
-            --card-shadow: 0 5px 15px rgba(0, 255, 157, 0.1);
-            --cloud-gradient: linear-gradient(135deg, #00FF9D, #00D4FF);
-            --linux-gradient: linear-gradient(135deg, #00D4FF, #00FF9D);
-            --hacker-gradient: linear-gradient(135deg, #00FF9D, #050A08);
+            --primary: #4a6fff;
+            --secondary: #2ecc71;
+            --accent: #ff6b6b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --text: #333333;
+            --border: #e0e0e0;
+            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            --cloud-gradient: linear-gradient(135deg, #4facfe, #00f2fe);
+            --linux-gradient: linear-gradient(135deg, #11998e, #38ef7d);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Courier New', monospace;
+            font-family: Georgia, "Times New Roman", serif;
             transition: all 0.3s ease;
         }
 
         body {
             line-height: 1.6;
             color: var(--text);
-            background-color: var(--dark);
+            background-color: var(--light);
             scroll-behavior: smooth;
             overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Terminal Grid Background */
-        .terminal-grid {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(0, 255, 157, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 157, 0.05) 1px, transparent 1px);
-            background-size: 50px 50px;
-            z-index: -2;
-            opacity: 0.5;
-        }
-
-        .grid-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(0deg, transparent 50%, rgba(0, 255, 157, 0.03) 50%);
-            background-size: 100% 4px;
-            z-index: -1;
-            animation: gridMove 20s linear infinite;
-        }
-
-        @keyframes gridMove {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(100%); }
-        }
-
-        /* Matrix Rain Animation */
-        .matrix-rain {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -3;
-            opacity: 0.1;
         }
 
         h1, h2, h3, h4, h5, h6 {
             font-weight: 700;
-            font-family: 'Courier New', monospace;
+            font-family: Georgia, "Times New Roman", serif;
         }
 
         .floating-icons {
@@ -128,7 +82,7 @@
             border-radius: 50px;
             text-align: center;
             font-size: 30px;
-            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+            box-shadow: 2px 2px 3px #999;
             z-index: 1000;
             display: flex;
             align-items: center;
@@ -172,72 +126,14 @@
             transform: translateY(0);
         }
 
-        /* LinkedIn Floating Button */
-        .linkedin-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            left: 40px;
-            background-color: #0077B5;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            animation: pulse-linkedin 2s infinite;
-        }
-
-        .linkedin-float:hover {
-            background-color: #005885;
-            transform: scale(1.1);
-            animation: none;
-        }
-
-        @keyframes pulse-linkedin {
-            0% { box-shadow: 0 0 0 0 rgba(0, 119, 181, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(0, 119, 181, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 119, 181, 0); }
-        }
-
-        .linkedin-text {
-            position: fixed;
-            bottom: 105px;
-            left: 40px;
-            background-color: #0077B5;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            z-index: 1000;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-            pointer-events: none;
-            white-space: nowrap;
-        }
-
-        .linkedin-float:hover + .linkedin-text {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 15, 13, 0.9);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            background: var(--light);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
             z-index: 1000;
             padding: 1rem 0;
-            border-bottom: 1px solid var(--primary);
         }
 
         .nav-container {
@@ -252,12 +148,11 @@
         .nav-logo {
             font-weight: 700;
             font-size: 1.4rem;
-            color: var(--primary);
+            color: var(--dark);
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 10px;
-            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
         }
 
         .nav-logo i {
@@ -286,7 +181,7 @@
             font-weight: 500;
             padding: 0.5rem 0;
             position: relative;
-            font-family: 'Courier New', monospace;
+            font-family: Georgia, "Times New Roman", serif;
         }
 
         .nav-links a:hover {
@@ -302,7 +197,6 @@
             left: 0;
             background-color: var(--primary);
             transition: width 0.3s;
-            box-shadow: 0 0 5px var(--primary);
         }
 
         .nav-links a:hover:after {
@@ -312,7 +206,7 @@
         .menu-toggle {
             display: none;
             font-size: 1.5rem;
-            color: var(--primary);
+            color: var(--dark);
             cursor: pointer;
             padding: 1rem;
         }
@@ -327,10 +221,9 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: var(--primary);
+            color: var(--dark);
             position: relative;
-            font-family: 'Courier New', monospace;
-            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+            font-family: Georgia, "Times New Roman", serif;
         }
 
         .section-title:after {
@@ -341,7 +234,6 @@
             background: var(--primary);
             margin: 0.8rem auto 0;
             border-radius: 2px;
-            box-shadow: 0 0 10px var(--primary);
         }
 
         .hero {
@@ -374,7 +266,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--primary);
-            box-shadow: 0 0 20px rgba(0, 255, 157, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             position: relative;
             z-index: 2;
         }
@@ -399,22 +291,12 @@
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
-            color: var(--primary);
+            color: var(--dark);
             line-height: 1.2;
-            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .hero h1 .name-line {
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         .hero h1 span {
-            color: var(--secondary);
+            color: var(--primary);
         }
 
         .hero p {
@@ -422,28 +304,6 @@
             color: var(--text);
             opacity: 0.9;
             margin-bottom: 1rem;
-        }
-
-        .typing-text {
-            font-family: 'Courier New', monospace;
-            border-right: 2px solid var(--primary);
-            padding-right: 5px;
-            animation: blink 1s infinite;
-            display: inline-block;
-            overflow: hidden;
-            white-space: nowrap;
-            width: 0;
-            animation: typing 4s steps(40, end) forwards, blink 1s infinite;
-        }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes blink {
-            0%, 100% { border-color: transparent }
-            50% { border-color: var(--primary) }
         }
 
         .hero-buttons {
@@ -463,34 +323,27 @@
             display: flex;
             align-items: center;
             gap: 0.8rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            border: 1px solid var(--primary);
-            background: rgba(0, 255, 157, 0.1);
-            color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .hero-btn.hire-me {
-            background: rgba(255, 42, 109, 0.2);
-            color: var(--accent);
-            border-color: var(--accent);
+            background: var(--accent);
+            color: white;
         }
 
         .hero-btn.view-resume {
-            background: rgba(0, 255, 157, 0.2);
-            color: var(--primary);
-            border-color: var(--primary);
+            background: var(--primary);
+            color: white;
         }
 
         .hero-btn.download-resume {
-            background: rgba(0, 212, 255, 0.2);
-            color: var(--secondary);
-            border-color: var(--secondary);
+            background: var(--secondary);
+            color: white;
         }
 
         .hero-btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 255, 157, 0.3);
-            background: rgba(0, 255, 157, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
         .tech-showcase {
@@ -515,7 +368,6 @@
             font-size: 3rem;
             color: var(--primary);
             margin-bottom: 0.5rem;
-            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
         }
 
         .tech-item span {
@@ -529,19 +381,18 @@
             margin: 0 auto;
             text-align: center;
             padding: 2rem;
-            background: rgba(31, 41, 55, 0.5);
+            background: var(--light);
             border-radius: 15px;
             margin-bottom: 2rem;
             position: relative;
             z-index: 1;
             border: 1px solid var(--border);
             box-shadow: var(--card-shadow);
-            backdrop-filter: blur(10px);
         }
 
         .open-to-work-badge {
-            background-color: rgba(0, 255, 157, 0.2);
-            color: var(--primary);
+            background-color: #d4fcd7;
+            color: #256029;
             padding: 6px 12px;
             border-radius: 20px;
             font-weight: bold;
@@ -549,7 +400,6 @@
             margin-top: 1rem;
             font-size: 1.1rem;
             box-shadow: var(--card-shadow);
-            border: 1px solid var(--primary);
         }
 
         .expertise-grid {
@@ -560,47 +410,38 @@
         }
 
         .expertise-card {
-            background: rgba(31, 41, 55, 0.5);
+            background: var(--light);
             border-radius: 15px;
             padding: 2.5rem 2rem;
             box-shadow: var(--card-shadow);
             border: 1px solid var(--border);
             transition: transform 0.3s, box-shadow 0.3s;
-            backdrop-filter: blur(10px);
         }
 
         .expertise-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 255, 157, 0.2);
-            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
 
         .cloud-expertise-card {
             background: var(--cloud-gradient);
-            color: var(--dark);
+            color: white;
         }
 
         .linux-expertise-card {
             background: var(--linux-gradient);
-            color: var(--dark);
-        }
-
-        .cybersecurity-expertise-card {
-            background: var(--hacker-gradient);
-            color: var(--text);
+            color: white;
         }
 
         .expertise-icon {
             font-size: 3rem;
             color: var(--primary);
             margin-bottom: 1.5rem;
-            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
         }
 
         .cloud-expertise-card .expertise-icon,
-        .linux-expertise-card .expertise-icon,
-        .cybersecurity-expertise-card .expertise-icon {
-            color: var(--dark);
+        .linux-expertise-card .expertise-icon {
+            color: white;
         }
 
         .expertise-card h3 {
@@ -627,16 +468,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(0, 255, 157, 0.1);
+            background: var(--light);
             border-radius: 10px;
             font-size: 1.2rem;
             box-shadow: var(--card-shadow);
-            border: 1px solid rgba(0, 255, 157, 0.3);
         }
 
         .cloud-expertise-card .expertise-tool,
-        .linux-expertise-card .expertise-tool,
-        .cybersecurity-expertise-card .expertise-tool {
+        .linux-expertise-card .expertise-tool {
             background: rgba(255, 255, 255, 0.2);
         }
 
@@ -647,33 +486,29 @@
         }
 
         .skill-category {
-            background: rgba(31, 41, 55, 0.5);
+            background: var(--light);
             border-radius: 15px;
             padding: 2rem;
             box-shadow: var(--card-shadow);
             border: 1px solid var(--border);
             text-align: center;
             transition: transform 0.3s;
-            backdrop-filter: blur(10px);
         }
 
         .skill-category:hover {
             transform: translateY(-5px);
-            border-color: var(--primary);
-            box-shadow: 0 10px 20px rgba(0, 255, 157, 0.2);
         }
 
         .skill-category h3 {
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
-            color: var(--primary);
+            color: var(--dark);
         }
 
         .skill-icon {
             font-size: 3rem;
             color: var(--primary);
             margin-bottom: 1.5rem;
-            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
         }
 
         .project-grid {
@@ -683,7 +518,7 @@
         }
 
         .project-card {
-            background: rgba(31, 41, 55, 0.5);
+            background: var(--light);
             border-radius: 15px;
             box-shadow: var(--card-shadow);
             transition: transform 0.4s, box-shadow 0.4s;
@@ -691,13 +526,11 @@
             display: flex;
             flex-direction: column;
             height: 100%;
-            backdrop-filter: blur(10px);
         }
 
         .project-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 255, 157, 0.2);
-            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
 
         .project-content {
@@ -710,7 +543,7 @@
         .project-content h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: var(--primary);
+            color: var(--dark);
         }
 
         .project-content p {
@@ -727,13 +560,12 @@
         }
 
         .project-tag {
-            background: rgba(0, 255, 157, 0.1);
+            background: rgba(74, 111, 255, 0.1);
             color: var(--primary);
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 500;
-            border: 1px solid rgba(0, 255, 157, 0.3);
         }
 
         .project-links {
@@ -745,8 +577,8 @@
             flex: 1;
             text-align: center;
             padding: 0.8rem 1rem;
-            background: rgba(0, 255, 157, 0.2);
-            color: var(--primary);
+            background: var(--primary);
+            color: white;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 500;
@@ -754,32 +586,28 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            border: 1px solid var(--primary);
         }
 
         .project-link:hover {
-            background: rgba(0, 255, 157, 0.3);
+            background: #3a5bff;
             transform: translateY(-3px);
         }
 
         .project-link.live {
-            background: rgba(0, 212, 255, 0.2);
-            color: var(--secondary);
-            border-color: var(--secondary);
+            background: var(--secondary);
         }
 
         .project-link.live:hover {
-            background: rgba(0, 212, 255, 0.3);
+            background: #27ae60;
         }
 
         .certification-list, .offer-letter-list {
             list-style: none;
-            background: rgba(31, 41, 55, 0.5);
+            background: var(--light);
             border-radius: 15px;
             padding: 2rem;
             box-shadow: var(--card-shadow);
             border: 1px solid var(--border);
-            backdrop-filter: blur(10px);
         }
 
         .certification-list li, .offer-letter-list li {
@@ -816,36 +644,31 @@
             align-items: center;
             gap: 0.5rem;
             font-size: 0.9rem;
-            border: 1px solid var(--primary);
-            background: rgba(0, 255, 157, 0.1);
-            color: var(--primary);
         }
 
         .certificate-btn.view, .offer-letter-btn.view {
-            background: rgba(0, 255, 157, 0.2);
-            color: var(--primary);
+            background: var(--primary);
+            color: white;
         }
 
         .certificate-btn.download, .offer-letter-btn.download {
-            background: rgba(0, 212, 255, 0.2);
-            color: var(--secondary);
-            border-color: var(--secondary);
+            background: var(--secondary);
+            color: white;
         }
 
         .certificate-btn:hover, .offer-letter-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 3px 8px rgba(0, 255, 157, 0.2);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
         }
 
         .contact-section {
-            background: rgba(31, 41, 55, 0.5);
+            background: var(--light);
             padding: 3rem;
             border-radius: 15px;
             box-shadow: var(--card-shadow);
             border: 1px solid var(--border);
             max-width: 800px;
             margin: 0 auto;
-            backdrop-filter: blur(10px);
         }
 
         .contact-icon {
@@ -856,7 +679,7 @@
         .contact-icon i {
             font-size: 4rem;
             color: var(--primary);
-            background: rgba(0, 255, 157, 0.1);
+            background: rgba(74, 111, 255, 0.1);
             width: 100px;
             height: 100px;
             display: inline-flex;
@@ -864,13 +687,11 @@
             justify-content: center;
             border-radius: 50%;
             margin-bottom: 1rem;
-            border: 1px solid var(--primary);
-            box-shadow: 0 0 20px rgba(0, 255, 157, 0.3);
         }
 
         .contact-icon h3 {
             font-size: 1.8rem;
-            color: var(--primary);
+            color: var(--dark);
         }
 
         .contact-form {
@@ -888,7 +709,7 @@
 
         .form-group label {
             font-weight: 600;
-            color: var(--primary);
+            color: var(--dark);
         }
 
         .form-group input,
@@ -897,17 +718,15 @@
             border: 1px solid var(--border);
             border-radius: 8px;
             font-size: 1rem;
-            font-family: 'Courier New', monospace;
+            font-family: Georgia, "Times New Roman", serif;
             transition: all 0.3s;
-            background: rgba(10, 15, 13, 0.5);
-            color: var(--text);
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(0, 255, 157, 0.2);
+            box-shadow: 0 0 0 3px rgba(74, 111, 255, 0.2);
         }
 
         .form-group textarea {
@@ -917,9 +736,9 @@
 
         .submit-btn {
             padding: 1rem 2rem;
-            background: rgba(0, 255, 157, 0.2);
-            color: var(--primary);
-            border: 1px solid var(--primary);
+            background: var(--primary);
+            color: white;
+            border: none;
             border-radius: 8px;
             font-size: 1.1rem;
             font-weight: 600;
@@ -932,9 +751,9 @@
         }
 
         .submit-btn:hover {
-            background: rgba(0, 255, 157, 0.3);
+            background: #3a5bff;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 255, 157, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .contact-links {
@@ -947,7 +766,7 @@
 
         .contact-links a {
             font-size: 1.6rem;
-            color: var(--primary);
+            color: var(--dark);
             transition: all 0.3s;
             display: flex;
             align-items: center;
@@ -957,9 +776,8 @@
         }
 
         .contact-links a:hover {
-            color: var(--secondary);
+            color: var(--primary);
             transform: scale(1.1);
-            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
         }
 
         .contact-info {
@@ -978,12 +796,11 @@
         }
 
         .footer {
-            background: var(--darker);
-            color: var(--text);
+            background: var(--dark);
+            color: var(--light);
             padding: 2rem;
             text-align: center;
             margin-top: 3rem;
-            border-top: 1px solid var(--primary);
         }
         
         .footer p {
@@ -999,23 +816,17 @@
         }
 
         .education-card {
-            background: rgba(31, 41, 55, 0.5);
+            background: var(--light);
             padding: 2rem;
             border-radius: 15px;
             box-shadow: var(--card-shadow);
             border: 1px solid var(--border);
-            backdrop-filter: blur(10px);
-        }
-
-        .education-card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 10px 20px rgba(0, 255, 157, 0.2);
         }
 
         .education-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: var(--primary);
+            color: var(--dark);
         }
 
         .education-card p {
@@ -1039,7 +850,6 @@
 
         .academic-link:hover {
             text-decoration: underline;
-            text-shadow: 0 0 5px rgba(0, 255, 157, 0.5);
         }
 
         /* Resume Section */
@@ -1049,11 +859,10 @@
             align-items: center;
             gap: 2rem;
             padding: 2rem;
-            background: rgba(31, 41, 55, 0.5);
+            background: var(--light);
             border-radius: 15px;
             box-shadow: var(--card-shadow);
             border: 1px solid var(--border);
-            backdrop-filter: blur(10px);
         }
 
         .resume-buttons {
@@ -1070,25 +879,21 @@
             display: flex;
             align-items: center;
             gap: 0.8rem;
-            border: 1px solid var(--primary);
-            background: rgba(0, 255, 157, 0.1);
-            color: var(--primary);
         }
 
         .resume-btn.view {
-            background: rgba(0, 255, 157, 0.2);
-            color: var(--primary);
+            background: var(--primary);
+            color: white;
         }
 
         .resume-btn.download {
-            background: rgba(0, 212, 255, 0.2);
-            color: var(--secondary);
-            border-color: var(--secondary);
+            background: var(--secondary);
+            color: white;
         }
 
         .resume-btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 255, 157, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
         /* Services CTA Section */
@@ -1109,21 +914,20 @@
             align-items: center;
             gap: 10px;
             padding: 1rem 2.5rem;
-            background: rgba(0, 255, 157, 0.2);
-            color: var(--primary);
+            background: var(--primary);
+            color: white;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 255, 157, 0.3);
-            border: 1px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(74, 111, 255, 0.3);
         }
         
         .contact-btn:hover {
-            background: rgba(0, 255, 157, 0.3);
+            background: #3a5bff;
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 255, 157, 0.4);
+            box-shadow: 0 8px 20px rgba(74, 111, 255, 0.4);
         }
 
         /* Resume Modal Styles */
@@ -1141,26 +945,24 @@
 
         .modal-content {
             position: relative;
-            background-color: var(--dark);
+            background-color: #fefefe;
             margin: 2% auto;
             padding: 20px;
             width: 90%;
             height: 90%;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            border: 1px solid var(--primary);
         }
 
         .close-modal {
             position: absolute;
             top: 15px;
             right: 25px;
-            color: var(--primary);
+            color: #fff;
             font-size: 35px;
             font-weight: bold;
             cursor: pointer;
             z-index: 2001;
-            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
         }
 
         .close-modal:hover {
@@ -1198,310 +1000,18 @@
             font-size: 4rem;
             color: var(--primary);
             margin-bottom: 1.5rem;
-            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
         }
 
         .project-summary h3 {
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
-            color: var(--primary);
+            color: var(--dark);
         }
 
         .project-summary p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
             line-height: 1.6;
-        }
-
-        /* Cybersecurity specific additions */
-        .terminal-prompt {
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        .command-line {
-            font-family: 'Courier New', monospace;
-            background: rgba(10, 15, 13, 0.5);
-            padding: 1rem;
-            border-radius: 8px;
-            border: 1px solid var(--primary);
-            margin: 1rem 0;
-            box-shadow: 0 0 10px rgba(0, 255, 157, 0.2);
-        }
-
-        /* Matrix rain characters */
-        .matrix-char {
-            position: absolute;
-            color: var(--primary);
-            font-family: 'Courier New', monospace;
-            font-size: 14px;
-            opacity: 0;
-            animation: matrixFall linear infinite;
-        }
-
-        @keyframes matrixFall {
-            0% {
-                transform: translateY(-100px);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(100vh);
-                opacity: 0;
-            }
-        }
-
-        /* Advanced Glitch Effect */
-        .glitch {
-            position: relative;
-            display: inline-block;
-        }
-
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .glitch::before {
-            left: 2px;
-            text-shadow: -2px 0 var(--accent);
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim 5s infinite linear alternate-reverse;
-        }
-
-        .glitch::after {
-            left: -2px;
-            text-shadow: -2px 0 var(--secondary);
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim2 5s infinite linear alternate-reverse;
-        }
-
-        @keyframes glitch-anim {
-            0% {
-                clip: rect(42px, 9999px, 44px, 0);
-            }
-            5% {
-                clip: rect(12px, 9999px, 59px, 0);
-            }
-            10% {
-                clip: rect(48px, 9999px, 29px, 0);
-            }
-            15% {
-                clip: rect(42px, 9999px, 73px, 0);
-            }
-            20% {
-                clip: rect(63px, 9999px, 27px, 0);
-            }
-            25% {
-                clip: rect(34px, 9999px, 55px, 0);
-            }
-            30% {
-                clip: rect(86px, 9999px, 73px, 0);
-            }
-            35% {
-                clip: rect(20px, 9999px, 20px, 0);
-            }
-            40% {
-                clip: rect(26px, 9999px, 60px, 0);
-            }
-            45% {
-                clip: rect(25px, 9999px, 66px, 0);
-            }
-            50% {
-                clip: rect(57px, 9999px, 98px, 0);
-            }
-            55% {
-                clip: rect(5px, 9999px, 46px, 0);
-            }
-            60% {
-                clip: rect(82px, 9999px, 31px, 0);
-            }
-            65% {
-                clip: rect(54px, 9999px, 27px, 0);
-            }
-            70% {
-                clip: rect(28px, 9999px, 99px, 0);
-            }
-            75% {
-                clip: rect(45px, 9999px, 69px, 0);
-            }
-            80% {
-                clip: rect(23px, 9999px, 85px, 0);
-            }
-            85% {
-                clip: rect(54px, 9999px, 84px, 0);
-            }
-            90% {
-                clip: rect(45px, 9999px, 47px, 0);
-            }
-            95% {
-                clip: rect(37px, 9999px, 20px, 0);
-            }
-            100% {
-                clip: rect(4px, 9999px, 91px, 0);
-            }
-        }
-
-        @keyframes glitch-anim2 {
-            0% {
-                clip: rect(65px, 9999px, 100px, 0);
-            }
-            5% {
-                clip: rect(52px, 9999px, 74px, 0);
-            }
-            10% {
-                clip: rect(79px, 9999px, 85px, 0);
-            }
-            15% {
-                clip: rect(75px, 9999px, 5px, 0);
-            }
-            20% {
-                clip: rect(67px, 9999px, 61px, 0);
-            }
-            25% {
-                clip: rect(14px, 9999px, 79px, 0);
-            }
-            30% {
-                clip: rect(1px, 9999px, 66px, 0);
-            }
-            35% {
-                clip: rect(86px, 9999px, 30px, 0);
-            }
-            40% {
-                clip: rect(23px, 9999px, 98px, 0);
-            }
-            45% {
-                clip: rect(85px, 9999px, 72px, 0);
-            }
-            50% {
-                clip: rect(71px, 9999px, 75px, 0);
-            }
-            55% {
-                clip: rect(2px, 9999px, 48px, 0);
-            }
-            60% {
-                clip: rect(30px, 9999px, 16px, 0);
-            }
-            65% {
-                clip: rect(59px, 9999px, 50px, 0);
-            }
-            70% {
-                clip: rect(41px, 9999px, 62px, 0);
-            }
-            75% {
-                clip: rect(2px, 9999px, 82px, 0);
-            }
-            80% {
-                clip: rect(47px, 9999px, 73px, 0);
-            }
-            85% {
-                clip: rect(3px, 9999px, 27px, 0);
-            }
-            90% {
-                clip: rect(26px, 9999px, 55px, 0);
-            }
-            95% {
-                clip: rect(42px, 9999px, 97px, 0);
-            }
-            100% {
-                clip: rect(38px, 9999px, 49px, 0);
-            }
-        }
-
-        /* Binary background animation */
-        .binary-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -4;
-            opacity: 0.03;
-            pointer-events: none;
-        }
-
-        .binary-digit {
-            position: absolute;
-            color: var(--primary);
-            font-family: 'Courier New', monospace;
-            font-size: 16px;
-            opacity: 0;
-            animation: binaryFloat 20s linear infinite;
-        }
-
-        @keyframes binaryFloat {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        /* Hologram effect */
-        .hologram {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hologram::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -60%;
-            width: 20%;
-            height: 200%;
-            background: rgba(0, 255, 157, 0.1);
-            transform: rotate(30deg);
-            animation: hologramScan 4s linear infinite;
-        }
-
-        @keyframes hologramScan {
-            0% {
-                left: -60%;
-            }
-            100% {
-                left: 120%;
-            }
-        }
-
-        /* Scan line effect */
-        .scanlines {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                to bottom,
-                rgba(0, 255, 157, 0.03) 50%,
-                transparent 50%
-            );
-            background-size: 100% 4px;
-            z-index: -1;
-            pointer-events: none;
-            animation: scanlineMove 10s linear infinite;
-        }
-
-        @keyframes scanlineMove {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: 0 100%;
-            }
         }
 
         /* Responsive Design */
@@ -1514,10 +1024,9 @@
                 position: absolute;
                 top: 100%;
                 left: 0;
-                background: rgba(10, 15, 13, 0.95);
+                background: var(--light);
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                 padding: 1rem 0;
-                backdrop-filter: blur(10px);
             }
 
             .nav-links.active {
@@ -1642,22 +1151,6 @@
                 padding: 6px 10px;
             }
 
-            /* LinkedIn button responsive */
-            .linkedin-float {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                left: 20px;
-                font-size: 24px;
-            }
-            
-            .linkedin-text {
-                bottom: 75px;
-                left: 20px;
-                font-size: 12px;
-                padding: 6px 10px;
-            }
-
             .project-summary-icon {
                 font-size: 3rem;
             }
@@ -1748,39 +1241,10 @@
                 font-size: 11px;
                 padding: 5px 8px;
             }
-
-            /* LinkedIn button responsive */
-            .linkedin-float {
-                width: 45px;
-                height: 45px;
-                bottom: 15px;
-                left: 15px;
-                font-size: 22px;
-            }
-            
-            .linkedin-text {
-                bottom: 65px;
-                left: 15px;
-                font-size: 11px;
-                padding: 5px 8px;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Terminal Grid Background -->
-    <div class="terminal-grid"></div>
-    <div class="grid-animation"></div>
-    
-    <!-- Matrix Rain Animation -->
-    <div class="matrix-rain" id="matrixRain"></div>
-    
-    <!-- Binary Background -->
-    <div class="binary-bg" id="binaryBg"></div>
-    
-    <!-- Scan Lines -->
-    <div class="scanlines"></div>
-    
     <!-- Floating Tech Icons -->
     <div class="floating-icons" id="floatingIcons"></div>
     
@@ -1789,12 +1253,6 @@
         <i class="fab fa-whatsapp"></i>
     </a>
     <div class="whatsapp-text">Message me on WhatsApp</div>
-    
-    <!-- LinkedIn Floating Button -->
-    <a href="https://linkedin.com/in/sanjaykumar77" class="linkedin-float" target="_blank">
-        <i class="fab fa-linkedin"></i>
-    </a>
-    <div class="linkedin-text">Connect on LinkedIn</div>
     
     <!-- Resume Modal -->
     <div id="resumeModal" class="modal">
@@ -1816,7 +1274,7 @@
         <nav>
             <div class="nav-container">
                 <a href="#home" class="nav-logo">
-                    <i class="fas fa-terminal"></i> <span class="glitch" data-text="Sanjaykumar P">Sanjaykumar P</span>
+                    <i class="fas fa-laptop-code"></i> Sanjaykumar P
                 </a>
                 <div class="menu-toggle"><i class="fas fa-bars"></i></div>
                 <ul class="nav-links">
@@ -1839,29 +1297,16 @@
                     <img src="profile.jpg" alt="Sanjaykumar P" class="profile-photo">
                     <div class="profile-photo-frame"></div>
                 </div>
-                <h1>
-                    <div class="name-line">
-                        <span class="terminal-prompt">></span> Hii, I'm <span class="glitch" data-text="Sanjaykumar">Sanjaykumar</span>
-                    </div>
-                    <div class="name-line">
-                        <span class="glitch" data-text="P">P</span>
-                    </div>
-                </h1>
-                <p class="typing-text">Aspiring Cybersecurity & DevOps Engineer | RHEL | CCNA | AWS Cloud Practitioner | Git |</p>
+                <h1>👋 Hii, I'm <span>Sanjaykumar P</span></h1>
+                <p>Aspiring Devops Engineer | RHEL | CCNA | AWS Cloud Practioner | Git |</p>
                 
-                <div class="command-line">
-                    <p><span class="terminal-prompt">$</span> whoami</p>
-                    <p>Cybersecurity Enthusiast | Cloud Specialist | Linux Administrator</p>
-                    <p><span class="terminal-prompt">$</span> cat about_me.txt</p>
-                </div>
-                
-                <div class="profile-summary hologram">
-                    <p>I have completed my B.Sc. in Computer Science and chosen to begin my career in Cybersecurity, DevOps and Cloud Engineering. I am actively building my skills in Linux Administration, AWS, Python, and security tools while gaining hands-on experience with automation, containerization, and network fundamentals. My goal is to grow as a Cybersecurity professional, combining technical expertise with problem-solving to deliver secure, scalable, and reliable solutions.</p>
+                <div class="profile-summary">
+                    <p>I have completed my B.Sc. in Computer Science and chosen to begin my career in DevOps and Cloud Engineering. I am actively building my skills in Linux Administration, AWS, Python, and CI/CD tools while gaining hands-on experience with automation, containerization, and network fundamentals. My goal is to grow as a DevOps professional, combining technical expertise with problem-solving to deliver scalable, efficient, and reliable solutions.</p>
                 </div>
                 
                 <!-- Open to Work badge -->
                 <div class="open-to-work-badge">
-                    <i class="fas fa-shield-alt"></i> Open to Work in Cybersecurity
+                    💼 Open to Work
                 </div>
                 
                 <div class="hero-buttons">
@@ -1880,19 +1325,13 @@
                 <div class="tech-showcase">
                     <div class="tech-item">
                         <div class="tech-icon">
-                            <i class="devicon-linux-plain"></i>
+                            <i class="devicon-linux-plain colored"></i>
                         </div>
                         <span>Linux</span>
                     </div>
                     <div class="tech-item">
                         <div class="tech-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <span>Cybersecurity</span>
-                    </div>
-                    <div class="tech-item">
-                        <div class="tech-icon">
-                            <i class="devicon-amazonwebservices-plain-wordmark"></i>
+                            <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
                         </div>
                         <span>AWS</span>
                     </div>
@@ -1918,7 +1357,7 @@
                     
                     <div class="expertise-tools">
                         <div class="expertise-tool">
-                            <i class="devicon-amazonwebservices-plain"></i>
+                            <i class="devicon-amazonwebservices-plain colored"></i>
                         </div>
                         <div class="expertise-tool">
                             <i class="fas fa-server"></i>
@@ -1938,33 +1377,13 @@
                     
                     <div class="expertise-tools">
                         <div class="expertise-tool">
-                            <i class="devicon-linux-plain"></i>
+                            <i class="devicon-linux-plain colored"></i>
                         </div>
                         <div class="expertise-tool">
-                            <i class="devicon-redhat-plain"></i>
+                            <i class="devicon-redhat-plain colored"></i>
                         </div>
                         <div class="expertise-tool">
                             <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="expertise-card cybersecurity-expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Cybersecurity</h3>
-                    <p>Building expertise in cybersecurity fundamentals, network security, and ethical hacking methodologies.</p>
-                    
-                    <div class="expertise-tools">
-                        <div class="expertise-tool">
-                            <i class="fas fa-user-secret"></i>
-                        </div>
-                        <div class="expertise-tool">
-                            <i class="fas fa-lock"></i>
-                        </div>
-                        <div class="expertise-tool">
-                            <i class="fas fa-fingerprint"></i>
                         </div>
                     </div>
                 </div>
@@ -2031,7 +1450,7 @@
             <div class="skills-grid">
                 <div class="skill-category">
                     <div class="skill-icon">
-                        <i class="devicon-linux-plain"></i>
+                        <i class="devicon-linux-plain colored"></i>
                     </div>
                     <h3>Linux Administration</h3>
                 </div>
@@ -2045,27 +1464,21 @@
                 
                 <div class="skill-category">
                     <div class="skill-icon">
-                        <i class="devicon-amazonwebservices-plain"></i>
+                        <i class="devicon-amazonwebservices-plain colored"></i>
                     </div>
                     <h3>AWS Cloud</h3>
                 </div>
                 <div class="skill-category">
                     <div class="skill-icon">
-                        <i class="devicon-git-plain"></i>
+                        <i class="devicon-git-plain colored"></i>
                     </div>
                     <h3>Git</h3>
                 </div>
                 <div class="skill-category">
                     <div class="skill-icon">
-                        <i class="fa-solid fa-infinity"></i>
+                        <i class="fa-solid fa-infinity colored"></i>
                     </div>
                     <h3>DevOps</h3>
-                </div> 
-                <div class="skill-category">
-                    <div class="skill-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Cybersecurity</h3>
                 </div> 
             </div>
         </section>
@@ -2079,11 +1492,11 @@
                 </div>
                 <h3>🚀 Explore My Projects</h3>
                 <p>
-                    I have completed <strong>20+ projects</strong> demonstrating my skills in DevOps, AWS, Linux, Cybersecurity, and more. 
+                    I have completed <strong>20+ projects</strong> demonstrating my skills in DevOps, AWS, Linux, and more. 
                     From infrastructure automation to cloud deployment and system administration, each project showcases 
                     practical implementation of modern technologies and best practices.
                 </p>
-                <a href="project.html" class="hero-btn" style="background: rgba(0, 212, 255, 0.2); color: var(--secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 10px; border-color: var(--secondary);">
+                <a href="project.html" class="hero-btn" style="background: var(--secondary); color: white; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;">
                     <i class="fas fa-external-link-alt"></i> View All Projects
                 </a>
             </div>
@@ -2353,15 +1766,15 @@
             const techIcons = [
                 'devicon-linux-plain', 'devicon-redhat-plain', 'devicon-amazonwebservices-plain-wordmark',
                 'devicon-apache-plain-wordmark', 'devicon-nginx-original', 'devicon-git-plain',
-                'devicon-github-original', 'fas fa-shield-alt', 'fas fa-user-secret',
-                'fas fa-lock', 'fas fa-fingerprint', 'fas fa-terminal'
+                'devicon-github-original', 'devicon-html5-plain', 'devicon-css3-plain',
+                'devicon-javascript-plain', 'devicon-python-plain', 'devicon-react-original'
             ];
             
             for (let i = 0; i < 20; i++) {
                 const icon = document.createElement('div');
                 icon.className = 'floating-icon';
                 const iconClass = techIcons[Math.floor(Math.random() * techIcons.length)];
-                icon.innerHTML = `<i class="${iconClass}"></i>`;
+                icon.innerHTML = `<i class="${iconClass} colored"></i>`;
                 icon.style.left = `${Math.random() * 100}%`;
                 icon.style.top = `${Math.random() * 100}%`;
                 icon.style.animationDuration = `${15 + Math.random() * 20}s`;
@@ -2460,53 +1873,6 @@
                     document.body.style.overflow = "auto"; // Re-enable scrolling
                 }
             });
-
-            // Matrix Rain Animation
-            const matrixRain = document.getElementById('matrixRain');
-            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-            
-            function createMatrixChar() {
-                const char = document.createElement('div');
-                char.className = 'matrix-char';
-                char.textContent = chars.charAt(Math.floor(Math.random() * chars.length));
-                char.style.left = `${Math.random() * 100}%`;
-                char.style.animationDuration = `${5 + Math.random() * 10}s`;
-                char.style.animationDelay = `${Math.random() * 5}s`;
-                matrixRain.appendChild(char);
-                
-                // Remove character after animation completes
-                setTimeout(() => {
-                    if (char.parentNode) {
-                        char.parentNode.removeChild(char);
-                    }
-                }, 15000);
-            }
-            
-            // Create matrix characters periodically
-            setInterval(createMatrixChar, 100);
-            
-            // Binary Background Animation
-            const binaryBg = document.getElementById('binaryBg');
-            
-            function createBinaryDigit() {
-                const digit = document.createElement('div');
-                digit.className = 'binary-digit';
-                digit.textContent = Math.round(Math.random());
-                digit.style.left = `${Math.random() * 100}%`;
-                digit.style.animationDuration = `${15 + Math.random() * 15}s`;
-                digit.style.animationDelay = `${Math.random() * 5}s`;
-                binaryBg.appendChild(digit);
-                
-                // Remove digit after animation completes
-                setTimeout(() => {
-                    if (digit.parentNode) {
-                        digit.parentNode.removeChild(digit);
-                    }
-                }, 30000);
-            }
-            
-            // Create binary digits periodically
-            setInterval(createBinaryDigit, 200);
         });
     </script>
 </body>
