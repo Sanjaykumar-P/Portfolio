@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanjaykumar P - Cybersecurity & Cloud Specialist</title>
+    <title>Sanjaykumar P - Cybersecurity & DevOps Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <style>
@@ -69,6 +69,17 @@
         @keyframes gridMove {
             0% { transform: translateY(0); }
             100% { transform: translateY(100%); }
+        }
+
+        /* Matrix Rain Animation */
+        .matrix-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+            opacity: 0.1;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -157,6 +168,62 @@
         }
 
         .whatsapp-float:hover + .whatsapp-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* LinkedIn Floating Button */
+        .linkedin-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            left: 40px;
+            background-color: #0077B5;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: pulse-linkedin 2s infinite;
+        }
+
+        .linkedin-float:hover {
+            background-color: #005885;
+            transform: scale(1.1);
+            animation: none;
+        }
+
+        @keyframes pulse-linkedin {
+            0% { box-shadow: 0 0 0 0 rgba(0, 119, 181, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 119, 181, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 119, 181, 0); }
+        }
+
+        .linkedin-text {
+            position: fixed;
+            bottom: 105px;
+            left: 40px;
+            background-color: #0077B5;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .linkedin-float:hover + .linkedin-text {
             opacity: 1;
             transform: translateY(0);
         }
@@ -335,6 +402,15 @@
             color: var(--primary);
             line-height: 1.2;
             text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero h1 .name-line {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .hero h1 span {
@@ -1153,6 +1229,281 @@
             box-shadow: 0 0 10px rgba(0, 255, 157, 0.2);
         }
 
+        /* Matrix rain characters */
+        .matrix-char {
+            position: absolute;
+            color: var(--primary);
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            opacity: 0;
+            animation: matrixFall linear infinite;
+        }
+
+        @keyframes matrixFall {
+            0% {
+                transform: translateY(-100px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        /* Advanced Glitch Effect */
+        .glitch {
+            position: relative;
+            display: inline-block;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 var(--accent);
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 var(--secondary);
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% {
+                clip: rect(42px, 9999px, 44px, 0);
+            }
+            5% {
+                clip: rect(12px, 9999px, 59px, 0);
+            }
+            10% {
+                clip: rect(48px, 9999px, 29px, 0);
+            }
+            15% {
+                clip: rect(42px, 9999px, 73px, 0);
+            }
+            20% {
+                clip: rect(63px, 9999px, 27px, 0);
+            }
+            25% {
+                clip: rect(34px, 9999px, 55px, 0);
+            }
+            30% {
+                clip: rect(86px, 9999px, 73px, 0);
+            }
+            35% {
+                clip: rect(20px, 9999px, 20px, 0);
+            }
+            40% {
+                clip: rect(26px, 9999px, 60px, 0);
+            }
+            45% {
+                clip: rect(25px, 9999px, 66px, 0);
+            }
+            50% {
+                clip: rect(57px, 9999px, 98px, 0);
+            }
+            55% {
+                clip: rect(5px, 9999px, 46px, 0);
+            }
+            60% {
+                clip: rect(82px, 9999px, 31px, 0);
+            }
+            65% {
+                clip: rect(54px, 9999px, 27px, 0);
+            }
+            70% {
+                clip: rect(28px, 9999px, 99px, 0);
+            }
+            75% {
+                clip: rect(45px, 9999px, 69px, 0);
+            }
+            80% {
+                clip: rect(23px, 9999px, 85px, 0);
+            }
+            85% {
+                clip: rect(54px, 9999px, 84px, 0);
+            }
+            90% {
+                clip: rect(45px, 9999px, 47px, 0);
+            }
+            95% {
+                clip: rect(37px, 9999px, 20px, 0);
+            }
+            100% {
+                clip: rect(4px, 9999px, 91px, 0);
+            }
+        }
+
+        @keyframes glitch-anim2 {
+            0% {
+                clip: rect(65px, 9999px, 100px, 0);
+            }
+            5% {
+                clip: rect(52px, 9999px, 74px, 0);
+            }
+            10% {
+                clip: rect(79px, 9999px, 85px, 0);
+            }
+            15% {
+                clip: rect(75px, 9999px, 5px, 0);
+            }
+            20% {
+                clip: rect(67px, 9999px, 61px, 0);
+            }
+            25% {
+                clip: rect(14px, 9999px, 79px, 0);
+            }
+            30% {
+                clip: rect(1px, 9999px, 66px, 0);
+            }
+            35% {
+                clip: rect(86px, 9999px, 30px, 0);
+            }
+            40% {
+                clip: rect(23px, 9999px, 98px, 0);
+            }
+            45% {
+                clip: rect(85px, 9999px, 72px, 0);
+            }
+            50% {
+                clip: rect(71px, 9999px, 75px, 0);
+            }
+            55% {
+                clip: rect(2px, 9999px, 48px, 0);
+            }
+            60% {
+                clip: rect(30px, 9999px, 16px, 0);
+            }
+            65% {
+                clip: rect(59px, 9999px, 50px, 0);
+            }
+            70% {
+                clip: rect(41px, 9999px, 62px, 0);
+            }
+            75% {
+                clip: rect(2px, 9999px, 82px, 0);
+            }
+            80% {
+                clip: rect(47px, 9999px, 73px, 0);
+            }
+            85% {
+                clip: rect(3px, 9999px, 27px, 0);
+            }
+            90% {
+                clip: rect(26px, 9999px, 55px, 0);
+            }
+            95% {
+                clip: rect(42px, 9999px, 97px, 0);
+            }
+            100% {
+                clip: rect(38px, 9999px, 49px, 0);
+            }
+        }
+
+        /* Binary background animation */
+        .binary-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -4;
+            opacity: 0.03;
+            pointer-events: none;
+        }
+
+        .binary-digit {
+            position: absolute;
+            color: var(--primary);
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            opacity: 0;
+            animation: binaryFloat 20s linear infinite;
+        }
+
+        @keyframes binaryFloat {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Hologram effect */
+        .hologram {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hologram::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20%;
+            height: 200%;
+            background: rgba(0, 255, 157, 0.1);
+            transform: rotate(30deg);
+            animation: hologramScan 4s linear infinite;
+        }
+
+        @keyframes hologramScan {
+            0% {
+                left: -60%;
+            }
+            100% {
+                left: 120%;
+            }
+        }
+
+        /* Scan line effect */
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 255, 157, 0.03) 50%,
+                transparent 50%
+            );
+            background-size: 100% 4px;
+            z-index: -1;
+            pointer-events: none;
+            animation: scanlineMove 10s linear infinite;
+        }
+
+        @keyframes scanlineMove {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 0 100%;
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
@@ -1291,6 +1642,22 @@
                 padding: 6px 10px;
             }
 
+            /* LinkedIn button responsive */
+            .linkedin-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                left: 20px;
+                font-size: 24px;
+            }
+            
+            .linkedin-text {
+                bottom: 75px;
+                left: 20px;
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+
             .project-summary-icon {
                 font-size: 3rem;
             }
@@ -1381,6 +1748,22 @@
                 font-size: 11px;
                 padding: 5px 8px;
             }
+
+            /* LinkedIn button responsive */
+            .linkedin-float {
+                width: 45px;
+                height: 45px;
+                bottom: 15px;
+                left: 15px;
+                font-size: 22px;
+            }
+            
+            .linkedin-text {
+                bottom: 65px;
+                left: 15px;
+                font-size: 11px;
+                padding: 5px 8px;
+            }
         }
     </style>
 </head>
@@ -1388,6 +1771,15 @@
     <!-- Terminal Grid Background -->
     <div class="terminal-grid"></div>
     <div class="grid-animation"></div>
+    
+    <!-- Matrix Rain Animation -->
+    <div class="matrix-rain" id="matrixRain"></div>
+    
+    <!-- Binary Background -->
+    <div class="binary-bg" id="binaryBg"></div>
+    
+    <!-- Scan Lines -->
+    <div class="scanlines"></div>
     
     <!-- Floating Tech Icons -->
     <div class="floating-icons" id="floatingIcons"></div>
@@ -1397,6 +1789,12 @@
         <i class="fab fa-whatsapp"></i>
     </a>
     <div class="whatsapp-text">Message me on WhatsApp</div>
+    
+    <!-- LinkedIn Floating Button -->
+    <a href="https://linkedin.com/in/sanjaykumar77" class="linkedin-float" target="_blank">
+        <i class="fab fa-linkedin"></i>
+    </a>
+    <div class="linkedin-text">Connect on LinkedIn</div>
     
     <!-- Resume Modal -->
     <div id="resumeModal" class="modal">
@@ -1418,7 +1816,7 @@
         <nav>
             <div class="nav-container">
                 <a href="#home" class="nav-logo">
-                    <i class="fas fa-terminal"></i> Sanjaykumar P
+                    <i class="fas fa-terminal"></i> <span class="glitch" data-text="Sanjaykumar P">Sanjaykumar P</span>
                 </a>
                 <div class="menu-toggle"><i class="fas fa-bars"></i></div>
                 <ul class="nav-links">
@@ -1441,8 +1839,15 @@
                     <img src="profile.jpg" alt="Sanjaykumar P" class="profile-photo">
                     <div class="profile-photo-frame"></div>
                 </div>
-                <h1><span class="terminal-prompt">></span> Hii, I'm <span>Sanjaykumar P</span></h1>
-                <p class="typing-text">Aspiring Cybersecurity & Devops Engineer | RHEL | CCNA | AWS Cloud Practioner | Git |</p>
+                <h1>
+                    <div class="name-line">
+                        <span class="terminal-prompt">></span> Hii, I'm <span class="glitch" data-text="Sanjaykumar">Sanjaykumar</span>
+                    </div>
+                    <div class="name-line">
+                        <span class="glitch" data-text="P">P</span>
+                    </div>
+                </h1>
+                <p class="typing-text">Aspiring Cybersecurity & DevOps Engineer | RHEL | CCNA | AWS Cloud Practitioner | Git |</p>
                 
                 <div class="command-line">
                     <p><span class="terminal-prompt">$</span> whoami</p>
@@ -1450,7 +1855,7 @@
                     <p><span class="terminal-prompt">$</span> cat about_me.txt</p>
                 </div>
                 
-                <div class="profile-summary">
+                <div class="profile-summary hologram">
                     <p>I have completed my B.Sc. in Computer Science and chosen to begin my career in Cybersecurity, DevOps and Cloud Engineering. I am actively building my skills in Linux Administration, AWS, Python, and security tools while gaining hands-on experience with automation, containerization, and network fundamentals. My goal is to grow as a Cybersecurity professional, combining technical expertise with problem-solving to deliver secure, scalable, and reliable solutions.</p>
                 </div>
                 
@@ -2055,6 +2460,53 @@
                     document.body.style.overflow = "auto"; // Re-enable scrolling
                 }
             });
+
+            // Matrix Rain Animation
+            const matrixRain = document.getElementById('matrixRain');
+            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            
+            function createMatrixChar() {
+                const char = document.createElement('div');
+                char.className = 'matrix-char';
+                char.textContent = chars.charAt(Math.floor(Math.random() * chars.length));
+                char.style.left = `${Math.random() * 100}%`;
+                char.style.animationDuration = `${5 + Math.random() * 10}s`;
+                char.style.animationDelay = `${Math.random() * 5}s`;
+                matrixRain.appendChild(char);
+                
+                // Remove character after animation completes
+                setTimeout(() => {
+                    if (char.parentNode) {
+                        char.parentNode.removeChild(char);
+                    }
+                }, 15000);
+            }
+            
+            // Create matrix characters periodically
+            setInterval(createMatrixChar, 100);
+            
+            // Binary Background Animation
+            const binaryBg = document.getElementById('binaryBg');
+            
+            function createBinaryDigit() {
+                const digit = document.createElement('div');
+                digit.className = 'binary-digit';
+                digit.textContent = Math.round(Math.random());
+                digit.style.left = `${Math.random() * 100}%`;
+                digit.style.animationDuration = `${15 + Math.random() * 15}s`;
+                digit.style.animationDelay = `${Math.random() * 5}s`;
+                binaryBg.appendChild(digit);
+                
+                // Remove digit after animation completes
+                setTimeout(() => {
+                    if (digit.parentNode) {
+                        digit.parentNode.removeChild(digit);
+                    }
+                }, 30000);
+            }
+            
+            // Create binary digits periodically
+            setInterval(createBinaryDigit, 200);
         });
     </script>
 </body>
