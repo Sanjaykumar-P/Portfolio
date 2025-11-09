@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanjaykumar P - Linux & Cloud Specialist</title>
+    <title>Sanjaykumar P - Cybersecurity Passionate</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <style>
@@ -18,6 +18,7 @@
             --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             --cloud-gradient: linear-gradient(135deg, #4facfe, #00f2fe);
             --linux-gradient: linear-gradient(135deg, #11998e, #38ef7d);
+            --cyber-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
         }
 
         * {
@@ -433,6 +434,11 @@
             color: white;
         }
 
+        .cyber-expertise-card {
+            background: var(--cyber-gradient);
+            color: white;
+        }
+
         .expertise-icon {
             font-size: 3rem;
             color: var(--primary);
@@ -440,7 +446,8 @@
         }
 
         .cloud-expertise-card .expertise-icon,
-        .linux-expertise-card .expertise-icon {
+        .linux-expertise-card .expertise-icon,
+        .cyber-expertise-card .expertise-icon {
             color: white;
         }
 
@@ -475,7 +482,8 @@
         }
 
         .cloud-expertise-card .expertise-tool,
-        .linux-expertise-card .expertise-tool {
+        .linux-expertise-card .expertise-tool,
+        .cyber-expertise-card .expertise-tool {
             background: rgba(255, 255, 255, 0.2);
         }
 
@@ -1014,6 +1022,232 @@
             line-height: 1.6;
         }
 
+        /* LinkedIn Integration Styles */
+        .linkedin-badge {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .linkedin-badge iframe {
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .linkedin-integration {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+
+        .linkedin-integration h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .linkedin-integration-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .linkedin-profile {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .linkedin-profile img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .linkedin-profile-info {
+            flex-grow: 1;
+        }
+
+        .linkedin-profile-info h4 {
+            margin-bottom: 0.3rem;
+            color: var(--dark);
+        }
+
+        .linkedin-profile-info p {
+            margin-bottom: 0.5rem;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        .linkedin-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #0e76a8;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .linkedin-btn:hover {
+            background: #0d5d8a;
+            transform: translateY(-2px);
+        }
+
+        /* Testimonials Section */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-quote {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .testimonial-quote:before {
+            content: """;
+            font-size: 3rem;
+            color: var(--primary);
+            opacity: 0.2;
+            position: absolute;
+            top: -1rem;
+            left: -0.5rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .testimonial-author-info h4 {
+            margin-bottom: 0.2rem;
+            color: var(--dark);
+        }
+
+        .testimonial-author-info p {
+            color: var(--text);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            padding: 1.5rem;
+            background: var(--light);
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            text-align: right;
+        }
+
+        .timeline-content:before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content:before {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content:before {
+            left: -10px;
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-company {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .timeline-role {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
@@ -1162,6 +1396,25 @@
             .project-summary p {
                 font-size: 1.1rem;
             }
+
+            /* Timeline Responsive */
+            .timeline:before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: row !important;
+                margin-left: 60px;
+            }
+
+            .timeline-content {
+                width: 100%;
+                text-align: left !important;
+            }
+
+            .timeline-content:before {
+                left: -40px !important;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1242,6 +1495,62 @@
                 padding: 5px 8px;
             }
         }
+
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .slide-in-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .slide-in-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .zoom-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .zoom-in.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .bounce-in {
+            opacity: 0;
+            transform: scale(0.3);
+            transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .bounce-in.active {
+            opacity: 1;
+            transform: scale(1);
+        }
     </style>
 </head>
 <body>
@@ -1281,11 +1590,12 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#expertise">Expertise</a></li>
                     <li><a href="#education">Education</a></li>
-                    <li><a href="#internship">Experience</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="project.html">Projects</a></li>
                     <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#Workshops">Workshops</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -1298,7 +1608,7 @@
                     <div class="profile-photo-frame"></div>
                 </div>
                 <h1>👋 Hii, I'm <span>Sanjaykumar P</span></h1>
-                <p>Aspiring Devops Engineer | RHEL | CCNA | AWS Cloud Practioner | Git |</p>
+                <p>Dream is not that which you see while sleeping, it is something that does not let you sleep</p>
                 
                 <div class="profile-summary">
                     <p>I have completed my B.Sc. in Computer Science and chosen to begin my career in DevOps and Cloud Engineering. I am actively building my skills in Linux Administration, AWS, Python, and CI/CD tools while gaining hands-on experience with automation, containerization, and network fundamentals. My goal is to grow as a DevOps professional, combining technical expertise with problem-solving to deliver scalable, efficient, and reliable solutions.</p>
@@ -1342,13 +1652,21 @@
                         <span>CCNA</span>
                     </div>
                 </div>
+
+                <!-- LinkedIn Integration -->
+                <div class="linkedin-badge">
+                    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+                    <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="VERTICAL" data-vanity="sanjaykumar77" data-version="v1">
+                        <a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/sanjaykumar77?trk=profile-badge"></a>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="expertise">
             <h2 class="section-title">Technical Expertise</h2>
             <div class="expertise-grid">
-                <div class="expertise-card cloud-expertise-card">
+                <div class="expertise-card cloud-expertise-card slide-in-left">
                     <div class="expertise-icon">
                         <i class="fas fa-cloud"></i>
                     </div>
@@ -1368,7 +1686,7 @@
                     </div>
                 </div>
                 
-                <div class="expertise-card linux-expertise-card">
+                <div class="expertise-card linux-expertise-card slide-in-right">
                     <div class="expertise-icon">
                         <i class="fas fa-terminal"></i>
                     </div>
@@ -1387,6 +1705,26 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="expertise-card cyber-expertise-card bounce-in">
+                    <div class="expertise-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cybersecurity</h3>
+                    <p>Passionate about cybersecurity with focus on network security, vulnerability assessment, and implementing security best practices.</p>
+                    
+                    <div class="expertise-tools">
+                        <div class="expertise-tool">
+                            <i class="fas fa-user-secret"></i>
+                        </div>
+                        <div class="expertise-tool">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="expertise-tool">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <!-- Services CTA Section -->
@@ -1401,7 +1739,7 @@
         <section id="education">
             <h2 class="section-title">Education</h2>
             <div class="education-grid">
-                <div class="education-card">
+                <div class="education-card fade-in">
                     <h3>Cloud Computing Master Training</h3>
                     <p><strong>Besant Technologies</strong> | May 2025– Present</p>
                     <ul>
@@ -1412,7 +1750,7 @@
                     </ul>
                 </div>
                 
-                <div class="education-card">
+                <div class="education-card fade-in">
                     <h3>B.Sc. in Computer Science</h3>
                     <p><strong>Kongu Arts and Science College, Erode</strong> | June 2022– May 2025</p>
                     <p><strong>GPA:</strong> 8.01 / 10.0 <a href="#" class="academic-link">(View Academic Info)</a></p>
@@ -1427,20 +1765,45 @@
             </div>
         </section>
 
-        <section id="internship">
+        <section id="experience">
             <h2 class="section-title">Experience</h2>
-            <div class="education-grid">
-                <div class="education-card">
-                    <h3>DevOps Internship</h3>
-                    <p><strong>CoreXTech IT Services</strong> | September 2025 – Present</p>
-                    <ul>
-                        <li>Currently gaining hands-on experience in AWS Cloud fundamentals.</li>
-                        <li>Worked on cloud service models and deployment models.</li>
-                        <li>Launched and managed AWS EC2 instances, with secure login using PuTTY.</li>
-                        <li>Explored operating system environments on AWS.</li>
-                        <li>Building strong foundations in Cloud Computing and DevOps practices.</li>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content zoom-in">
+                        <div class="timeline-date">Oct 2025 - Present</div>
+                        <div class="timeline-company">Alethea Communications Technologies</div>
+                        <div class="timeline-role">Trainee Engineer · Full-time</div>
+                        <p>Bengaluru, Karnataka, India · On-site</p>
+                        <p>Network Engineer, CCNA and +3 skills</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content zoom-in">
+                        <div class="timeline-date">Oct 2025 - Nov 2025</div>
+                        <div class="timeline-company">Elevate Labs</div>
+                        <div class="timeline-role">DevOps Intern · Internship</div>
+                        <p>Bengaluru, Karnataka, India · Remote</p>
+                        <p>Contributed to designing and optimizing CI/CD pipelines, improving software delivery speed and reliability. Gained hands-on experience with cloud deployment, Docker, and Kubernetes, while developing automation scripts and monitoring tools to ensure system stability. Followed best DevOps practices with a collaborative and proactive approach. Eligible for a Completion Certificate and Letter of Recommendation validating practical skills.</p>
+                        <p><em>LinkedIn helped me get this job</em></p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content zoom-in">
+                        <div class="timeline-date">September 2025 – Present</div>
+                        <div class="timeline-company">CoreXTech IT Services</div>
+                        <div class="timeline-role">DevOps Internship</div>
+                        <ul>
+                            <li>Currently gaining hands-on experience in AWS Cloud fundamentals.</li>
+                            <li>Worked on cloud service models and deployment models.</li>
+                            <li>Launched and managed AWS EC2 instances, with secure login using PuTTY.</li>
+                            <li>Explored operating system environments on AWS.</li>
+                            <li>Building strong foundations in Cloud Computing and DevOps practices.</li>
+                        </ul>
                         <a href="https://drive.google.com/file/d/16xnG4n_PsB3ufpL8jzu_vaWuaCaFg46u/view?usp=sharing" class="academic-link">(View offer Letter)</a>
-                    </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1448,33 +1811,33 @@
         <section id="skills">
             <h2 class="section-title">Technical Skills</h2>
             <div class="skills-grid">
-                <div class="skill-category">
+                <div class="skill-category fade-in">
                     <div class="skill-icon">
                         <i class="devicon-linux-plain colored"></i>
                     </div>
                     <h3>Linux Administration</h3>
                 </div>
                 
-                <div class="skill-category">
+                <div class="skill-category fade-in">
                     <div class="skill-icon">
                         <i class="fas fa-network-wired"></i>
                     </div>
                     <h3>CCNA Networking</h3>
                 </div>
                 
-                <div class="skill-category">
+                <div class="skill-category fade-in">
                     <div class="skill-icon">
                         <i class="devicon-amazonwebservices-plain colored"></i>
                     </div>
                     <h3>AWS Cloud</h3>
                 </div>
-                <div class="skill-category">
+                <div class="skill-category fade-in">
                     <div class="skill-icon">
                         <i class="devicon-git-plain colored"></i>
                     </div>
                     <h3>Git</h3>
                 </div>
-                <div class="skill-category">
+                <div class="skill-category fade-in">
                     <div class="skill-icon">
                         <i class="fa-solid fa-infinity colored"></i>
                     </div>
@@ -1684,6 +2047,50 @@
             </ul>
         </section>
 
+        <section id="testimonials">
+            <h2 class="section-title">Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">
+                        "Sanjaykumar demonstrated exceptional problem-solving skills during our collaboration on the cloud migration project. His attention to detail and dedication to learning new technologies made him a valuable asset to our team."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe">
+                        <div class="testimonial-author-info">
+                            <h4>John Doe</h4>
+                            <p>Senior DevOps Engineer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">
+                        "Working with Sanjaykumar was a great experience. He quickly grasped complex networking concepts and implemented them effectively in our infrastructure. His CCNA knowledge was particularly impressive."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith">
+                        <div class="testimonial-author-info">
+                            <h4>Jane Smith</h4>
+                            <p>IT Manager</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-quote">
+                        "Sanjaykumar's enthusiasm for cybersecurity is infectious. He consistently stayed updated with the latest security trends and implemented robust security measures in our projects. A promising talent in the field."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Robert Johnson">
+                        <div class="testimonial-author-info">
+                            <h4>Robert Johnson</h4>
+                            <p>Cybersecurity Specialist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="contact">
             <h2 class="section-title">Contact</h2>
             <div class="contact-section">
@@ -1872,6 +2279,25 @@
                     modal.style.display = "none";
                     document.body.style.overflow = "auto"; // Re-enable scrolling
                 }
+            });
+
+            // Scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements with animation classes
+            document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .zoom-in, .bounce-in').forEach(el => {
+                observer.observe(el);
             });
         });
     </script>
