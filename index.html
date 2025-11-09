@@ -19,6 +19,7 @@
             --cloud-gradient: linear-gradient(135deg, #4facfe, #00f2fe);
             --linux-gradient: linear-gradient(135deg, #11998e, #38ef7d);
             --cyber-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            --linkedin-color: #0e76a8;
         }
 
         * {
@@ -123,6 +124,62 @@
         }
 
         .whatsapp-float:hover + .whatsapp-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* LinkedIn Floating Button */
+        .linkedin-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 120px;
+            right: 40px;
+            background-color: var(--linkedin-color);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: pulse-linkedin 2s infinite;
+        }
+
+        .linkedin-float:hover {
+            background-color: #0d5d8a;
+            transform: scale(1.1);
+            animation: none;
+        }
+
+        @keyframes pulse-linkedin {
+            0% { box-shadow: 0 0 0 0 rgba(14, 118, 168, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(14, 118, 168, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(14, 118, 168, 0); }
+        }
+
+        .linkedin-text {
+            position: fixed;
+            bottom: 185px;
+            right: 40px;
+            background-color: var(--linkedin-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .linkedin-float:hover + .linkedin-text {
             opacity: 1;
             transform: translateY(0);
         }
@@ -1169,83 +1226,60 @@
             font-size: 0.9rem;
         }
 
-        /* Experience Timeline */
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
-        .timeline:before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--primary);
-            transform: translateX(-50%);
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .timeline-item {
-            display: flex;
-            margin-bottom: 2rem;
-            position: relative;
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
-        .timeline-item:nth-child(odd) {
-            flex-direction: row-reverse;
+        .slide-in-left.active {
+            opacity: 1;
+            transform: translateX(0);
         }
 
-        .timeline-content {
-            width: 45%;
-            padding: 1.5rem;
-            background: var(--light);
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-            border: 1px solid var(--border);
-            position: relative;
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
-        .timeline-item:nth-child(odd) .timeline-content {
-            text-align: right;
+        .slide-in-right.active {
+            opacity: 1;
+            transform: translateX(0);
         }
 
-        .timeline-content:before {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: var(--primary);
-            border-radius: 50%;
-            top: 50%;
-            transform: translateY(-50%);
+        .zoom-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
-        .timeline-item:nth-child(odd) .timeline-content:before {
-            right: -10px;
+        .zoom-in.active {
+            opacity: 1;
+            transform: scale(1);
         }
 
-        .timeline-item:nth-child(even) .timeline-content:before {
-            left: -10px;
+        .bounce-in {
+            opacity: 0;
+            transform: scale(0.3);
+            transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .timeline-date {
-            font-weight: bold;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-company {
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-        }
-
-        .timeline-role {
-            font-style: italic;
-            margin-bottom: 1rem;
-            color: var(--text);
+        .bounce-in.active {
+            opacity: 1;
+            transform: scale(1);
         }
 
         /* Responsive Design */
@@ -1385,6 +1419,22 @@
                 padding: 6px 10px;
             }
 
+            /* LinkedIn button responsive */
+            .linkedin-float {
+                width: 50px;
+                height: 50px;
+                bottom: 90px;
+                right: 20px;
+                font-size: 24px;
+            }
+            
+            .linkedin-text {
+                bottom: 145px;
+                right: 20px;
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+
             .project-summary-icon {
                 font-size: 3rem;
             }
@@ -1395,25 +1445,6 @@
 
             .project-summary p {
                 font-size: 1.1rem;
-            }
-
-            /* Timeline Responsive */
-            .timeline:before {
-                left: 30px;
-            }
-
-            .timeline-item {
-                flex-direction: row !important;
-                margin-left: 60px;
-            }
-
-            .timeline-content {
-                width: 100%;
-                text-align: left !important;
-            }
-
-            .timeline-content:before {
-                left: -40px !important;
             }
         }
 
@@ -1494,62 +1525,22 @@
                 font-size: 11px;
                 padding: 5px 8px;
             }
-        }
 
-        /* Animation classes */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .fade-in.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .slide-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .slide-in-left.active {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .slide-in-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .slide-in-right.active {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .zoom-in {
-            opacity: 0;
-            transform: scale(0.9);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .zoom-in.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .bounce-in {
-            opacity: 0;
-            transform: scale(0.3);
-            transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .bounce-in.active {
-            opacity: 1;
-            transform: scale(1);
+            /* LinkedIn button responsive */
+            .linkedin-float {
+                width: 45px;
+                height: 45px;
+                bottom: 75px;
+                right: 15px;
+                font-size: 22px;
+            }
+            
+            .linkedin-text {
+                bottom: 125px;
+                right: 15px;
+                font-size: 11px;
+                padding: 5px 8px;
+            }
         }
     </style>
 </head>
@@ -1562,6 +1553,12 @@
         <i class="fab fa-whatsapp"></i>
     </a>
     <div class="whatsapp-text">Message me on WhatsApp</div>
+    
+    <!-- LinkedIn Floating Button -->
+    <a href="https://linkedin.com/in/sanjaykumar77" class="linkedin-float" target="_blank">
+        <i class="fab fa-linkedin"></i>
+    </a>
+    <div class="linkedin-text">Connect on LinkedIn</div>
     
     <!-- Resume Modal -->
     <div id="resumeModal" class="modal">
@@ -1767,43 +1764,41 @@
 
         <section id="experience">
             <h2 class="section-title">Experience</h2>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content zoom-in">
-                        <div class="timeline-date">Oct 2025 - Present</div>
-                        <div class="timeline-company">Alethea Communications Technologies</div>
-                        <div class="timeline-role">Trainee Engineer · Full-time</div>
-                        <p>Bengaluru, Karnataka, India · On-site</p>
-                        <p>Network Engineer, CCNA and +3 skills</p>
-                    </div>
+            <div class="education-grid">
+                <div class="education-card fade-in">
+                    <h3>Trainee Engineer</h3>
+                    <p><strong>Alethea Communications Technologies</strong> | Oct 2025 - Present</p>
+                    <p>Bengaluru, Karnataka, India · On-site</p>
+                    <ul>
+                        <li>Network Engineer with CCNA and +3 skills</li>
+                    </ul>
                 </div>
                 
-                <div class="timeline-item">
-                    <div class="timeline-content zoom-in">
-                        <div class="timeline-date">Oct 2025 - Nov 2025</div>
-                        <div class="timeline-company">Elevate Labs</div>
-                        <div class="timeline-role">DevOps Intern · Internship</div>
-                        <p>Bengaluru, Karnataka, India · Remote</p>
-                        <p>Contributed to designing and optimizing CI/CD pipelines, improving software delivery speed and reliability. Gained hands-on experience with cloud deployment, Docker, and Kubernetes, while developing automation scripts and monitoring tools to ensure system stability. Followed best DevOps practices with a collaborative and proactive approach. Eligible for a Completion Certificate and Letter of Recommendation validating practical skills.</p>
-                        <p><em>LinkedIn helped me get this job</em></p>
-                    </div>
+                <div class="education-card fade-in">
+                    <h3>DevOps Intern</h3>
+                    <p><strong>Elevate Labs</strong> | Oct 2025 - Nov 2025</p>
+                    <p>Bengaluru, Karnataka, India · Remote</p>
+                    <ul>
+                        <li>Contributed to designing and optimizing CI/CD pipelines, improving software delivery speed and reliability.</li>
+                        <li>Gained hands-on experience with cloud deployment, Docker, and Kubernetes.</li>
+                        <li>Developed automation scripts and monitoring tools to ensure system stability.</li>
+                        <li>Followed best DevOps practices with a collaborative and proactive approach.</li>
+                        <li>Eligible for a Completion Certificate and Letter of Recommendation validating practical skills.</li>
+                    </ul>
+                    <p><em>LinkedIn helped me get this job</em></p>
                 </div>
                 
-                <div class="timeline-item">
-                    <div class="timeline-content zoom-in">
-                        <div class="timeline-date">September 2025 – Present</div>
-                        <div class="timeline-company">CoreXTech IT Services</div>
-                        <div class="timeline-role">DevOps Internship</div>
-                        <ul>
-                            <li>Currently gaining hands-on experience in AWS Cloud fundamentals.</li>
-                            <li>Worked on cloud service models and deployment models.</li>
-                            <li>Launched and managed AWS EC2 instances, with secure login using PuTTY.</li>
-                            <li>Explored operating system environments on AWS.</li>
-                            <li>Building strong foundations in Cloud Computing and DevOps practices.</li>
-                        </ul>
+                <div class="education-card fade-in">
+                    <h3>DevOps Internship</h3>
+                    <p><strong>CoreXTech IT Services</strong> | September 2025 – Present</p>
+                    <ul>
+                        <li>Currently gaining hands-on experience in AWS Cloud fundamentals.</li>
+                        <li>Worked on cloud service models and deployment models.</li>
+                        <li>Launched and managed AWS EC2 instances, with secure login using PuTTY.</li>
+                        <li>Explored operating system environments on AWS.</li>
+                        <li>Building strong foundations in Cloud Computing and DevOps practices.</li>
                         <a href="https://drive.google.com/file/d/16xnG4n_PsB3ufpL8jzu_vaWuaCaFg46u/view?usp=sharing" class="academic-link">(View offer Letter)</a>
-                    </div>
+                    </ul>
                 </div>
             </div>
         </section>
