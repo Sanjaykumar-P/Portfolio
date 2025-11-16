@@ -3,31 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanjaykumar P - Cybersecurity Passionate</title>
+    <title>Sanjaykumar P | Cybersecurity & Cloud Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <style>
         :root {
-            --primary: #4a6fff;
-            --secondary: #2ecc71;
-            --accent: #ff6b6b;
-            --dark: #1e293b;
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7e22ce;
+            --accent: #06b6d4;
+            --dark: #0f172a;
+            --darker: #020617;
             --light: #f8fafc;
-            --text: #333333;
-            --border: #e0e0e0;
-            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            --cloud-gradient: linear-gradient(135deg, #4facfe, #00f2fe);
-            --linux-gradient: linear-gradient(135deg, #11998e, #38ef7d);
-            --cyber-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            --linkedin-color: #0e76a8;
+            --text: #334155;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --card-bg: #ffffff;
+            --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --section-padding: 6rem 1.5rem;
+            --container-max-width: 1200px;
+            --gradient-primary: linear-gradient(135deg, var(--primary), var(--secondary));
+            --gradient-dark: linear-gradient(135deg, var(--dark), var(--darker));
+            --gradient-accent: linear-gradient(135deg, var(--accent), var(--primary));
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Georgia, "Times New Roman", serif;
-            transition: all 0.3s ease;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
@@ -40,224 +44,106 @@
 
         h1, h2, h3, h4, h5, h6 {
             font-weight: 700;
-            font-family: Georgia, "Times New Roman", serif;
+            color: var(--dark);
+            line-height: 1.2;
         }
 
-        .floating-icons {
+        .container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: var(--section-padding);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-primary);
+            margin: 0.8rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Header & Navigation */
+        header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .floating-icon {
-            position: absolute;
-            opacity: 0.1;
-            animation: float 15s infinite linear;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); }
-            100% { transform: translateY(-100vh) rotate(360deg); }
-        }
-
-        /* WhatsApp Floating Button */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
             z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
-            animation: pulse-whatsapp 2s infinite;
         }
 
-        .whatsapp-float:hover {
-            background-color: #128C7E;
-            transform: scale(1.1);
-            animation: none;
-        }
-
-        @keyframes pulse-whatsapp {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-
-        .whatsapp-text {
-            position: fixed;
-            bottom: 105px;
-            right: 40px;
-            background-color: #25d366;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            z-index: 1000;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-            pointer-events: none;
-            white-space: nowrap;
-        }
-
-        .whatsapp-float:hover + .whatsapp-text {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* LinkedIn Floating Button */
-        .linkedin-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 120px;
-            right: 40px;
-            background-color: var(--linkedin-color);
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            animation: pulse-linkedin 2s infinite;
-        }
-
-        .linkedin-float:hover {
-            background-color: #0d5d8a;
-            transform: scale(1.1);
-            animation: none;
-        }
-
-        @keyframes pulse-linkedin {
-            0% { box-shadow: 0 0 0 0 rgba(14, 118, 168, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(14, 118, 168, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(14, 118, 168, 0); }
-        }
-
-        .linkedin-text {
-            position: fixed;
-            bottom: 185px;
-            right: 40px;
-            background-color: var(--linkedin-color);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            z-index: 1000;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-            pointer-events: none;
-            white-space: nowrap;
-        }
-
-        .linkedin-float:hover + .linkedin-text {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: var(--light);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-            z-index: 1000;
-            padding: 1rem 0;
+        header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem 0;
         }
 
-        .nav-logo {
+        .logo {
             font-weight: 700;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             color: var(--dark);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 0.5rem;
         }
 
-        .nav-logo i {
+        .logo span {
             color: var(--primary);
-            animation: bounce 2s infinite ease-in-out;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            align-items: center;
-        }
-
-        .nav-links li {
-            margin-left: 1.5rem;
+            gap: 2rem;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--text);
             font-weight: 500;
-            padding: 0.5rem 0;
             position: relative;
-            font-family: Georgia, "Times New Roman", serif;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
             color: var(--primary);
         }
 
-        .nav-links a:after {
+        .nav-links a::after {
             content: '';
             position: absolute;
             width: 0;
             height: 2px;
-            bottom: 0;
+            bottom: -5px;
             left: 0;
             background-color: var(--primary);
             transition: width 0.3s;
         }
 
-        .nav-links a:hover:after {
+        .nav-links a:hover::after {
             width: 100%;
         }
 
@@ -266,293 +152,358 @@
             font-size: 1.5rem;
             color: var(--dark);
             cursor: pointer;
-            padding: 1rem;
         }
 
-        section {
-            padding: 6rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--dark);
-            position: relative;
-            font-family: Georgia, "Times New Roman", serif;
-        }
-
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--primary);
-            margin: 0.8rem auto 0;
-            border-radius: 2px;
-        }
-
+        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 2rem;
             position: relative;
-            padding-top: 120px;
+            overflow: hidden;
+            background: var(--gradient-dark);
+            color: white;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="none"><polygon fill="rgba(255,255,255,0.03)" points="0,1000 1000,0 1000,1000"/></svg>');
+            background-size: cover;
         }
 
         .hero-content {
-            max-width: 800px;
             position: relative;
             z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
         }
 
-        .profile-photo-container {
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .hero-title span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             position: relative;
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 2rem;
         }
 
-        .profile-photo {
+        .profile-container {
+            position: relative;
+            width: 350px;
+            height: 350px;
+        }
+
+        .profile-image {
             width: 100%;
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--primary);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
             position: relative;
             z-index: 2;
         }
 
-        .profile-photo-frame {
+        .floating-tech {
             position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            border: 2px solid var(--secondary);
-            z-index: 1;
-            animation: pulse 2s infinite ease-in-out;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.7; }
-            50% { transform: scale(1.05); opacity: 1; }
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
-            line-height: 1.2;
-        }
-
-        .hero h1 span {
-            color: var(--primary);
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text);
-            opacity: 0.9;
-            margin-bottom: 1rem;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        .hero-btn {
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 0.8rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero-btn.hire-me {
-            background: var(--accent);
-            color: white;
-        }
-
-        .hero-btn.view-resume {
-            background: var(--primary);
-            color: white;
-        }
-
-        .hero-btn.download-resume {
-            background: var(--secondary);
-            color: white;
-        }
-
-        .hero-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .tech-showcase {
-            display: flex;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .tech-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .tech-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .tech-icon {
-            font-size: 3rem;
+            background: var(--card-bg);
+            box-shadow: var(--card-shadow);
+            font-size: 1.5rem;
             color: var(--primary);
-            margin-bottom: 0.5rem;
+            animation: float 6s ease-in-out infinite;
         }
 
-        .tech-item span {
-            font-size: 0.9rem;
-            color: var(--text);
-            font-weight: 500;
+        .floating-tech:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
         }
 
-        .profile-summary {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 2rem;
+        .floating-tech:nth-child(2) {
+            top: 10%;
+            right: 10%;
+            animation-delay: 1s;
+        }
+
+        .floating-tech:nth-child(3) {
+            bottom: 20%;
+            left: 5%;
+            animation-delay: 2s;
+        }
+
+        .floating-tech:nth-child(4) {
+            bottom: 10%;
+            right: 15%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Expertise Section */
+        .expertise {
             background: var(--light);
-            border-radius: 15px;
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 1;
-            border: 1px solid var(--border);
-            box-shadow: var(--card-shadow);
-        }
-
-        .open-to-work-badge {
-            background-color: #d4fcd7;
-            color: #256029;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 1rem;
-            font-size: 1.1rem;
-            box-shadow: var(--card-shadow);
         }
 
         .expertise-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
         }
 
         .expertise-card {
-            background: var(--light);
-            border-radius: 15px;
+            background: var(--card-bg);
+            border-radius: 16px;
             padding: 2.5rem 2rem;
             box-shadow: var(--card-shadow);
-            border: 1px solid var(--border);
             transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            border: 1px solid var(--border);
         }
 
         .expertise-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .cloud-expertise-card {
-            background: var(--cloud-gradient);
-            color: white;
-        }
-
-        .linux-expertise-card {
-            background: var(--linux-gradient);
-            color: white;
-        }
-
-        .cyber-expertise-card {
-            background: var(--cyber-gradient);
-            color: white;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
 
         .expertise-icon {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .cloud-expertise-card .expertise-icon,
-        .linux-expertise-card .expertise-icon,
-        .cyber-expertise-card .expertise-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            font-size: 2rem;
             color: white;
         }
 
         .expertise-card h3 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
         .expertise-card p {
+            color: var(--text-light);
             margin-bottom: 1.5rem;
-            font-size: 1.1rem;
         }
 
-        .expertise-tools {
+        .expertise-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.8rem;
-            margin: 1.5rem 0;
+            gap: 0.5rem;
             justify-content: center;
         }
 
-        .expertise-tool {
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--light);
-            border-radius: 10px;
-            font-size: 1.2rem;
+        .tag {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Education & Experience */
+        .education, .experience {
+            background: var(--card-bg);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background: var(--border);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 100%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            padding-right: calc(50% + 2rem);
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: calc(50% + 2rem);
+        }
+
+        .timeline-content {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
             box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+            position: relative;
         }
 
-        .cloud-expertise-card .expertise-tool,
-        .linux-expertise-card .expertise-tool,
-        .cyber-expertise-card .expertise-tool {
-            background: rgba(255, 255, 255, 0.2);
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -3rem;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -3rem;
+        }
+
+        .timeline-date {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content ul {
+            padding-left: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .timeline-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: var(--light);
         }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
 
         .skill-category {
-            background: var(--light);
-            border-radius: 15px;
+            background: var(--card-bg);
+            border-radius: 12px;
             padding: 2rem;
             box-shadow: var(--card-shadow);
             border: 1px solid var(--border);
@@ -564,56 +515,58 @@
             transform: translateY(-5px);
         }
 
-        .skill-category h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
-        }
-
         .skill-icon {
             font-size: 3rem;
             color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .skill-category h3 {
             margin-bottom: 1.5rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        /* Projects Section - No Images */
+        .projects {
+            background: var(--card-bg);
         }
 
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
         }
 
         .project-card {
-            background: var(--light);
-            border-radius: 15px;
+            background: var(--card-bg);
+            border-radius: 16px;
             box-shadow: var(--card-shadow);
-            transition: transform 0.4s, box-shadow 0.4s;
+            transition: transform 0.3s, box-shadow 0.3s;
             border: 1px solid var(--border);
             display: flex;
             flex-direction: column;
-            height: 100%;
+            padding: 2rem;
         }
 
         .project-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-content {
-            padding: 1.8rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
 
         .project-content h3 {
-            font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: var(--dark);
+            font-size: 1.4rem;
         }
 
         .project-content p {
+            color: var(--text-light);
             margin-bottom: 1.5rem;
-            color: var(--text);
             flex-grow: 1;
         }
 
@@ -624,24 +577,15 @@
             margin-bottom: 1.5rem;
         }
 
-        .project-tag {
-            background: rgba(74, 111, 255, 0.1);
-            color: var(--primary);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
         .project-links {
             display: flex;
-            gap: 1rem;
+            gap: 0.8rem;
         }
 
         .project-link {
             flex: 1;
             text-align: center;
-            padding: 0.8rem 1rem;
+            padding: 0.7rem;
             background: var(--primary);
             color: white;
             border-radius: 8px;
@@ -651,164 +595,191 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
+            transition: background 0.3s;
         }
 
         .project-link:hover {
-            background: #3a5bff;
-            transform: translateY(-3px);
+            background: var(--primary-dark);
         }
 
-        .project-link.live {
-            background: var(--secondary);
+        .project-link.github {
+            background: var(--dark);
         }
 
-        .project-link.live:hover {
-            background: #27ae60;
+        .project-link.github:hover {
+            background: #1a1a1a;
         }
 
-        .certification-list, .offer-letter-list {
-            list-style: none;
+        /* Certifications Section - No Icons */
+        .certifications {
             background: var(--light);
-            border-radius: 15px;
-            padding: 2rem;
+        }
+
+        .certification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .certification-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
             box-shadow: var(--card-shadow);
             border: 1px solid var(--border);
+            transition: transform 0.3s;
         }
 
-        .certification-list li, .offer-letter-list li {
-            padding: 1.2rem;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-            font-size: 1.1rem;
-            justify-content: space-between;
+        .certification-card:hover {
+            transform: translateY(-5px);
         }
 
-        .certification-list li:last-child, .offer-letter-list li:last-child {
-            border-bottom: none;
+        .certification-info h3 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
         }
 
-        .certification-list i, .offer-letter-list i {
-            color: var(--primary);
-            font-size: 1.3rem;
-        }
-
-        .certificate-actions, .offer-letter-actions {
-            display: flex;
-            gap: 0.8rem;
-        }
-
-        .certificate-btn, .offer-letter-btn {
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .certification-info p {
+            color: var(--text-light);
             font-size: 0.9rem;
-        }
-
-        .certificate-btn.view, .offer-letter-btn.view {
-            background: var(--primary);
-            color: white;
-        }
-
-        .certificate-btn.download, .offer-letter-btn.download {
-            background: var(--secondary);
-            color: white;
-        }
-
-        .certificate-btn:hover, .offer-letter-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-section {
-            background: var(--light);
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-            border: 1px solid var(--border);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .contact-icon {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .contact-icon i {
-            font-size: 4rem;
-            color: var(--primary);
-            background: rgba(74, 111, 255, 0.1);
-            width: 100px;
-            height: 100px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
             margin-bottom: 1rem;
         }
 
-        .contact-icon h3 {
-            font-size: 1.8rem;
-            color: var(--dark);
+        .certification-action {
+            text-align: right;
         }
 
-        .contact-form {
-            width: 100%;
+        /* Contact Section */
+        .contact {
+            background: var(--gradient-dark);
+            color: white;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact .section-title::after {
+            background: var(--gradient-accent);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
         }
 
-        .form-group {
+        .contact-item {
             display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            color: white;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-details p {
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
         }
 
         .form-group label {
-            font-weight: 600;
-            color: var(--dark);
+            display: block;
+            margin-bottom: 0.5rem;
+            color: white;
+            font-weight: 500;
         }
 
         .form-group input,
         .form-group textarea {
-            padding: 1rem;
-            border: 1px solid var(--border);
+            width: 100%;
+            padding: 0.8rem 1rem;
             border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
             font-size: 1rem;
-            font-family: Georgia, "Times New Roman", serif;
-            transition: all 0.3s;
+            transition: border 0.3s;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(74, 111, 255, 0.2);
+            border-color: var(--accent);
         }
 
         .form-group textarea {
-            min-height: 150px;
+            min-height: 120px;
             resize: vertical;
         }
 
         .submit-btn {
-            padding: 1rem 2rem;
-            background: var(--primary);
+            width: 100%;
+            background: var(--gradient-accent);
             color: white;
             border: none;
+            padding: 0.8rem;
             border-radius: 8px;
-            font-size: 1.1rem;
             font-weight: 600;
+            font-size: 1rem;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: transform 0.3s;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -816,186 +787,229 @@
         }
 
         .submit-btn:hover {
-            background: #3a5bff;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .contact-links {
+        /* Footer */
+        footer {
+            background: var(--darker);
+            color: white;
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
             display: flex;
             justify-content: center;
-            gap: 2.5rem;
-            margin-top: 3rem;
+            gap: 2rem;
+            margin-bottom: 2rem;
             flex-wrap: wrap;
         }
 
-        .contact-links a {
-            font-size: 1.6rem;
-            color: var(--dark);
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
-            font-weight: 500;
+            transition: color 0.3s;
         }
 
-        .contact-links a:hover {
-            color: var(--primary);
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Floating Action Buttons */
+        .floating-actions {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 100;
+        }
+
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .floating-btn:hover {
             transform: scale(1.1);
         }
 
-        .contact-info {
-            text-align: center;
-            margin-top: 2rem;
-            font-size: 1.2rem;
-            color: var(--text);
+        .floating-btn.whatsapp {
+            background: #25D366;
         }
 
-        .last-updated {
-            text-align: center;
-            margin-top: 3rem;
-            color: var(--text);
-            opacity: 0.7;
-            font-size: 1rem;
+        .floating-btn.linkedin {
+            background: #0A66C2;
         }
 
-        .footer {
+        .floating-btn.resume {
+            background: var(--primary);
+        }
+
+        .tooltip {
+            position: absolute;
+            right: 70px;
             background: var(--dark);
-            color: var(--light);
-            padding: 2rem;
-            text-align: center;
-            margin-top: 3rem;
-        }
-        
-        .footer p {
-            font-size: 1rem;
-            opacity: 0.8;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
         }
 
-        /* Education grid */
-        .education-grid {
+        .floating-btn:hover .tooltip {
+            opacity: 1;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Workshops Section */
+        .workshops {
+            background: var(--card-bg);
+        }
+
+        .workshops-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 2rem;
-        }
-
-        .education-card {
-            background: var(--light);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-            border: 1px solid var(--border);
-        }
-
-        .education-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .education-card p {
-            margin-bottom: 0.8rem;
-        }
-
-        .education-card ul {
-            padding-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .education-card li {
-            margin-bottom: 0.5rem;
-        }
-
-        .academic-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .academic-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Resume Section */
-        .resume-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-            padding: 2rem;
-            background: var(--light);
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-            border: 1px solid var(--border);
-        }
-
-        .resume-buttons {
-            display: flex;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1.5rem;
         }
 
-        .resume-btn {
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
+        .workshop-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+            transition: transform 0.3s;
         }
 
-        .resume-btn.view {
-            background: var(--primary);
-            color: white;
-        }
-
-        .resume-btn.download {
-            background: var(--secondary);
-            color: white;
-        }
-
-        .resume-btn:hover {
+        .workshop-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
-        /* Services CTA Section */
-        .services-cta {
-            text-align: center;
-            margin-top: 3rem;
-            padding: 0 2rem;
+        .workshop-info h3 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
         }
-        
-        .services-cta p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+
+        .workshop-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .workshop-action {
+            text-align: right;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: var(--light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-quote {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
             color: var(--text);
         }
-        
-        .contact-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 1rem 2.5rem;
-            background: var(--primary);
-            color: white;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(74, 111, 255, 0.3);
-        }
-        
-        .contact-btn:hover {
-            background: #3a5bff;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(74, 111, 255, 0.4);
+
+        .testimonial-quote:before {
+            content: """;
+            font-size: 3rem;
+            color: var(--primary);
+            opacity: 0.2;
+            position: absolute;
+            top: -1rem;
+            left: -0.5rem;
         }
 
-        /* Resume Modal Styles */
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .testimonial-author-info h4 {
+            margin-bottom: 0.2rem;
+            color: var(--dark);
+        }
+
+        .testimonial-author-info p {
+            color: var(--text-light);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Resume Modal */
         .modal {
             display: none;
             position: fixed;
@@ -1054,629 +1068,133 @@
             margin-top: 20px;
         }
 
-        /* Project Summary Styles */
-        .project-summary {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .project-summary-icon {
-            font-size: 4rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .project-summary h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
-        }
-
-        .project-summary p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        /* LinkedIn Integration Styles */
-        .linkedin-badge {
-            margin-top: 2rem;
-            display: flex;
-            justify-content: center;
-        }
-
-        .linkedin-badge iframe {
-            border-radius: 8px;
-            box-shadow: var(--card-shadow);
-        }
-
-        .linkedin-integration {
-            background: var(--light);
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: var(--card-shadow);
-            border: 1px solid var(--border);
-            margin-bottom: 2rem;
-        }
-
-        .linkedin-integration h3 {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
-        }
-
-        .linkedin-integration-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .linkedin-profile {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: var(--card-shadow);
-            width: 100%;
-            max-width: 400px;
-        }
-
-        .linkedin-profile img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .linkedin-profile-info {
-            flex-grow: 1;
-        }
-
-        .linkedin-profile-info h4 {
-            margin-bottom: 0.3rem;
-            color: var(--dark);
-        }
-
-        .linkedin-profile-info p {
-            margin-bottom: 0.5rem;
-            color: var(--text);
-            font-size: 0.9rem;
-        }
-
-        .linkedin-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: #0e76a8;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-
-        .linkedin-btn:hover {
-            background: #0d5d8a;
-            transform: translateY(-2px);
-        }
-
-        /* Testimonials Section */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: var(--light);
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: var(--card-shadow);
-            border: 1px solid var(--border);
-            position: relative;
-            transition: transform 0.3s;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .testimonial-quote {
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        .testimonial-quote:before {
-            content: """;
-            font-size: 3rem;
-            color: var(--primary);
-            opacity: 0.2;
-            position: absolute;
-            top: -1rem;
-            left: -0.5rem;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .testimonial-author img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .testimonial-author-info h4 {
-            margin-bottom: 0.2rem;
-            color: var(--dark);
-        }
-
-        .testimonial-author-info p {
-            color: var(--text);
-            opacity: 0.7;
-            font-size: 0.9rem;
-        }
-
-        /* NEW ANIMATIONS */
-        .zoom-in {
-            opacity: 0;
-            transform: scale(0.9);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .zoom-in.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .zoom-out {
-            opacity: 0;
-            transform: scale(1.1);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .zoom-out.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .fade-in-up.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .fade-in-down {
-            opacity: 0;
-            transform: translateY(-30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .fade-in-down.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .slide-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .slide-in-left.active {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .slide-in-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .slide-in-right.active {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .bounce-in {
-            opacity: 0;
-            transform: scale(0.3);
-            transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .bounce-in.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .flip-in {
-            opacity: 0;
-            transform: rotateY(90deg);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .flip-in.active {
-            opacity: 1;
-            transform: rotateY(0);
-        }
-
-        .pulse-once {
-            animation: pulse-once 0.5s ease-in-out;
-        }
-
-        @keyframes pulse-once {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .color-shift {
-            animation: color-shift 5s infinite alternate;
-        }
-
-        @keyframes color-shift {
-            0% { filter: hue-rotate(0deg); }
-            100% { filter: hue-rotate(45deg); }
-        }
-
-        /* Enhanced hover effects */
-        .project-card {
-            overflow: hidden;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: left 0.7s;
-        }
-
-        .project-card:hover::before {
-            left: 100%;
-        }
-
-        /* Enhanced button animations */
-        .hero-btn, .project-link, .certificate-btn, .submit-btn {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-btn::after, .project-link::after, .certificate-btn::after, .submit-btn::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: left 0.7s;
-        }
-
-        .hero-btn:hover::after, .project-link:hover::after, .certificate-btn:hover::after, .submit-btn:hover::after {
-            left: 100%;
-        }
-
         /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                width: 100%;
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
                 text-align: center;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                background: var(--light);
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                padding: 1rem 0;
             }
 
-            .nav-links.active {
-                display: flex;
+            .hero-visual {
+                order: -1;
             }
 
-            .nav-links li {
-                margin: 0.5rem 0;
+            .profile-container {
+                width: 280px;
+                height: 280px;
             }
 
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
             }
 
-            .hero {
-                padding-top: 140px;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .hero-btn {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
                 width: 100%;
-                max-width: 300px;
-                justify-content: center;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            section {
-                padding: 5rem 1.5rem;
-            }
-
-            .profile-summary {
+                background: white;
+                flex-direction: column;
                 padding: 1.5rem;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: transform 0.3s, opacity 0.3s;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding: 0 0 0 4rem;
+                text-align: left;
+            }
+
+            .timeline-content::before {
+                left: -2.5rem;
             }
 
             .project-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .resume-buttons {
-                flex-direction: column;
-            }
-            
-            .certificate-actions, .offer-letter-actions {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-            
-            .contact-section {
-                padding: 1.5rem;
-            }
-            
-            .contact-icon i {
-                width: 80px;
-                height: 80px;
-                font-size: 3rem;
-            }
-            
-            .contact-icon h3 {
-                font-size: 1.5rem;
-            }
-            
-            .services-cta p {
-                font-size: 1rem;
-            }
-            
-            .education-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .certification-list li, .offer-letter-list li {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
-            
-            .project-links {
-                flex-direction: column;
-            }
-            
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-form {
-                gap: 1rem;
-            }
-            
-            .modal-content {
-                width: 95%;
-                height: 85%;
-                margin: 5% auto;
-            }
-            
-            /* WhatsApp button responsive */
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
-                font-size: 24px;
-            }
-            
-            .whatsapp-text {
-                bottom: 75px;
-                right: 20px;
-                font-size: 12px;
-                padding: 6px 10px;
+
+            .hero-title {
+                font-size: 2.2rem;
             }
 
-            /* LinkedIn button responsive */
-            .linkedin-float {
-                width: 50px;
-                height: 50px;
-                bottom: 90px;
-                right: 20px;
-                font-size: 24px;
-            }
-            
-            .linkedin-text {
-                bottom: 145px;
-                right: 20px;
-                font-size: 12px;
-                padding: 6px 10px;
-            }
-
-            .project-summary-icon {
-                font-size: 3rem;
-            }
-
-            .project-summary h3 {
-                font-size: 1.5rem;
-            }
-
-            .project-summary p {
-                font-size: 1.1rem;
+            .section-title {
+                font-size: 2rem;
             }
         }
 
-        @media (max-width: 480px) {
-            .nav-links {
-                flex-wrap: wrap;
+        @media (max-width: 576px) {
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 250px;
                 justify-content: center;
             }
 
-            .nav-links li {
-                margin: 0.5rem;
+            .profile-container {
+                width: 220px;
+                height: 220px;
             }
 
-            .hero {
-                padding-top: 120px;
+            .floating-tech {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
             }
 
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .resume-buttons {
-                width: 100%;
-            }
-            
-            .resume-btn {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .profile-photo-container {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .education-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .certificate-actions, .offer-letter-actions {
-                flex-direction: column;
-            }
-            
-            .contact-links {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-            
-            .contact-links a {
-                font-size: 1.4rem;
-            }
-            
-            .modal-content {
-                width: 95%;
-                height: 80%;
-                margin: 10% auto;
-                padding: 10px;
-            }
-            
-            .close-modal {
-                top: 5px;
-                right: 15px;
-                font-size: 30px;
-            }
-            
-            /* WhatsApp button responsive */
-            .whatsapp-float {
-                width: 45px;
-                height: 45px;
-                bottom: 15px;
-                right: 15px;
-                font-size: 22px;
-            }
-            
-            .whatsapp-text {
-                bottom: 65px;
-                right: 15px;
-                font-size: 11px;
-                padding: 5px 8px;
+            .floating-actions {
+                bottom: 1rem;
+                right: 1rem;
             }
 
-            /* LinkedIn button responsive */
-            .linkedin-float {
-                width: 45px;
-                height: 45px;
-                bottom: 75px;
-                right: 15px;
-                font-size: 22px;
-            }
-            
-            .linkedin-text {
-                bottom: 125px;
-                right: 15px;
-                font-size: 11px;
-                padding: 5px 8px;
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Floating Tech Icons -->
-    <div class="floating-icons" id="floatingIcons"></div>
-    
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/918072414579?text=Hi%20Sanjaykumar,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you." class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-    <div class="whatsapp-text">Message me on WhatsApp</div>
-    
-    <!-- LinkedIn Floating Button -->
-    <a href="https://linkedin.com/in/sanjaykumar77" class="linkedin-float" target="_blank">
-        <i class="fab fa-linkedin"></i>
-    </a>
-    <div class="linkedin-text">Connect on LinkedIn</div>
-    
-    <!-- Resume Modal -->
-    <div id="resumeModal" class="modal">
-        <span class="close-modal">&times;</span>
-        <div class="modal-content">
-            <div class="resume-container">
-                <iframe src="Sanjaykumar P Resume Cloud Engineer.pdf" class="resume-iframe" id="resumeIframe"></iframe>
-            </div>
-            <div class="resume-download-container">
-                <a href="Sanjaykumar P Resume Cloud Engineer.pdf" download="Sanjaykumar P Resume Cloud Engineer.pdf" class="hero-btn download-resume">
-                    <i class="fas fa-download"></i> Download Resume
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Content -->
-    <div class="main-content">
-        <nav>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
             <div class="nav-container">
-                <a href="#home" class="nav-logo">
-                    <i class="fas fa-laptop-code"></i> Sanjaykumar P
+                <a href="#home" class="logo">
+                    <i class="fas fa-shield-alt"></i> Sanjay<span>kumar</span>
                 </a>
-                <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-                <ul class="nav-links">
+                
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <ul class="nav-links" id="navLinks">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#expertise">Expertise</a></li>
                     <li><a href="#education">Education</a></li>
@@ -1684,273 +1202,288 @@
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#certifications">Certifications</a></li>
-                    <li><a href="#Workshops">Workshops</a></li>
+                    <li><a href="#workshops">Workshops</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-        </nav>
+        </div>
+    </header>
 
-        <section id="home" class="hero">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
             <div class="hero-content">
-                <div class="profile-photo-container zoom-in">
-                    <img src="profile.jpg" alt="Sanjaykumar P" class="profile-photo">
-                    <div class="profile-photo-frame"></div>
-                </div>
-                <h1 class="fade-in-up">👋 Hii, I'm <span>Sanjaykumar P</span></h1>
-                <p class="fade-in-up">Dream is not that which you see while sleeping, it is something that does not let you sleep</p>
-                
-                <div class="profile-summary fade-in-up">
-                    <p>I have completed my B.Sc. in Computer Science and chosen to begin my career in DevOps and Cloud Engineering. I am actively building my skills in Linux Administration, AWS, Python, and CI/CD tools while gaining hands-on experience with automation, containerization, and network fundamentals. My goal is to grow as a DevOps professional, combining technical expertise with problem-solving to deliver scalable, efficient, and reliable solutions.</p>
-                </div>
-                
-                <!-- Open to Work badge -->
-                <div class="open-to-work-badge bounce-in">
-                    💼 Open to Work
-                </div>
-                
-                <div class="hero-buttons">
-                    <a href="#contact" class="hero-btn hire-me fade-in-up">
-                        <i class="fas fa-briefcase"></i> Hire Me
-                    </a>
-                    <a href="Sanjaykumar P Resume Cloud Engineer.pdf" class="hero-btn view-resume fade-in-up" id="viewResumeBtn">
-                        <i class="fas fa-eye"></i> View Resume
-                    </a>
-                    <a href="Sanjaykumar P Resume Cloud Engineer.pdf" download="Sanjaykumar_P Resume.pdf" class="hero-btn download-resume fade-in-up">
-                        <i class="fas fa-download"></i> Download Resume
-                    </a>
-                </div>
-
-                <!-- Tech Showcase in Hero -->
-                <div class="tech-showcase">
-                    <div class="tech-item fade-in-up">
-                        <div class="tech-icon">
-                            <i class="devicon-linux-plain colored"></i>
-                        </div>
-                        <span>Linux</span>
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <i class="fas fa-briefcase"></i> Open to Work
                     </div>
-                    <div class="tech-item fade-in-up">
-                        <div class="tech-icon">
-                            <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
-                        </div>
-                        <span>AWS</span>
+                    <h1 class="hero-title">Cybersecurity & <span>Cloud Engineer</span></h1>
+                    <p class="hero-description">
+                        Passionate about building secure, scalable cloud infrastructure and protecting digital assets. 
+                        Specializing in AWS, Linux administration, and cybersecurity practices.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Get In Touch
+                        </a>
+                        <a href="#projects" class="btn btn-secondary">
+                            <i class="fas fa-code"></i> View Projects
+                        </a>
+                        <a href="Sanjaykumar P Resume Cloud Engineer.pdf" download class="btn btn-secondary">
+                            <i class="fas fa-download"></i> Download Resume
+                        </a>
                     </div>
-                    <div class="tech-item fade-in-up">
-                        <div class="tech-icon">
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="profile-container">
+                        <img src="profile.jpg" alt="Sanjaykumar P" class="profile-image">
+                        <div class="floating-tech">
+                            <i class="devicon-amazonwebservices-plain"></i>
+                        </div>
+                        <div class="floating-tech">
+                            <i class="devicon-linux-plain"></i>
+                        </div>
+                        <div class="floating-tech">
                             <i class="fas fa-network-wired"></i>
                         </div>
-                        <span>CCNA</span>
-                    </div>
-                </div>
-
-                <!-- LinkedIn Integration -->
-                <div class="linkedin-badge fade-in-up">
-                    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-                    <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="VERTICAL" data-vanity="sanjaykumar77" data-version="v1">
-                        <a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/sanjaykumar77?trk=profile-badge"></a>
+                        <div class="floating-tech">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="expertise">
+    <!-- Expertise Section -->
+    <section id="expertise" class="expertise">
+        <div class="container">
             <h2 class="section-title">Technical Expertise</h2>
             <div class="expertise-grid">
-                <div class="expertise-card cloud-expertise-card slide-in-left">
+                <div class="expertise-card fade-in">
                     <div class="expertise-icon">
                         <i class="fas fa-cloud"></i>
                     </div>
                     <h3>Cloud Solutions & Services</h3>
                     <p>Comprehensive cloud solutions including infrastructure setup, deployment, and management on AWS and other cloud platforms.</p>
-                    
-                    <div class="expertise-tools">
-                        <div class="expertise-tool">
-                            <i class="devicon-amazonwebservices-plain colored"></i>
-                        </div>
-                        <div class="expertise-tool">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <div class="expertise-tool">
-                            <i class="fas fa-database"></i>
-                        </div>
+                    <div class="expertise-tags">
+                        <span class="tag">AWS</span>
+                        <span class="tag">EC2</span>
+                        <span class="tag">S3</span>
+                        <span class="tag">CloudFront</span>
                     </div>
                 </div>
                 
-                <div class="expertise-card linux-expertise-card slide-in-right">
+                <div class="expertise-card fade-in">
                     <div class="expertise-icon">
                         <i class="fas fa-terminal"></i>
                     </div>
                     <h3>Linux Administration</h3>
                     <p>Expert Linux server administration, configuration, and maintenance for optimal performance and security.</p>
-                    
-                    <div class="expertise-tools">
-                        <div class="expertise-tool">
-                            <i class="devicon-linux-plain colored"></i>
-                        </div>
-                        <div class="expertise-tool">
-                            <i class="devicon-redhat-plain colored"></i>
-                        </div>
-                        <div class="expertise-tool">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
+                    <div class="expertise-tags">
+                        <span class="tag">RHEL</span>
+                        <span class="tag">Bash Scripting</span>
+                        <span class="tag">System Administration</span>
                     </div>
                 </div>
-
-                <div class="expertise-card cyber-expertise-card bounce-in">
+                
+                <div class="expertise-card fade-in">
                     <div class="expertise-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3>Cybersecurity</h3>
                     <p>Passionate about cybersecurity with focus on network security, vulnerability assessment, and implementing security best practices.</p>
-                    
-                    <div class="expertise-tools">
-                        <div class="expertise-tool">
-                            <i class="fas fa-user-secret"></i>
-                        </div>
-                        <div class="expertise-tool">
-                            <i class="fas fa-lock"></i>
-                        </div>
-                        <div class="expertise-tool">
-                            <i class="fas fa-network-wired"></i>
-                        </div>
+                    <div class="expertise-tags">
+                        <span class="tag">Network Security</span>
+                        <span class="tag">IAM</span>
+                        <span class="tag">Security Practices</span>
                     </div>
                 </div>
             </div>
-            
-            <!-- Services CTA Section -->
-            <div class="services-cta fade-in-up">
-                <p>If you're interested in connecting, collaborating, or learning more about my work, feel free to reach out using the form below.</p>
-                <a href="#contact" class="contact-btn">
-                    <i class="fas fa-envelope"></i> Contact Me Now
-                </a>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="education">
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
             <h2 class="section-title">Education</h2>
-            <div class="education-grid">
-                <div class="education-card fade-in-up">
-                    <h3>Cloud Computing Master Training</h3>
-                    <p><strong>Besant Technologies</strong> | May 2025– Present</p>
-                    <ul>
-                        <li>Actively Building my skills on Devops Tools.</li>
-                        <li>Completed AWS Cloud Practioner by Udemy with hands on Practices in IAM,EC2,ASG , ELB,VPC,CloudFront,CloudFormation.</li>
-                        <li>Completed CCNA (Cisco Certified Network Associate), with a focus on routing, switching, and network troubleshooting.</li>
-                        <li>Completed Linux Administration training on RHEL Distribution.Completed Linux Administration training with practical labs</li>
-                    </ul>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022 - 2025</span>
+                        <h3>B.Sc. in Computer Science</h3>
+                        <p><strong>Kongu Arts and Science College, Erode</strong></p>
+                        <p><strong>GPA:</strong> 8.01 / 10.0</p>
+                        <p><strong>Coursework:</strong></p>
+                        <ul>
+                            <li>Operating Systems</li>
+                            <li>Networking Fundamentals</li>
+                            <li>Digital Electronics</li>
+                            <li>Software Engineering Life Cycle</li>
+                        </ul>
+                    </div>
                 </div>
                 
-                <div class="education-card fade-in-up">
-                    <h3>B.Sc. in Computer Science</h3>
-                    <p><strong>Kongu Arts and Science College, Erode</strong> | June 2022– May 2025</p>
-                    <p><strong>GPA:</strong> 8.01 / 10.0 <a href="#" class="academic-link">(View Academic Info)</a></p>
-                    <p><strong>Coursework:</strong></p>
-                    <ul>
-                        <li>Operating Systems</li>
-                        <li>Networking Fundamentals</li>
-                        <li>Digital Electronics</li>
-                        <li>Software Engineering Life Cycle</li>
-                    </ul>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025 - Present</span>
+                        <h3>Cloud Computing Master Training</h3>
+                        <p><strong>Besant Technologies</strong></p>
+                        <ul>
+                            <li>Actively Building my skills on Devops Tools.</li>
+                            <li>Completed AWS Cloud Practioner by Udemy with hands on Practices in IAM,EC2,ASG , ELB,VPC,CloudFront,CloudFormation.</li>
+                            <li>Completed CCNA (Cisco Certified Network Associate), with a focus on routing, switching, and network troubleshooting.</li>
+                            <li>Completed Linux Administration training on RHEL Distribution.Completed Linux Administration training with practical labs</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="experience">
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
             <h2 class="section-title">Experience</h2>
-            <div class="education-grid">
-                <div class="education-card fade-in-up">
-                    <h3>Trainee Engineer</h3>
-                    <p><strong>Alethea Communications Technologies</strong> | Oct 2025 - Present</p>
-                    <p>Bengaluru, Karnataka, India · On-site</p>
-                    <ul>
-                        <li>Network Engineer with CCNA and +3 skills</li>
-                    </ul>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025 - Present</span>
+                        <h3>Trainee Engineer</h3>
+                        <p><strong>Alethea Communications Technologies</strong></p>
+                        <p>Bengaluru, Karnataka, India · On-site</p>
+                        <ul>
+                            <li>Network Engineer with CCNA and Wifi Funadamental skills</li>
+                        </ul>
+                    </div>
                 </div>
                 
-                <div class="education-card fade-in-up">
-                    <h3>DevOps Intern</h3>
-                    <p><strong>Elevate Labs</strong> | Oct 2025 - Nov 2025</p>
-                    <p>Bengaluru, Karnataka, India · Remote</p>
-                    <ul>
-                        <li>Contributed to designing and optimizing CI/CD pipelines, improving software delivery speed and reliability.</li>
-                        <li>Gained hands-on experience with cloud deployment, Docker, and Kubernetes.</li>
-                        <li>Developed automation scripts and monitoring tools to ensure system stability.</li>
-                        <li>Followed best DevOps practices with a collaborative and proactive approach.</li>
-                        <li>Eligible for a Completion Certificate and Letter of Recommendation validating practical skills.</li>
-                    </ul>
-                    <p><em>LinkedIn helped me get this job</em></p>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025</span>
+                        <h3>DevOps Intern</h3>
+                        <p><strong>Elevate Labs</strong></p>
+                        <p>Bengaluru, Karnataka, India · Remote</p>
+                        <ul>
+                            <li>Contributed to designing and optimizing CI/CD pipelines, improving software delivery speed and reliability.</li>
+                            <li>Gained hands-on experience with cloud deployment, Docker, and Kubernetes.</li>
+                            <li>Developed automation scripts and monitoring tools to ensure system stability.</li>
+                            <li>Followed best DevOps practices with a collaborative and proactive approach.</li>
+                            <li>Eligible for a Completion Certificate and Letter of Recommendation validating practical skills.</li>
+                        </ul>
+                        <p><em>LinkedIn helped me get this job</em></p>
+                    </div>
                 </div>
                 
-                <div class="education-card fade-in-up">
-                    <h3>DevOps Internship</h3>
-                    <p><strong>CoreXTech IT Services</strong> | September 2025 – Present</p>
-                    <ul>
-                        <li>Currently gaining hands-on experience in AWS Cloud fundamentals.</li>
-                        <li>Worked on cloud service models and deployment models.</li>
-                        <li>Launched and managed AWS EC2 instances, with secure login using PuTTY.</li>
-                        <li>Explored operating system environments on AWS.</li>
-                        <li>Building strong foundations in Cloud Computing and DevOps practices.</li>
-                        <a href="https://drive.google.com/file/d/16xnG4n_PsB3ufpL8jzu_vaWuaCaFg46u/view?usp=sharing" class="academic-link">(View offer Letter)</a>
-                    </ul>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025 - Present</span>
+                        <h3>DevOps Internship</h3>
+                        <p><strong>CoreXTech IT Services</strong></p>
+                        <ul>
+                            <li>Currently gaining hands-on experience in AWS Cloud fundamentals.</li>
+                            <li>Worked on cloud service models and deployment models.</li>
+                            <li>Launched and managed AWS EC2 instances, with secure login using PuTTY.</li>
+                            <li>Explored operating system environments on AWS.</li>
+                            <li>Building strong foundations in Cloud Computing and DevOps practices.</li>
+                        </ul>
+                        <a href="https://drive.google.com/file/d/16xnG4n_PsB3ufpL8jzu_vaWuaCaFg46u/view?usp=sharing" class="btn btn-primary" style="margin-top: 1rem;">
+                            <i class="fas fa-eye"></i> View Offer Letter
+                        </a>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="skills">
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
             <h2 class="section-title">Technical Skills</h2>
             <div class="skills-grid">
-                <div class="skill-category fade-in-up">
+                <div class="skill-category fade-in">
                     <div class="skill-icon">
-                        <i class="devicon-linux-plain colored"></i>
+                        <i class="devicon-linux-plain"></i>
                     </div>
                     <h3>Linux Administration</h3>
+                    <div class="skill-list">
+                        <span class="tag">RHEL</span>
+                        <span class="tag">Bash Scripting</span>
+                        <span class="tag">System Administration</span>
+                    </div>
                 </div>
                 
-                <div class="skill-category fade-in-up">
+                <div class="skill-category fade-in">
                     <div class="skill-icon">
                         <i class="fas fa-network-wired"></i>
                     </div>
                     <h3>CCNA Networking</h3>
+                    <div class="skill-list">
+                        <span class="tag">Routing</span>
+                        <span class="tag">Switching</span>
+                        <span class="tag">Network Troubleshooting</span>
+                    </div>
                 </div>
                 
-                <div class="skill-category fade-in-up">
+                <div class="skill-category fade-in">
                     <div class="skill-icon">
-                        <i class="devicon-amazonwebservices-plain colored"></i>
+                        <i class="devicon-amazonwebservices-plain"></i>
                     </div>
                     <h3>AWS Cloud</h3>
+                    <div class="skill-list">
+                        <span class="tag">EC2</span>
+                        <span class="tag">S3</span>
+                        <span class="tag">IAM</span>
+                        <span class="tag">VPC</span>
+                    </div>
                 </div>
-                <div class="skill-category fade-in-up">
+                
+                <div class="skill-category fade-in">
                     <div class="skill-icon">
-                        <i class="devicon-git-plain colored"></i>
+                        <i class="devicon-git-plain"></i>
                     </div>
                     <h3>Git</h3>
+                    <div class="skill-list">
+                        <span class="tag">Version Control</span>
+                        <span class="tag">GitHub</span>
+                    </div>
                 </div>
-                <div class="skill-category fade-in-up">
+                
+                <div class="skill-category fade-in">
                     <div class="skill-icon">
-                        <i class="fa-solid fa-infinity colored"></i>
+                        <i class="fa-solid fa-infinity"></i>
                     </div>
                     <h3>DevOps</h3>
-                </div> 
+                    <div class="skill-list">
+                        <span class="tag">CI/CD</span>
+                        <span class="tag">Automation</span>
+                        <span class="tag">Containerization</span>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- PROJECTS SECTION -->
-        <section id="projects" style="padding-top: 120px;">
+    <!-- Projects Section - No Images -->
+    <section id="projects" class="projects">
+        <div class="container">
             <h2 class="section-title">All Projects</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.2rem;" class="fade-in-up">
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.2rem; color: var(--text-light);" class="fade-in">
                 Here's a comprehensive collection of my projects showcasing my skills in DevOps, Cloud Computing, Linux Administration, and more.
             </p>
             
             <div class="project-grid">
-                <div class="project-card zoom-in">
+                <div class="project-card fade-in">
                     <div class="project-content">
                         <h3>Footstep Power Generation System - IoT</h3>
                         <p>An innovative IoT project that converts kinetic energy from human footsteps into usable electrical energy with real-time monitoring capabilities.</p>
                         <div class="project-tags">
-                            <div class="project-tag">IoT</div>
-                            <div class="project-tag">Energy Harvesting</div>
-                            <div class="project-tag">Arduino</div>
-                            <div class="project-tag">Sensor Integration</div>
+                            <span class="tag">IoT</span>
+                            <span class="tag">Energy Harvesting</span>
+                            <span class="tag">Arduino</span>
+                            <span class="tag">Sensor Integration</span>
                         </div>
                         <div class="project-links">
                             <a href="https://drive.google.com/drive/folders/1T2o3WeTfvZYoQXgGFteOMZJqJJ9KPEqi?usp=sharing" target="_blank" class="project-link">
@@ -1960,584 +1493,670 @@
                     </div>
                 </div>
                 
-                <div class="project-card zoom-in">
+                <div class="project-card fade-in">
                     <div class="project-content">
                         <h3>PortfolioBuilder-Nginx.com</h3>
                         <p>About Portfolio Builder Website – Locally hosted on Nginx in a Linux environment, with custom server files, port configuration, and secure HTTP→HTTPS (80→443) redirection. Built from scratch with HTML, CSS, and JavaScript, highlighting frontend and advanced server configuration skills</p>
                         <div class="project-tags">
-                            <div class="project-tag">Nginx Server</div>
-                            <div class="project-tag">Nginx Configuration</div>
-                            <div class="project-tag">Port Configuration</div>
-                            <div class="project-tag">HTML,CSS,JS</div>
+                            <span class="tag">Nginx Server</span>
+                            <span class="tag">Nginx Configuration</span>
+                            <span class="tag">Port Configuration</span>
+                            <span class="tag">HTML,CSS,JS</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/PortfolioBuilder-Nginx.com" target="_blank" class="project-link">
+                            <a href="https://github.com/Sanjaykumar-P/PortfolioBuilder-Nginx.com" target="_blank" class="project-link github">
                                 <i class="fab fa-github"></i> View Code
                             </a>
-                            <a href="https://sanjaykumar-p.github.io/PortfolioBuilder-Nginx.com/" class="project-link live">
+                            <a href="https://sanjaykumar-p.github.io/PortfolioBuilder-Nginx.com/" class="project-link">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="project-card zoom-in">
+                <div class="project-card fade-in">
                     <div class="project-content">
                         <h3>Linux Network Script</h3>
                         <p>A comprehensive bash script for network management that provides all networking details in a single execution.</p>
                         <div class="project-tags">
-                            <div class="project-tag">Linux</div>
-                            <div class="project-tag">Bash</div>
-                            <div class="project-tag">Networking</div>
-                            <div class="project-tag">Automation</div>
+                            <span class="tag">Linux</span>
+                            <span class="tag">Bash</span>
+                            <span class="tag">Networking</span>
+                            <span class="tag">Automation</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/networkscript.sh.git" target="_blank" class="project-link">
+                            <a href="https://github.com/Sanjaykumar-P/networkscript.sh.git" target="_blank" class="project-link github">
                                 <i class="fab fa-github"></i> View Script
                             </a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="project-card zoom-in">
+                <div class="project-card fade-in">
                     <div class="project-content">
                         <h3>Systemhealth.sh</h3>
                         <p>A shell script for automated system health monitoring that generates reports and sends them via email using cron job scheduling.</p>
                         <div class="project-tags">
-                            <div class="project-tag">Linux</div>
-                            <div class="project-tag">Bash Scripting</div>
-                            <div class="project-tag">Crontab</div>
-                            <div class="project-tag">Automation</div>
-                            <div class="project-tag">Postfix</div>
+                            <span class="tag">Linux</span>
+                            <span class="tag">Bash Scripting</span>
+                            <span class="tag">Crontab</span>
+                            <span class="tag">Automation</span>
+                            <span class="tag">Postfix</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/Systemhealth.sh.git" target="_blank" class="project-link">
+                            <a href="https://github.com/Sanjaykumar-P/Systemhealth.sh.git" target="_blank" class="project-link github">
                                 <i class="fab fa-github"></i> View Script
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card zoom-in">
+                <div class="project-card fade-in">
                     <div class="project-content">
                         <h3>Automated Backup Script</h3>
                         <p>This script is a simple and effective solution to create compressed backups of a specified directory on a Linux system. It is ideal for personal or project-level backups where keeping date-wise versions is important.</p>
                         <div class="project-tags">
-                            <div class="project-tag">Linux</div>
-                            <div class="project-tag">Bash Scripting</div>
-                            <div class="project-tag">Crontab</div>
-                            <div class="project-tag">Automation</div>
-                            <div class="project-tag">System Administration</div>
+                            <span class="tag">Linux</span>
+                            <span class="tag">Bash Scripting</span>
+                            <span class="tag">Crontab</span>
+                            <span class="tag">Automation</span>
+                            <span class="tag">System Administration</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/backupscript" target="_blank" class="project-link">
+                            <a href="https://github.com/Sanjaykumar-P/backupscript" target="_blank" class="project-link github">
                                 <i class="fab fa-github"></i> View Script
                             </a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="project-card zoom-in">
+                <div class="project-card fade-in">
                     <div class="project-content">
                         <h3>Booknow-Apache-host.com</h3>
                         <p>A web application for appointment booking hosted on Apache web server with Linux deployment. Features AI-generated code with custom server configuration.</p>
                         <div class="project-tags">
-                            <div class="project-tag">Linux</div>
-                            <div class="project-tag">Apache</div>
-                            <div class="project-tag">Web Hosting</div>
-                            <div class="project-tag">AI Development</div>
+                            <span class="tag">Linux</span>
+                            <span class="tag">Apache</span>
+                            <span class="tag">Web Hosting</span>
+                            <span class="tag">AI Development</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/Booknow-Apache-host.com" target="_blank" class="project-link">
+                            <a href="https://github.com/Sanjaykumar-P/Booknow-Apache-host.com" target="_blank" class="project-link github">
                                 <i class="fab fa-github"></i> View Code
                             </a>
-                            <a href="https://sanjaykumar-p.github.io/Booknow-Apache-host.com/" class="project-link live">
+                            <a href="https://sanjaykumar-p.github.io/Booknow-Apache-host.com/" class="project-link">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="project-card zoom-in">
+                <div class="project-card fade-in">
                     <div class="project-content">
                         <h3>Secure-IAM Access Management</h3>
                         <p>AWS IAM Access Management Project: Developed a secure access control system for an enterprise environment. Implemented user and group management, role-based policies, and fine-grained permissions. Integrated MFA and access monitoring to ensure compliance and security best practices.</p>
                         <div class="project-tags">
-                            <div class="project-tag">AWS</div>
-                            <div class="project-tag">IAM</div>
-                            <div class="project-tag">Security Practices</div>
-                            <div class="project-tag">Users</div>
-                            <div class="project-tag">User Groups</div>
-                            <div class="project-tag">IAM Roles</div>
-                            <div class="project-tag">Access Reports</div>
-                            <div class="project-tag">Credential Reports</div>
-                            <div class="project-tag">JSON Policies</div>
+                            <span class="tag">AWS</span>
+                            <span class="tag">IAM</span>
+                            <span class="tag">Security Practices</span>
+                            <span class="tag">Users</span>
+                            <span class="tag">User Groups</span>
+                            <span class="tag">IAM Roles</span>
+                            <span class="tag">Access Reports</span>
+                            <span class="tag">Credential Reports</span>
+                            <span class="tag">JSON Policies</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/IAMSecureaccess" target="_blank" class="project-link">
+                            <a href="https://github.com/Sanjaykumar-P/IAMSecureaccess" target="_blank" class="project-link github">
                                 <i class="fab fa-github"></i> View Repository
                             </a>
-                            <a href="https://github.com/Sanjaykumar-P/IAMSecureaccess/blob/main/IAM%20Secure%20Final.pdf" class="project-link live">
+                            <a href="https://github.com/Sanjaykumar-P/IAMSecureaccess/blob/main/IAM%20Secure%20Final.pdf" class="project-link">
                                 <i class="fas fa-external-link-alt"></i> View Document
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card zoom-in">
+                <div class="project-card fade-in">
                     <div class="project-content">
                         <h3>Hosting On AWS EC2 With Apache Web Server</h3>
                         <p>This project demonstrates hosting a personal portfolio on an Amazon EC2 (Free Tier) instance with Amazon Linux 2. It involved configuring an Apache web server, managing security groups, and deploying files in /var/www/html/index.html for seamless access via the instance's public IPv4.</p>
                         <div class="project-tags">
-                            <div class="project-tag">AWS</div>
-                            <div class="project-tag">Amazon EC2</div>
-                            <div class="project-tag">Security Groups</div>
-                            <div class="project-tag">Cloud Deployment</div>
-                            <div class="project-tag">Amazon Linux Administration</div>
-                            <div class="project-tag">Public IP Management</div>
+                            <span class="tag">AWS</span>
+                            <span class="tag">Amazon EC2</span>
+                            <span class="tag">Security Groups</span>
+                            <span class="tag">Cloud Deployment</span>
+                            <span class="tag">Amazon Linux Administration</span>
+                            <span class="tag">Public IP Management</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/Hosting-on-AWS-EC2-with-Apache-Web-Server.git" target="_blank" class="project-link">
+                            <a href="https://github.com/Sanjaykumar-P/Hosting-on-AWS-EC2-with-Apache-Web-Server.git" target="_blank" class="project-link github">
                                 <i class="fab fa-github"></i> View Repository
                             </a>
-                            <a href="https://github.com/Sanjaykumar-P/Hosting-on-AWS-EC2-with-Apache-Web-Server/blob/main/Amzon%20EC2%20Apache%20Web%20Server%20Project.pdf" class="project-link live">
+                            <a href="https://github.com/Sanjaykumar-P/Hosting-on-AWS-EC2-with-Apache-Web-Server/blob/main/Amzon%20EC2%20Apache%20Web%20Server%20Project.pdf" class="project-link">
                                 <i class="fas fa-external-link-alt"></i> View Document
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card zoom-in">
+                <div class="project-card fade-in">
                     <div class="project-content">
                         <h3>High Availability Web Application with AWS Elastic Load Balancer (BookNow Project)</h3>
                         <p>This project demonstrates deploying the BookNow web app on AWS EC2 instances with an Elastic Load Balancer to ensure high availability, scalability, and fault tolerance. Traffic is distributed across servers with different backgrounds (blue & black), showcasing load balancing, web hosting, and cloud deployment skills.</p>
                         <div class="project-tags">
-                            <div class="project-tag">Amazon EC2</div>
-                            <div class="project-tag">Elastic Load Balancer (ALB)</div>
-                            <div class="project-tag">High Availability & Scalability</div>
-                            <div class="project-tag">Linux Administration (Apache Web Server)</div>
-                            <div class="project-tag">AWS Security Groups & Networking</div>
+                            <span class="tag">Amazon EC2</span>
+                            <span class="tag">Elastic Load Balancer (ALB)</span>
+                            <span class="tag">High Availability & Scalability</span>
+                            <span class="tag">Linux Administration (Apache Web Server)</span>
+                            <span class="tag">AWS Security Groups & Networking</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/High-Availability-Web-Application-with-AWS-Elastic-Load-Balancer-BookNow-Project-.git" target="_blank" class="project-link">
+                            <a href="https://github.com/Sanjaykumar-P/High-Availability-Web-Application-with-AWS-Elastic-Load-Balancer-BookNow-Project-.git" target="_blank" class="project-link github">
                                 <i class="fab fa-github"></i> View Repository
                             </a>
-                            <a href="https://github.com/Sanjaykumar-P/High-Availability-Web-Application-with-AWS-Elastic-Load-Balancer-BookNow-Project-/blob/main/High%20Availability%20Web%20Application%20with%20AWS%20Elastic%20Load%20Balancer%20(BookNow%20Project).pdf" class="project-link live">
+                            <a href="https://github.com/Sanjaykumar-P/High-Availability-Web-Application-with-AWS-Elastic-Load-Balancer-BookNow-Project-/blob/main/High%20Availability%20Web%20Application%20with%20AWS%20Elastic%20Load%20Balancer%20(BookNow%20Project).pdf" class="project-link">
                                 <i class="fas fa-external-link-alt"></i> View Document
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card zoom-in">
+                <div class="project-card fade-in">
                     <div class="project-content">
                         <h3>Highly Available Web Application with AWS Auto Scaling and Load Balancing</h3>
                         <p>Built a highly available and scalable web application on AWS using EC2, Auto Scaling Group, and Application Load Balancer for seamless performance and cost efficiency.</p>
                         <div class="project-tags">
-                            <div class="project-tag">Amazon EC2</div>
-                            <div class="project-tag">Auto Scaling Groups</div>
-                            <div class="project-tag">High Availability & Cost Efficient</div>
-                            <div class="project-tag">ALB</div>
-                            <div class="project-tag">Scale In & Scale Out</div>
+                            <span class="tag">Amazon EC2</span>
+                            <span class="tag">Auto Scaling Groups</span>
+                            <span class="tag">High Availability & Cost Efficient</span>
+                            <span class="tag">ALB</span>
+                            <span class="tag">Scale In & Scale Out</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/Highly-Available-Web-Application-with-AWS-Auto-Scaling-and-Load-Balancing.git" target="_blank" class="project-link">
+                            <a href="https://github.com/Sanjaykumar-P/Highly-Available-Web-Application-with-AWS-Auto-Scaling-and-Load-Balancing.git" target="_blank" class="project-link github">
                                 <i class="fab fa-github"></i> View Repository
                             </a>
-                            <a href="https://github.com/Sanjaykumar-P/Highly-Available-Web-Application-with-AWS-Auto-Scaling-and-Load-Balancing/blob/main/Highly%20Available%20Web%20Application%20with%20AWS%20Auto%20Scaling%20and%20Load.pdf" class="project-link live">
+                            <a href="https://github.com/Sanjaykumar-P/Highly-Available-Web-Application-with-AWS-Auto-Scaling-and-Load-Balancing/blob/main/Highly%20Available%20Web%20Application%20with%20AWS%20Auto%20Scaling%20and%20Load.pdf" class="project-link">
                                 <i class="fas fa-external-link-alt"></i> View Document
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card zoom-in">
+                <div class="project-card fade-in">
                     <div class="project-content">
                         <h3>ElegantEvents: Static Event Planner Website Hosted on AWS S3 and CloudFront</h3>
                         <p>Developed and hosted a static Event Planner Website on AWS S3 with CloudFront CDN. Ensured global availability, low latency, scalability, and cost-efficient performance.</p>
                         <div class="project-tags">
-                            <div class="project-tag">Amazon S3</div>
-                            <div class="project-tag">Static Website Hosting</div>
-                            <div class="project-tag">CloudFront</div>
-                            <div class="project-tag">Global Infrastructure</div>
-                            <div class="project-tag">Security & Cost Optimization</div>
+                            <span class="tag">Amazon S3</span>
+                            <span class="tag">Static Website Hosting</span>
+                            <span class="tag">CloudFront</span>
+                            <span class="tag">Global Infrastructure</span>
+                            <span class="tag">Security & Cost Optimization</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/ElegantEvents-Static-Event-Planner-Website-Hosted-on-AWS-S3-and-CloudFront.git" target="_blank" class="project-link">
+                            <a href="https://github.com/Sanjaykumar-P/ElegantEvents-Static-Event-Planner-Website-Hosted-on-AWS-S3-and-CloudFront.git" target="_blank" class="project-link github">
                                 <i class="fab fa-github"></i> View Repository
                             </a>
-                            <a href="https://github.com/Sanjaykumar-P/ElegantEvents-Static-Event-Planner-Website-Hosted-on-AWS-S3-and-CloudFront/blob/main/Static%20Web%20pages%20and%20Cloud%20Front.pdf" class="project-link live">
+                            <a href="https://github.com/Sanjaykumar-P/ElegantEvents-Static-Event-Planner-Website-Hosted-on-AWS-S3-and-CloudFront/blob/main/Static%20Web%20pages%20and%20Cloud%20Front.pdf" class="project-link">
                                 <i class="fas fa-external-link-alt"></i> View Document
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card zoom-in">
+                <div class="project-card fade-in">
                     <div class="project-content">
                         <h3>courseMate - Your Learning Companion</h3>
                         <p>CourseMate – Your Learning Companion is a static website on AWS S3 delivering CCNA video courses with embedded lessons and auto-generated completion certificates. An S3 lifecycle policy deletes uploaded videos after 15 days for efficient storage management.</p>
                         <div class="project-tags">
-                            <div class="project-tag">Amazon S3</div>
-                            <div class="project-tag">Static Website Hosting</div>
-                            <div class="project-tag">Lifecycle Configuration</div>
-                            <div class="project-tag">Security & Cost Optimization</div>
+                            <span class="tag">Amazon S3</span>
+                            <span class="tag">Static Website Hosting</span>
+                            <span class="tag">Lifecycle Configuration</span>
+                            <span class="tag">Security & Cost Optimization</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Sanjaykumar-P/Course-Mate-Your-Learning-Companion.git" target="_blank" class="project-link">
+                            <a href="https://github.com/Sanjaykumar-P/Course-Mate-Your-Learning-Companion.git" target="_blank" class="project-link github">
                                 <i class="fab fa-github"></i> View Repository
                             </a>
-                            <a href="https://github.com/Sanjaykumar-P/Course-Mate-Your-Learning-Companion/blob/main/index.html" class="project-link live">
+                            <a href="https://github.com/Sanjaykumar-P/Course-Mate-Your-Learning-Companion/blob/main/index.html" class="project-link">
                                 <i class="fas fa-external-link-alt"></i> View Code
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="certifications">
+    <!-- Certifications Section - No Icons -->
+    <section id="certifications" class="certifications">
+        <div class="container">
             <h2 class="section-title">Certifications</h2>
-            <ul class="certification-list">
-                <li class="fade-in-up">
-                    <div>
-                        <i class="fas fa-certificate"></i> DevOps Workshop
+            <div class="certification-grid">
+                <div class="certification-card fade-in">
+                    <div class="certification-info">
+                        <h3>DevOps Workshop</h3>
+                        <p>Besant Technologies</p>
                     </div>
-                    <div class="certificate-actions">
-                        <a href="https://drive.google.com/file/d/1nv6_HewnhSVhjnsJDIhfkw0wZ85CQrUQ/view?usp=sharing" class="certificate-btn view">
+                    <div class="certification-action">
+                        <a href="https://drive.google.com/file/d/1nv6_HewnhSVhjnsJDIhfkw0wZ85CQrUQ/view?usp=sharing" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem;">
                             <i class="fas fa-eye"></i> View
                         </a>
                     </div>
-                </li>
-                <li class="fade-in-up">
-                    <div>
-                        <i class="fas fa-certificate"></i> Git (VCS)
+                </div>
+                
+                <div class="certification-card fade-in">
+                    <div class="certification-info">
+                        <h3>Git (VCS)</h3>
+                        <p>Besant Technologies</p>
                     </div>
-                    <div class="certificate-actions">
-                        <a href="https://drive.google.com/file/d/1vUybd8H98Xcm_p5PIAHO75qYjJMg9dx1/view?usp=sharing" class="certificate-btn view">
+                    <div class="certification-action">
+                        <a href="https://drive.google.com/file/d/1vUybd8H98Xcm_p5PIAHO75qYjJMg9dx1/view?usp=sharing" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem;">
                             <i class="fas fa-eye"></i> View
                         </a>
                     </div>
-                </li>
-                <li class="fade-in-up">
-                    <div>
-                        <i class="fas fa-certificate"></i> Introduction to DevOps
+                </div>
+                
+                <div class="certification-card fade-in">
+                    <div class="certification-info">
+                        <h3>Introduction to DevOps</h3>
+                        <p>Besant Technologies</p>
                     </div>
-                    <div class="certificate-actions">
-                        <a href="https://drive.google.com/file/d/1RPIokwqi9lGB04R6qnMl04dSznB8LbiO/view?usp=sharing" class="certificate-btn view">
+                    <div class="certification-action">
+                        <a href="https://drive.google.com/file/d/1RPIokwqi9lGB04R6qnMl04dSznB8LbiO/view?usp=sharing" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem;">
                             <i class="fas fa-eye"></i> View
                         </a>
                     </div>
-                </li>
-                <li class="fade-in-up">
-                    <div>
-                        <i class="fas fa-certificate"></i> AWS Cloud Practioner (Udemy)
+                </div>
+                
+                <div class="certification-card fade-in">
+                    <div class="certification-info">
+                        <h3>AWS Cloud Practitioner (Udemy)</h3>
+                        <p>Udemy</p>
                     </div>
-                    <div class="certificate-actions">
-                        <a href="https://drive.google.com/file/d/1fdgcqjNxyDGGtLQpGdpumPBD-o_ZpWtU/view?usp=sharing" class="certificate-btn view">
+                    <div class="certification-action">
+                        <a href="https://drive.google.com/file/d/1fdgcqjNxyDGGtLQpGdpumPBD-o_ZpWtU/view?usp=sharing" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem;">
                             <i class="fas fa-eye"></i> View
                         </a>
                     </div>
-                </li>
-                <li class="fade-in-up">
-                    <div>
-                        <i class="fas fa-certificate"></i> RHEL Training (Besant Technologies - 2025)
+                </div>
+                
+                <div class="certification-card fade-in">
+                    <div class="certification-info">
+                        <h3>RHEL Training</h3>
+                        <p>Besant Technologies - 2025</p>
                     </div>
-                    <div class="certificate-actions">
-                        <a href="https://drive.google.com/file/d/1B6K9-6a5h1FBZ_byy95cHb5gEneOwzYh/view?usp=sharing" class="certificate-btn view">
+                    <div class="certification-action">
+                        <a href="https://drive.google.com/file/d/1B6K9-6a5h1FBZ_byy95cHb5gEneOwzYh/view?usp=sharing" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem;">
                             <i class="fas fa-eye"></i> View
                         </a>
                     </div>
-                </li>
-                <li class="fade-in-up">
-                    <div>
-                        <i class="fas fa-certificate"></i> CCNA (Cisco Certified Network Associate) Training – Besant Technologies, 2025
+                </div>
+                
+                <div class="certification-card fade-in">
+                    <div class="certification-info">
+                        <h3>CCNA Training</h3>
+                        <p>Besant Technologies, 2025</p>
                     </div>
-                    <div class="certificate-actions">
-                        <a href="https://drive.google.com/file/d/1WSm6P651wIEKJ0XF-o0EzkNQUCWY9shb/view?usp=sharing" class="certificate-btn view">
+                    <div class="certification-action">
+                        <a href="https://drive.google.com/file/d/1WSm6P651wIEKJ0XF-o0EzkNQUCWY9shb/view?usp=sharing" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem;">
                             <i class="fas fa-eye"></i> View
                         </a>
                     </div>
-                </li>
-                <li class="fade-in-up">
-                    <div>
-                        <i class="fas fa-certificate"></i> AI-Powered Resume Shortlisting Workflow -by Google SWE3
+                </div>
+                
+                <div class="certification-card fade-in">
+                    <div class="certification-info">
+                        <h3>AI-Powered Resume Shortlisting Workflow</h3>
+                        <p>by Google SWE3</p>
                     </div>
-                    <div class="certificate-actions">
-                        <a href="https://drive.google.com/file/d/1LXojJ10JcfJHBn7dKQs-vVW8LU5spIPl/view?usp=sharing" class="certificate-btn view">
+                    <div class="certification-action">
+                        <a href="https://drive.google.com/file/d/1LXojJ10JcfJHBn7dKQs-vVW8LU5spIPl/view?usp=sharing" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem;">
                             <i class="fas fa-eye"></i> View
                         </a>
                     </div>
-                </li>
-                <li class="fade-in-up">
-                    <div>
-                        <i class="fas fa-certificate"></i> Coding Ninjas – Prompt Engineering: Must-Have GenAI Skill for Developers
+                </div>
+                
+                <div class="certification-card fade-in">
+                    <div class="certification-info">
+                        <h3>Prompt Engineering: Must-Have GenAI Skill for Developers</h3>
+                        <p>Coding Ninjas</p>
                     </div>
-                    <div class="certificate-actions">
-                        <a href="https://drive.google.com/file/d/1zbP_XjqSLBIMtegm84sZBsBlsrOBQ7Hs/view?usp=sharing" class="certificate-btn view">
+                    <div class="certification-action">
+                        <a href="https://drive.google.com/file/d/1zbP_XjqSLBIMtegm84sZBsBlsrOBQ7Hs/view?usp=sharing" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem;">
                             <i class="fas fa-eye"></i> View
                         </a>
                     </div>
-                </li>
-                <li class="fade-in-up">
-                    <div>
-                        <i class="fas fa-certificate"></i> System and Network Administration
+                </div>
+                
+                <div class="certification-card fade-in">
+                    <div class="certification-info">
+                        <h3>System and Network Administration</h3>
+                        <p>Besant Technologies</p>
                     </div>
-                    <div class="certificate-actions">
-                        <a href="https://drive.google.com/file/d/1_4UFDz8PLJh_kYXZwwSTonz_UnJnnTP2/view?usp=sharing" class="certificate-btn view">
+                    <div class="certification-action">
+                        <a href="https://drive.google.com/file/d/1_4UFDz8PLJh_kYXZwwSTonz_UnJnnTP2/view?usp=sharing" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem;">
                             <i class="fas fa-eye"></i> View
                         </a>
                     </div>
-                </li>
-                <li class="fade-in-up">
-                    <div>
-                        <i class="fas fa-certificate"></i> Android App Development Using Eclipse
+                </div>
+                
+                <div class="certification-card fade-in">
+                    <div class="certification-info">
+                        <h3>Android App Development Using Eclipse</h3>
+                        <p>Besant Technologies</p>
                     </div>
-                    <div class="certificate-actions">
-                        <a href="https://drive.google.com/file/d/1jXr6iTgZyQzc2xll2bvAtX4hKIzFy56j/view?usp=sharing" class="certificate-btn view">
+                    <div class="certification-action">
+                        <a href="https://drive.google.com/file/d/1jXr6iTgZyQzc2xll2bvAtX4hKIzFy56j/view?usp=sharing" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem;">
                             <i class="fas fa-eye"></i> View
                         </a>
                     </div>
-                </li>
-                <li class="fade-in-up">
-                    <div>
-                        <i class="fas fa-certificate"></i> Vedic Mathematics
+                </div>
+                
+                <div class="certification-card fade-in">
+                    <div class="certification-info">
+                        <h3>Vedic Mathematics</h3>
+                        <p>Besant Technologies</p>
                     </div>
-                    <div class="certificate-actions">
-                        <a href="https://drive.google.com/file/d/1fPDYdi3FZDDHn3KohPdUS1Y7zVplAnxX/view?usp=sharing" class="certificate-btn view">
+                    <div class="certification-action">
+                        <a href="https://drive.google.com/file/d/1fPDYdi3FZDDHn3KohPdUS1Y7zVplAnxX/view?usp=sharing" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem;">
                             <i class="fas fa-eye"></i> View
                         </a>
                     </div>
-                </li>
-                <li class="fade-in-up">
-                    <div>
-                        <i class="fas fa-certificate"></i> National Service Scheme (NSS) Volunteer & Special Camp
+                </div>
+                
+                <div class="certification-card fade-in">
+                    <div class="certification-info">
+                        <h3>National Service Scheme (NSS) Volunteer & Special Camp</h3>
+                        <p>Kongu Arts and Science College</p>
                     </div>
-                    <div class="certificate-actions">
-                        <a href="https://drive.google.com/file/d/1ePFvSQLJf56Uf4g5Rhz-VqBOKhaivD80/view?usp=sharing" class="certificate-btn view">
+                    <div class="certification-action">
+                        <a href="https://drive.google.com/file/d/1ePFvSQLJf56Uf4g5Rhz-VqBOKhaivD80/view?usp=sharing" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem;">
                             <i class="fas fa-eye"></i> View
                         </a>
                     </div>
-                </li>
-                <li class="fade-in-up">
-                    <div>
-                        <i class="fas fa-certificate"></i> Excel Intermediate (Great Learning)
+                </div>
+                
+                <div class="certification-card fade-in">
+                    <div class="certification-info">
+                        <h3>Excel Intermediate</h3>
+                        <p>Great Learning</p>
                     </div>
-                    <div class="certificate-actions">
-                        <a href="https://www.mygreatlearning.com/certificate/TWYGEVHQ" class="certificate-btn view">
+                    <div class="certification-action">
+                        <a href="https://www.mygreatlearning.com/certificate/TWYGEVHQ" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem;">
                             <i class="fas fa-eye"></i> View
                         </a>
                     </div>
-                </li>
-                <li class="fade-in-up">
-                    <div>
-                        <i class="fas fa-certificate"></i> Face Detection with OpenCV (Great Learning)
+                </div>
+                
+                <div class="certification-card fade-in">
+                    <div class="certification-info">
+                        <h3>Face Detection with OpenCV</h3>
+                        <p>Great Learning</p>
                     </div>
-                    <div class="certificate-actions">
-                        <a href="https://www.mygreatlearning.com/certificate/TWYGEVHQ" class="certificate-btn view">
+                    <div class="certification-action">
+                        <a href="https://www.mygreatlearning.com/certificate/TWYGEVHQ" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem;">
                             <i class="fas fa-eye"></i> View
                         </a>
                     </div>
-                </li>
-                <li class="fade-in-up">
-                    <div>
-                        <i class="fas fa-certificate"></i> Cloud Foundations Using AWS (Great Learning)
+                </div>
+                
+                <div class="certification-card fade-in">
+                    <div class="certification-info">
+                        <h3>Cloud Foundations Using AWS</h3>
+                        <p>Great Learning</p>
                     </div>
-                    <div class="certificate-actions">
-                        <a href="#" class="certificate-btn view">
+                    <div class="certification-action">
+                        <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem;">
                             <i class="fas fa-eye"></i> View
                         </a>
                     </div>
-                </li>
-                <li class="fade-in-up">
-                    <div>
-                        <i class="fas fa-certificate"></i> Artificial Intelligence with Python
+                </div>
+                
+                <div class="certification-card fade-in">
+                    <div class="certification-info">
+                        <h3>Artificial Intelligence with Python</h3>
+                        <p>Great Learning</p>
                     </div>
-                    <div class="certificate-actions">
-                        <a href="https://www.mygreatlearning.com/certificate/OSKZHQMJ" class="certificate-btn view">
+                    <div class="certification-action">
+                        <a href="https://www.mygreatlearning.com/certificate/OSKZHQMJ" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem;">
                             <i class="fas fa-eye"></i> View
                         </a>
                     </div>
-                </li>
-            </ul>
-        </section>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section id="Workshops">
+    <!-- Workshops Section -->
+    <section id="workshops" class="workshops">
+        <div class="container">
             <h2 class="section-title">Workshops</h2>
-            <ul class="certification-list">
-                <li class="fade-in-up">
-                    <div>
-                        <i class="fas fa-certificate"></i> DevOps Workshop
+            <div class="workshops-grid">
+                <div class="workshop-card fade-in">
+                    <div class="workshop-info">
+                        <h3>DevOps Workshop</h3>
+                        <p>Besant Technologies</p>
                     </div>
-                    <div class="certificate-actions">
-                        <a href="https://drive.google.com/file/d/1nv6_HewnhSVhjnsJDIhfkw0wZ85CQrUQ/view?usp=sharing" class="certificate-btn view">
+                    <div class="workshop-action">
+                        <a href="https://drive.google.com/file/d/1nv6_HewnhSVhjnsJDIhfkw0wZ85CQrUQ/view?usp=sharing" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem;">
                             <i class="fas fa-eye"></i> View
                         </a>
                     </div>
-                </li>
-            </ul>
-        </section>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section id="testimonials">
+    <!-- Testimonials Section - With Image for Second Card -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
             <h2 class="section-title">Testimonials</h2>
             <div class="testimonials-grid">
-                <div class="testimonial-card fade-in-up">
+                <div class="testimonial-card fade-in">
                     <div class="testimonial-quote">
                         "Sanjay, I wanted to give you this feedback because your help has been truly outstanding.
-​When I was feeling lost and genuinely confused about my career path—not knowing what to do at all—you were always the first person to step in and offer support. Your ability to provide clear motivation, practical roadmaps, and all the necessary resources is simply amazing.
-​What really stands out is your genuine passion and advice for helping freshers, students, and undergraduates find their way. You positively impact so many lives.
-​Your tech blogs are a fantastic resource for cutting through the noise, giving us a solid idea of what to do, how to start, and how to grow. If anyone needs real, actionable guidance from a truly supportive and caring person, I always point them to you."
+                        When I was feeling lost and genuinely confused about my career path—not knowing what to do at all—you were always the first person to step in and offer support. Your ability to provide clear motivation, practical roadmaps, and all the necessary resources is simply amazing.
+                        What really stands out is your genuine passion and advice for helping freshers, students, and undergraduates find their way. You positively impact so many lives.
+                        Your tech blogs are a fantastic resource for cutting through the noise, giving us a solid idea of what to do, how to start, and how to grow. If anyone needs real, actionable guidance from a truly supportive and caring person, I always point them to you."
                     </div>
                     <div class="testimonial-author">
-                        <img src="" alt="var**">
                         <div class="testimonial-author-info">
-                            <h4></h4>
-                            <p></p>
+                            <h4>Varshika</h4>
+                            <p>Colleague</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="testimonial-card fade-in-up">
+                <div class="testimonial-card fade-in">
                     <div class="testimonial-quote">
-                        "."
+                        "Sanjay's dedication to learning and sharing knowledge is truly inspiring. He has a unique ability to break down complex technical concepts into understandable pieces, making him an excellent mentor and team player."
                     </div>
                     <div class="testimonial-author">
-                        <img src="" alt="">
+                        <!-- You can add an image here by uncommenting and providing the image URL -->
+                        <!-- <img src="path-to-image.jpg" alt="Mentor"> -->
                         <div class="testimonial-author-info">
-                            <h4></h4>
-                            <p></p>
+                            <h4>Mentor</h4>
+                            <p>Professional Contact</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="testimonial-card fade-in-up">
+                <div class="testimonial-card fade-in">
                     <div class="testimonial-quote">
-                        "."
+                        "Working with Sanjay on projects has been a great experience. His attention to detail and problem-solving skills consistently deliver high-quality results. He's a valuable asset to any team."
                     </div>
                     <div class="testimonial-author">
-                        <img src="" alt="Robert Johnson">
                         <div class="testimonial-author-info">
-                            <h4></h4>
-                            <p></p>
+                            <h4>Colleague</h4>
+                            <p>Project Team Member</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contact">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-section">
-                <div class="contact-icon">
-                    <i class="fas fa-handshake"></i>
-                    <h3>Get in Touch</h3>
-                </div>
-                
-                <form class="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLSfhtnSYgZDFpQTYJ5damfOa393t7Hyyyg73aI9A_PVoMbIPfg/formResponse" method="POST" target="_blank">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="entry.1181390135" placeholder="Enter your name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" name="entry.606845025" placeholder="Enter your email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Your Phone Number</label>
-                        <input type="tel" id="phone" name="entry.28667283" placeholder="Enter your phone number" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="alt-phone">Alternate Phone (Optional)</label>
-                        <input type="tel" id="alt-phone" name="entry.990884387" placeholder="Enter alternate phone number">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="entry.257264339" placeholder="Type your message here..." required></textarea>
-                    </div>
-                    
-                    <!-- Hidden fields -->
-                    <input type="hidden" name="fvv" value="1">
-                    <input type="hidden" name="fbzx" value="-2206508105654241332">
-                    <input type="hidden" name="pageHistory" value="0">
-                    
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i> Send Message
-                    </button>
-                </form>
-                
-                <div class="contact-links">
-                    <a href="mailto:sanjaykumarp8577@gmail.com" title="Email">
-                        <i class="fas fa-envelope"></i> Email
-                    </a>
-                    <a href="https://linkedin.com/in/sanjaykumar77" target="_blank" title="LinkedIn">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/Sanjaykumar-P" target="_blank" title="GitHub">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                    <a href="tel:+918072414579" title="Call">
-                        <i class="fas fa-phone"></i> Call
-                    </a>
-                </div>
-                
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
                 <div class="contact-info">
-                    <p><i class="fas fa-map-marker-alt"></i> Bengaluru, Karnataka, India</p>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>sanjaykumarp8577@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+91 8072414579</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Bengaluru, Karnataka, India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/sanjaykumar77" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/Sanjaykumar-P" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://wa.me/918072414579" target="_blank" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form action="https://docs.google.com/forms/d/e/1FAIpQLSfhtnSYgZDFpQTYJ5damfOa393t7Hyyyg73aI9A_PVoMbIPfg/formResponse" method="POST" target="_blank">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="entry.1181390135" placeholder="Enter your name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="entry.606845025" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Your Phone Number</label>
+                            <input type="tel" id="phone" name="entry.28667283" placeholder="Enter your phone number" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="alt-phone">Alternate Phone (Optional)</label>
+                            <input type="tel" id="alt-phone" name="entry.990884387" placeholder="Enter alternate phone number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="entry.257264339" placeholder="Type your message here..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <div class="last-updated">
-            Last Updated: <span id="lastUpdatedDate"></span>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Sanjaykumar P</div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#expertise">Expertise</a>
+                <a href="#education">Education</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#workshops">Workshops</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Sanjaykumar P. All Rights Reserved.
+            </div>
         </div>
-        
-        <!-- Footer -->
-        <div class="footer">
-            <p>&copy; 2025 Sanjaykumar P. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <div class="resume-container">
+                <iframe src="Sanjaykumar P Resume Cloud Engineer.pdf" class="resume-iframe" id="resumeIframe"></iframe>
+            </div>
+            <div class="resume-download-container">
+                <a href="Sanjaykumar P Resume Cloud Engineer.pdf" download="Sanjaykumar P Resume Cloud Engineer.pdf" class="btn btn-primary">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
         </div>
+    </div>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-actions">
+        <a href="https://wa.me/918072414579" target="_blank" class="floating-btn whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="tooltip">Message on WhatsApp</span>
+        </a>
+        <a href="https://linkedin.com/in/sanjaykumar77" target="_blank" class="floating-btn linkedin">
+            <i class="fab fa-linkedin-in"></i>
+            <span class="tooltip">Connect on LinkedIn</span>
+        </a>
+        <a href="#" id="viewResumeBtn" class="floating-btn resume">
+            <i class="fas fa-file"></i>
+            <span class="tooltip">View Resume</span>
+        </a>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Generate floating icons
-            const floatingIcons = document.getElementById('floatingIcons');
-            const techIcons = [
-                'devicon-linux-plain', 'devicon-redhat-plain', 'devicon-amazonwebservices-plain-wordmark',
-                'devicon-apache-plain-wordmark', 'devicon-nginx-original', 'devicon-git-plain',
-                'devicon-github-original', 'devicon-html5-plain', 'devicon-css3-plain',
-                'devicon-javascript-plain', 'devicon-python-plain', 'devicon-react-original'
-            ];
-            
-            for (let i = 0; i < 20; i++) {
-                const icon = document.createElement('div');
-                icon.className = 'floating-icon';
-                const iconClass = techIcons[Math.floor(Math.random() * techIcons.length)];
-                icon.innerHTML = `<i class="${iconClass} colored"></i>`;
-                icon.style.left = `${Math.random() * 100}%`;
-                icon.style.top = `${Math.random() * 100}%`;
-                icon.style.animationDuration = `${15 + Math.random() * 20}s`;
-                icon.style.animationDelay = `${Math.random() * 5}s`;
-                floatingIcons.appendChild(icon);
-            }
-
-            // Set last updated date
-            document.getElementById('lastUpdatedDate').textContent = new Date().toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
+            // Header scroll effect
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
             });
 
             // Mobile menu toggle
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
             
             if (menuToggle) {
                 menuToggle.addEventListener('click', function() {
                     navLinks.classList.toggle('active');
-                    // Change icon based on menu state
+                    // Change icon
                     const icon = this.querySelector('i');
                     if (navLinks.classList.contains('active')) {
                         icon.classList.remove('fa-bars');
@@ -2549,42 +2168,45 @@
                 });
             }
             
-            // Smooth scrolling for navigation
+            // Smooth scrolling for navigation links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
-                    if (this.getAttribute('href') === '#') return;
-                    
                     e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const target = document.querySelector(targetId);
                     if (target) {
-                        window.scrollTo({
-                            top: target.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                        
                         // Close mobile menu if open
                         if (navLinks.classList.contains('active')) {
                             navLinks.classList.remove('active');
                             // Reset menu icon
-                            const icon = document.querySelector('.menu-toggle i');
+                            const icon = document.querySelector('#menuToggle i');
                             icon.classList.remove('fa-times');
                             icon.classList.add('fa-bars');
                         }
+                        
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
                     }
                 });
             });
             
-            // Close mobile menu when clicking a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                        // Reset menu icon
-                        const icon = document.querySelector('.menu-toggle i');
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
+            // Fade-in animation on scroll
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
                     }
                 });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(el => {
+                fadeObserver.observe(el);
             });
             
             // Resume Modal functionality
@@ -2613,36 +2235,6 @@
                     modal.style.display = "none";
                     document.body.style.overflow = "auto"; // Re-enable scrolling
                 }
-            });
-
-            // Scroll animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, observerOptions);
-
-            // Observe elements with animation classes
-            document.querySelectorAll('.zoom-in, .zoom-out, .fade-in-up, .fade-in-down, .slide-in-left, .slide-in-right, .bounce-in, .flip-in').forEach(el => {
-                observer.observe(el);
-            });
-
-            // Enhanced hover effects for project cards
-            document.querySelectorAll('.project-card').forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.classList.add('pulse-once');
-                });
-                
-                card.addEventListener('animationend', function() {
-                    this.classList.remove('pulse-once');
-                });
             });
         });
     </script>
